@@ -1,20 +1,12 @@
 .slide{
-  height: 400px;
-  width: 90%;
-  background-color: blue;
-  margin: 10px auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  &__img{
-    height: 250px;
-    width: 300px;
-    background-color:yellow;
-    
-    h1{
-      font-size: 20px;
-      text-align: center;
-      line-height: 250px;
-    }
+  background-color: #fff;
+  width: 100%;
+  margin-top: 20px;
+  &__back-img{
+    height: 500px;
+    width: 100%;
+    background-color: red;
+    border-bottom: solid 2px;
   }
+
 }
