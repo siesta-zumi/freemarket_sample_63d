@@ -34,10 +34,14 @@
         bottom: 1px;
         margin: 0 auto;
         background-color:lightgray;
+        color: lightgray;
+        font-size: 15px;
+        padding-bottom: 5px;
         i{
           display: block;
           padding: 10px;
           height: 30px;
+          line-height: 30px;
         }
         :hover{
           cursor: pointer;
@@ -58,12 +62,16 @@
       display: flex;
       li{
         background-color: #fff;
+        display:none;
       }
       a{
         color: #000;
       }
       a:hover{
         color: rgb(0,149,238);
+        ul{
+          display: block;
+        }
       }
       .category-list{
         width: 150px;
