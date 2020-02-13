@@ -1,12 +1,6 @@
 .slide{
-  background-color: #fff;
-  width: 100%;
-  margin-top: 20px;
   &__back-img{
-    height: 500px;
-    width: 100%;
-    background-color: red;
-    border-bottom: solid 2px;
+    @include insert-img();
+    background-image: url("material/pict/bg-mainVisual-pict_pc.jpg");
   }
-
 }

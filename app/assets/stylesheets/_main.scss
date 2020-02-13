@@ -1,65 +1,27 @@
 .main{
   width: 100%;
   margin: 30px auto 40px;
-  background-color: lightgray;
-  &__title{
-    h1{
-      font-size: 25px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 25px;
-      margin-bottom: 20px;
-      padding: 15px;
+  background-color: $furima-gray;
 
-    }
-    p{
-      content:"";
-      border-bottom:5px solid lightseagreen ;
-      width: 100px;
-      margin: 0 auto;
-      margin-bottom: 30px;
-
-    }
-   
-  }
-  &__title-list{
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    a{
-      text-decoration: none;
-      cursor: pointer;
-      color: #000;
-      padding: 3px 10px;
-      background-color: lightgray;
-      border-radius: 20px;
-      margin-right: 20px;
-    }
-
-
-  }
   &__content{
-    background-color: lightgray;
     width: 70%;
     margin: 0 auto;
     margin-bottom: 20px;
     &__name{
-      background-color: yellow;
+      padding-top: 50px;
       width: 100%;
-      h1 {
-        font-size: 30px;
-        font-weight: bold;
-      }
+      @include pickup();
     }
     &__items{
-      background-color: green;
+      //background-color: green;
       width: 100%;
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       .contents__list{
-        height: 200px;
-        width: 150px;
+        //@include list();
+        height: 280px;
+        width: 250px;
         background-color: #fff;
         margin: 25px;
         border: 1px solid;
@@ -67,36 +29,25 @@
 
     }
     &__img{
-      height: 300px;
-      width: 100%;
-      background-color: red;
+      @include insert-img();
+      background-image: url("material/pict/bg-appBanner-pict.jpg");
     }
 
   }
-  .exhibition-item{
-    background-color:lightseagreen;
-    height: 160px;
-    width: 160px;
+
+  button{
+    display: inline-block;
+    font-size: 15px;
+    width: 100px;
+    color: #fff;
+    background-color: $furima-green;
+    padding: 10px;
     position: fixed;
-    bottom: 40px;
-    right: 30px;
-    border-radius: 150px;
-    text-align: center;
-    a{
-      color: #fff;
-      font-size: 30px;
-      font-weight: bold;
-      display: block;
-      margin-top: 30px;
-      text-decoration: none;
-    }
+    bottom:40px;
+    right:30px;
+    border-radius: 5px;
     i{
-      display: inline-block;
-      
-      height: 50px;
-      width: 50px;
       font-size: 50px;
-      
     }
   }
 }

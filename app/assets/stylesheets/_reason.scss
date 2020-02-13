@@ -1,73 +1,27 @@
 .reason{
   width: 100%;
-  //background-color:lightcoral;
-  
   &__title{
-    h1{
-      font-size: 25px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 25px;
-      margin-bottom: 20px;
-      padding: 15px;
-
-    }
-    p{
-      content:"";
-      border-bottom:5px solid lightseagreen ;
-      width: 100px;
-      margin: 0 auto;
-      margin-bottom: 30px;
-
-    }
-   
+    @include title();
   }
   &__items{
-    height: 300px;
-    width: 70%;
-    margin: 0 auto;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-around;
-    ul{
-      display: block;
+    @include items();
+    .list__img-a{
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-image: url("material/pict/pict-reason-01.jpg");
     }
-    li.list{
-      display: inline-block;
-      background-color:#fff;
-      height: 300px;
-      width: 200px;
-      position: relative;
-      .list__img{
-        height: 200px;
-        width: 100%;
-        background-color: red;
-      }
-      .list__num{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 30px;
-        width: 30px;
-        background-color: lightgreen;
-        color: #fff;
-        text-align: center;
-      }
-      h2 span{
-        color: lightseagreen;
-      }
-      h2 {
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-      }
-      p{
-        font-size: 12px;
-        margin-top: 10px;
-        
-      }
-
+    .list__img-b{
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-image: url("material/pict/pict-reason-02.jpg");
     }
-     
+    .list__img-c{
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-image: url("material/pict/pict-reason-03.jpg");
+    }
   }
 }
