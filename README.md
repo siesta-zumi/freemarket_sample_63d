@@ -1,4 +1,7 @@
 # DB設計
+
+https://gyazo.com/f2a425a482dd176a64da0100da4dd85e
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
