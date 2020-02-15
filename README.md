@@ -10,9 +10,9 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |password|string|null: false|
 
 ### Association
-- has_one : identity-informations
-- has_one : shipping-addresses
-- has_one : cards
+- has_one : identity-information
+- has_one : shipping-address
+- has_one : card
 - has_many : orders
 - has_many : items
 - has_many : messages
@@ -80,10 +80,10 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |brans_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_one : orders
+- has_one : order
 - has_many : item-images
-- has_one : categories
-- has_one : brands
+- has_one : categoriy
+- has_one : brand
 - has_many : messages
 
 ## item-imagesテーブル
@@ -93,7 +93,7 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |image|string|null: false|
 
 ### Association
-- belongs_to : items
+- belongs_to : item
 
 
 ## categoriesテーブル
@@ -123,7 +123,7 @@ has_many : third_categories
 |second_categories_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 ### Association
-belongs_to : second_categories
+belongs_to : second_category
 
 
 ## brandsテーブル
@@ -132,7 +132,7 @@ belongs_to : second_categories
 |name|string|null: false|
 
 ### Association
-has_one : items
+has_one : item
 
 
 ## messagesテーブル
@@ -144,5 +144,5 @@ has_one : items
 |purchase_phase|integer|null: false|
 
 ### Association
-belongs_to : users
-belongs_to : items
+belongs_to : user
+belongs_to : item
