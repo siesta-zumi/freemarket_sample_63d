@@ -30,7 +30,7 @@
     }
     &__img{
       @include insert-img();
-      background-image: url("material/pict/bg-appBanner-pict.jpg");
+      background-image: image-url("material/pict/bg-appBanner-pict.jpg");
     }
 
   }

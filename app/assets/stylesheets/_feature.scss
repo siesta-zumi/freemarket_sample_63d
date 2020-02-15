@@ -3,7 +3,7 @@
   margin-bottom: 150px;
   &__img{
     @include insert-img();
-    background-image: url("material/pict/bg-topMiddleDl-pict.jpg");
+    background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
   }
   &__title{
    @include title();
@@ -14,19 +14,19 @@
       width: 100%;
       height: 300px;
       background-size: cover;
-      background-image: url("material/icon/icon-01.png");
+      background-image: image-url("material/icon/icon-01.png");
     }
     .list__img-b{
       width: 100%;
       height: 300px;
       background-size: cover;
-      background-image: url("material/icon/icon-03.png");
+      background-image: image-url("material/icon/icon-03.png");
     }
     .list__img-c{
       width: 100%;
       height: 300px;
       background-size: cover;
-      background-image: url("material/icon/icon-04.png");
+      background-image: image-url("material/icon/icon-04.png");
     }
   }
 }
