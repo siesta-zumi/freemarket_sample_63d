@@ -1,6 +1,6 @@
 # DB設計
 
-https://gyazo.com/970dd57fbe06cce4f99ea652132acf4e
+https://gyazo.com/0ab27fea4409be582ae36673bda46cc2
 
 ## usersテーブル
 |Column|Type|Options|
