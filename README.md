@@ -1,6 +1,6 @@
 # DB設計
 
-https://gyazo.com/30bc69996416bd6582f3ed0e66990b00
+https://gyazo.com/b92accbc10f3866ade33cf561bb72101
 
 ## usersテーブル
 |Column|Type|Options|
@@ -114,7 +114,7 @@ has_ancestry
 |name|string|null: false|
 
 ### Association
-has_one : item
+has_many : item
 
 
 ## messagesテーブル
