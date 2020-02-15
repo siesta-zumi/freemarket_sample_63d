@@ -1,6 +1,6 @@
 # DB設計
 
-https://gyazo.com/f2a425a482dd176a64da0100da4dd85e
+https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 
 ## usersテーブル
 |Column|Type|Options|
@@ -39,7 +39,7 @@ https://gyazo.com/f2a425a482dd176a64da0100da4dd85e
 |municipalities|string|null: false|
 |block|string|null: false|
 |building_name_room_number|string||
-|phone_number|string||
+|phone_number|integer||
 
 ### Association
 - has_one : users
