@@ -28,7 +28,7 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |birthday|date|null: false|
 
 ### Association
-- has_one : user
+- belongs_tio : user
 
 ## shipping-addressesテーブル
 |Column|Type|Options|
@@ -42,7 +42,7 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |phone_number|integer||
 
 ### Association
-- has_one : user
+- belongs_to : user
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -52,7 +52,7 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |card_id|integer|null: false|
 
 ### Association
-- has_one : user
+- belongs_to : user
 
 ## ordersテーブル
 |Column|Type|Options|
@@ -62,7 +62,7 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 
 ### Association
 - belongs_to : user
-- has_one : item
+- belongs_to : item
 
 ## itemsテーブル
 |Column|Type|Options|
