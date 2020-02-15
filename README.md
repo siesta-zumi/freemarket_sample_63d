@@ -10,14 +10,14 @@ https://gyazo.com/970dd57fbe06cce4f99ea652132acf4e
 |password|string|null: false|
 
 ### Association
-- has_one : identity-information
-- has_one : shipping-address
+- has_one : identity_information
+- has_one : shipping_address
 - has_one : card
 - has_many : orders
 - has_many : items
 - has_many : messages
 
-## identity-informationsテーブル
+## identity_informationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -28,9 +28,9 @@ https://gyazo.com/970dd57fbe06cce4f99ea652132acf4e
 |birthday|date|null: false|
 
 ### Association
-- belongs_tio : user
+- belongs_to : user
 
-## shipping-addressesテーブル
+## shipping_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -69,7 +69,7 @@ https://gyazo.com/970dd57fbe06cce4f99ea652132acf4e
 |------|----|-------|
 |name|string|null: false|
 |desription|text|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |is_bear_shipping_cost|integer|null: false|
 |region|string|null: false|
 |period|string|null: false|
@@ -77,16 +77,16 @@ https://gyazo.com/970dd57fbe06cce4f99ea652132acf4e
 |selling_status|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
-|brans_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_one : order
-- has_many : item-images
-- belongs_to : categoriy
+- has_many : item_images
+- belongs_to : category
 - has_one : brand
 - has_many : messages
 
-## item-imagesテーブル
+## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
