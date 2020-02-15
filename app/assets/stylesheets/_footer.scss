@@ -1,5 +1,32 @@
 .footer{
-  //width: 100%;
-  //background-color: red;
+  background-color: #272727;
+  color: white;
   @include  pickup();
+  text-align: center; 
 }
+ul.contents {
+  max-width: 840px;
+  margin: 0 auto;
+  padding-top: 60px;
+  display: flex;
+}
+
+li.content{
+  display: flex;
+  flex-direction: column;
+  width: calc(1 / 3 * 100%);
+  font-size: 12px;
+  line-height: 32px;
+}
+
+h2.content__head{
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer__sign{
+  font-size: 14px;
+  padding-bottom: 60px;
+}
+
