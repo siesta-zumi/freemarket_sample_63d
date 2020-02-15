@@ -1,6 +1,6 @@
 # DB設計
 
-https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
+https://gyazo.com/970dd57fbe06cce4f99ea652132acf4e
 
 ## usersテーブル
 |Column|Type|Options|
@@ -82,7 +82,7 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 ### Association
 - has_one : order
 - has_many : item-images
-- has_one : categoriy
+- belongs_to : categoriy
 - has_one : brand
 - has_many : messages
 
@@ -100,30 +100,11 @@ https://gyazo.com/36c01b70f99c1fb20a9625157a2ae8a5
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|varchar(255)|null: false|
 
 ### Association
-has_one : item
-has_many : second_categories
-
-
-## second_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|categories_id|integer|null: false, foreign_key: true|
-|name|string|null: false|
-
-### Association
-belongs_to : category
-has_many : third_categories
-
-
-## third_categorieテーブル
-|Column|Type|Options|
-|------|----|-------|
-|second_categories_id|integer|null: false, foreign_key: true|
-|name|string|null: false|
-### Association
-belongs_to : second_category
+has_many : items
+has_ancestry
 
 
 ## brandsテーブル
