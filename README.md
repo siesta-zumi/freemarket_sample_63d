@@ -1,4 +1,7 @@
 # DB設計
+
+https://gyazo.com/b92accbc10f3866ade33cf561bb72101
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -7,14 +10,14 @@
 |password|string|null: false|
 
 ### Association
-- has_one : identity-informations
-- has_one : shipping-addresses
-- has_one : cards
+- has_one : identity_information
+- has_one : shipping_address
+- has_one : card
 - has_many : orders
 - has_many : items
 - has_many : messages
 
-## identity-informationsテーブル
+## identity_informationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -25,9 +28,9 @@
 |birthday|date|null: false|
 
 ### Association
-- has_one : users
+- belongs_to : user
 
-## shipping-addressesテーブル
+## shipping_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -36,10 +39,10 @@
 |municipalities|string|null: false|
 |block|string|null: false|
 |building_name_room_number|string||
-|phone_number|string||
+|phone_number|integer||
 
 ### Association
-- has_one : users
+- belongs_to : user
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -49,7 +52,7 @@
 |card_id|integer|null: false|
 
 ### Association
-- has_one : users
+- belongs_to : user
 
 ## ordersテーブル
 |Column|Type|Options|
@@ -58,15 +61,15 @@
 |item_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to : users
-- has_one : items
+- belongs_to : user
+- belongs_to : item
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |desription|text|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |is_bear_shipping_cost|integer|null: false|
 |region|string|null: false|
 |period|string|null: false|
@@ -74,53 +77,35 @@
 |selling_status|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
-|brans_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_one : orders
-- has_many : item-images
-- has_one : categories
-- has_one : brands
+- belongs_to : user
+- has_one : order
+- has_many : item_images
+- belongs_to : category
+- belongs_to : brand
 - has_many : messages
 
-## item-imagesテーブル
+## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
 |image|string|null: false|
 
 ### Association
-- belongs_to : items
+- belongs_to : item
 
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|varchar(255)|null: false|
 
 ### Association
-has_one : items
-has_many : second_categories
-
-
-## second_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|categories_id|integer|null: false, foreign_key: true|
-|name|string|null: false|
-
-### Association
-belongs_to : categories
-has_many : third_categories
-
-
-## third_categorieテーブル
-|Column|Type|Options|
-|------|----|-------|
-|second_categories_id|integer|null: false, foreign_key: true|
-|name|string|null: false|
-### Association
-belongs_to : second_categories
+has_many : items
+has_ancestry
 
 
 ## brandsテーブル
@@ -129,7 +114,7 @@ belongs_to : second_categories
 |name|string|null: false|
 
 ### Association
-has_one : items
+has_many : item
 
 
 ## messagesテーブル
@@ -141,5 +126,5 @@ has_one : items
 |purchase_phase|integer|null: false|
 
 ### Association
-belongs_to : users
-belongs_to : items
+belongs_to : user
+belongs_to : item
