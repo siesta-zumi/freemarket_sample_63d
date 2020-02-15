@@ -80,10 +80,11 @@ https://gyazo.com/0ab27fea4409be582ae36673bda46cc2
 |brand_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belongs_to : user
 - has_one : order
 - has_many : item_images
 - belongs_to : category
-- has_one : brand
+- belongs_to : brand
 - has_many : messages
 
 ## item_imagesテーブル
