@@ -1,7 +1,43 @@
 %main.main
-  .main__title 
-    %h1 人気のカテゴリー
-  .category1 
-    %p レディース
-  .category2 メンズ
-  .category３ その他
+  .main__content
+    .main__content__name
+      %h1 ピックアップカテゴリー
+      %h2=link_to"新規投稿商品"
+
+    .main__content__items
+      .contents__list
+        %P item.img
+        %P item.price
+        %P item.name
+      .contents__list
+        %P item.img
+        %P item.price
+        %P item.name
+      .contents__list
+        %P item.img
+        %P item.price
+        %P item.name
+
+  .main__content
+    .main__content__name
+      %h1 ピックアップブランド
+      %h2=link_to"アーカイバ"
+    .main__content__items
+      .contents__list
+        %P item.img
+        %P item.price
+        %P item.name
+      .contents__list
+        %P item.img
+        %P item.price
+        %P item.name
+      .contents__list
+        %P item.img
+        %P item.price
+        %P item.name
+  .main__content__img
+
+  .create-item
+  = button_tag type: "submit", class: "create-icon"do
+    %p 出品する
+    %i.fa.fa-camera

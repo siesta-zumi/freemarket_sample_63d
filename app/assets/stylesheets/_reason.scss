@@ -1,0 +1,27 @@
+.reason{
+  width: 100%;
+  &__title{
+    @include title();
+  }
+  &__items{
+    @include items();
+    .list__img-a{
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-image: url("material/pict/pict-reason-01.jpg");
+    }
+    .list__img-b{
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-image: url("material/pict/pict-reason-02.jpg");
+    }
+    .list__img-c{
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-image: url("material/pict/pict-reason-03.jpg");
+    }
+  }
+}

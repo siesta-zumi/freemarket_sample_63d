@@ -1,6 +1,53 @@
 .main{
-  width: 90%;
-  height: 500px;
+  width: 100%;
   margin: 30px auto 40px;
-  background-color: lightgray;
+  background-color: $furima-gray;
+
+  &__content{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    &__name{
+      padding-top: 50px;
+      width: 100%;
+      @include pickup();
+    }
+    &__items{
+      //background-color: green;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      .contents__list{
+        //@include list();
+        height: 280px;
+        width: 250px;
+        background-color: #fff;
+        margin: 25px;
+        border: 1px solid;
+      }
+
+    }
+    &__img{
+      @include insert-img();
+      background-image: url("material/pict/bg-appBanner-pict.jpg");
+    }
+
+  }
+
+  button{
+    display: inline-block;
+    font-size: 15px;
+    width: 100px;
+    color: #fff;
+    background-color: $furima-green;
+    padding: 10px;
+    position: fixed;
+    bottom:40px;
+    right:30px;
+    border-radius: 5px;
+    i{
+      font-size: 50px;
+    }
+  }
 }
