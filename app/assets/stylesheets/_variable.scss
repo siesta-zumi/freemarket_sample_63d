@@ -94,3 +94,31 @@ $furima-gray: rgb(242,242,242);
       }
     }
 }
+@mixin not-null {
+  background: #ea352d;
+  margin: 15px 0 2px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+@mixin categories() {
+  display: flex;
+  p{
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 15px 0px 0px;
+  }
+  span{
+    background: #ea352d;
+    margin: 15px 0 2px 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+}
