@@ -1,6 +1,7 @@
 .header
   .header__logo
-    = link_to image_tag("material/logo/logo.png", alt: "logo image"), "#"
+    = link_to root_path do 
+      = image_tag("material/logo/logo.png", alt: "logo image")
 
 .new-contents
   .new-contents-main
@@ -65,7 +66,10 @@
       %h5 販売価格
       .price-input__box
         %P 価格
-        %input{type: "text",placeholder: '例)¥300',class: "input-price" } 
+        %span 必須
+      .price-input__form
+        ¥
+        %input{type: "text",placeholder: '例)300',class: "input-price" } 
     .sell-item
       = button_tag type: "submit", class: "sell-btn"do
         %p 出品する
