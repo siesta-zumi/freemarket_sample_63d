@@ -8,7 +8,7 @@ $furima-gray: rgb(242,242,242);
     font-weight: bold;
     text-align: center;
     line-height: 25px;
-    margin-bottom: 20px;
+    margin-top: 30px;
     padding: 15px;
   }
   p{
@@ -16,7 +16,7 @@ $furima-gray: rgb(242,242,242);
     border-bottom:5px solid $furima-green;
     width: 100px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 
   }
 }
@@ -40,23 +40,22 @@ $furima-gray: rgb(242,242,242);
 }
 
 @mixin insert-img(){
-  height: 500px;
+  height: 550px;
   width: 100%;
   background-size: cover;
-  border: solid 2px;
 }
 
 @mixin list(){
   display: inline-block;
   background-color:#fff;
   height: 300px;
-  width: 200px;
+  width: 300px;
 
 }
 
 
 @mixin items(){
-  height: 300px;
+    //height: 500px;
     width: 70%;
     margin: 0 auto;
     background-color: #fff;
@@ -68,6 +67,7 @@ $furima-gray: rgb(242,242,242);
     li.list{
       @include list();
       position: relative;
+      margin-right: 30px;
       .list__num{
         position: absolute;
         top: 0;
@@ -84,13 +84,14 @@ $furima-gray: rgb(242,242,242);
         color: $furima-green;
       }
       h2 {
-        font-size: 15px;
+        font-size: 25px;
         font-weight: bold;
         text-align: center;
+        margin-top: 30px;
       }
       p{
-        font-size: 12px;
-        margin-top: 10px;
+        font-size: 17px;
+        margin-top: 15px;
       }
     }
 }

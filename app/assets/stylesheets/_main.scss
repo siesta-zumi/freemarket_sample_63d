@@ -1,6 +1,6 @@
 .main{
   width: 100%;
-  margin: 30px auto 40px;
+  margin: 0 auto;
   background-color: $furima-gray;
 
   &__content{
@@ -13,13 +13,11 @@
       @include pickup();
     }
     &__items{
-      //background-color: green;
       width: 100%;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-wrap: wrap;
       .contents__list{
-        //@include list();
         height: 280px;
         width: 250px;
         background-color: #fff;

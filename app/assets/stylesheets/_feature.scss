@@ -1,6 +1,7 @@
 .feature{
   width: 100%;
-  margin-bottom: 150px;
+  //height: 900px;
+  margin-bottom: 250px;
   &__img{
     @include insert-img();
     background-image: image-url("material/pict/bg-topMiddleDl-pict.jpg");
@@ -11,19 +12,19 @@
   &__items{
     @include items();
     .list__img-a{
-      width: 100%;
+      width: 200px;
       height: 300px;
       background-size: cover;
       background-image: image-url("material/icon/icon-01.png");
     }
     .list__img-b{
-      width: 100%;
+      width: 200px;
       height: 300px;
       background-size: cover;
       background-image: image-url("material/icon/icon-03.png");
     }
     .list__img-c{
-      width: 100%;
+      width: 200px;
       height: 300px;
       background-size: cover;
       background-image: image-url("material/icon/icon-04.png");
