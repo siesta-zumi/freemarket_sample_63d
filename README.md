@@ -68,11 +68,11 @@ https://gyazo.com/b92accbc10f3866ade33cf561bb72101
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|desription|text|null: false|
+|description|text|null: false|
 |status|integer|null: false|
 |is_bear_shipping_cost|integer|null: false|
-|region|string|null: false|
-|period|string|null: false|
+|region|integer|null: false|
+|period|integer|null: false|
 |price|integer|null: false|
 |selling_status|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
