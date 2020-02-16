@@ -1,0 +1,216 @@
+.header {
+  height: 128px;
+  background-color: #f5f5f5;
+  
+  &__logo{
+    height: 49px;
+    width: 185px;
+    margin:  0 auto; 
+    padding: 30px 0;
+     img{
+       width: 100%;
+     }
+  }
+}
+.contents{
+  background-color: #f5f5f5;
+  .contents-main{
+    width: 700px;
+    margin:  0 auto;  
+    background-color:white;
+    .title{
+      padding: 32px 16px;
+      font-size: 22px;
+      text-align: center;
+      line-height: 1.5;
+      h1{
+        font-weight: bold;
+        color: #333333;
+      }
+    }
+
+    .imege-upload{
+      height: 303px;
+      border: 1px solid #f5f5f5;
+      padding: 40px;
+      .section{
+        display: flex;
+        h2{
+          margin-block-start: 1em;
+          font-size: 16px;
+          font-weight: bold;
+          color: #333333;
+        } 
+        span{
+          @include not-null
+        }
+      }
+      p{
+        font-size: 14px;
+        margin: 8px 0 10px;
+        color: #333333;
+      }
+      .image__list{
+        display: flex;
+        justify-content: space-around;
+        .item.img{
+          height: 114px;
+          width: 114px;
+          border: 1px solid #333333;
+        }
+      }
+    }
+
+    .item-name{
+      height: 355px;
+      border: 1px solid #f5f5f5;
+      padding: 40px;
+      .section{
+        display: flex;
+      p{
+        color: #333333;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 15px 0px 0px;
+      }
+      span{
+        @include not-null
+      }
+      }
+      .input-name{
+        width: 620px;
+        height: 48px;
+        margin: 8px 0 0;
+        padding: 10px 16px 8px;
+        border-radius: 5px;
+      }
+      .input-description{
+        width: 620px;
+        height: 140px;
+        margin: 8px 0 0;
+        padding: 10px 16px 8px;
+        border-radius: 5px;
+      }
+    }
+
+    .item-details{
+      height: 490px;
+      border: 1px solid #f5f5f5;
+      padding: 40px;
+      position: relative;
+      h3{
+        color: #888888;
+        font-size: 14px;
+        font-weight: bold; 
+      }
+      .item-details__box{
+        height:200px;
+        width: 400px;
+        position: absolute;
+        right: 50px;
+        .section{
+          @include categories
+        }
+        .select-box{
+          height: 48px;
+          width: 400px;
+        }
+      }
+    }
+
+    .delivery-select{
+      height: 371px;
+      border: 1px solid #f5f5f5;
+      padding: 40px;
+      position: relative;
+      h4{
+        color: #888888;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .delivery-select__box{
+        height:200px;
+        width: 400px;
+        position: absolute;
+        right: 50px;
+        .section{
+          @include categories
+        }
+        .select-box{
+          height: 48px;
+          width: 400px;
+        }
+      }
+    }
+
+    .price-input{
+      height: 200px;
+      border: 1px solid #f5f5f5;
+      padding: 40px;
+      position: relative;
+      h5{
+        color: #888888;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &__box{
+        height:100px;
+        width: 300px;
+        position: absolute;
+        right: 50px;
+        display: flex;
+        justify-content: space-between;
+        line-height: 100px;
+        P{
+          color: #333333;
+          font-size: 14px;
+          font-weight: bold;
+          }
+        
+        .input-price{
+          height: 48px;
+          width: 180px;
+          padding: 10px 16px 8px;
+          border-radius: 5px;
+          margin: 23px 0px;
+          font-size: 13px;
+          text-align: right;
+        }
+      }
+    }
+    .sell-item{
+      height: 200px;
+      border: 1px solid #f5f5f5;
+      padding: 70px;
+      text-align: center;
+      .sell-btn{
+      line-height: 48px;
+      background: $furima-green;
+      border: 1px solid $furima-green;
+      color: #fff;
+      width: 60%;
+      font-size: 18px;
+      border-radius: 100px;
+      }
+    }
+  }
+}
+.footer{
+  height: 100px;
+  background-color: #f5f5f5;
+  text-align: center;
+  &__logo{
+    height: 50px;
+    width: 160px;
+    margin:  0 auto; 
+    padding: 20px 0;
+    img{
+      width: 100%;
+    }
+  }
+  p{
+    font-size: 13px;
+    color: #333333;
+    margin: 10px;
+   }
+}
