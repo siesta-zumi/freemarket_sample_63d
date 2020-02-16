@@ -1,6 +1,6 @@
 .main{
   width: 100%;
-  margin: 30px auto 40px;
+  margin: 0 auto;
   background-color: $furima-gray;
 
   &__content{
@@ -13,13 +13,11 @@
       @include pickup();
     }
     &__items{
-      //background-color: green;
       width: 100%;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-wrap: wrap;
       .contents__list{
-        //@include list();
         height: 280px;
         width: 250px;
         background-color: #fff;
@@ -31,6 +29,22 @@
     &__img{
       @include insert-img();
       background-image: image-url("material/pict/bg-appBanner-pict.jpg");
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1,p{
+        color: #fff;
+        text-shadow: 1px 2px 3px #808080;
+      }
+      h1{
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      p{
+        font-size: 35px;
+      }
     }
 
   }
