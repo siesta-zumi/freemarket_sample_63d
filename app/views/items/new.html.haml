@@ -22,11 +22,11 @@
       .section
         %p 商品名
         %span 必須
-      %input{:type => "text",placeholder: '商品名（必須）',class: "input-name" } 
+      %input{type: "text",placeholder: '商品名（必須）',class: "input-name" } 
       .section
         %p 商品の説明
         %span 必須
-      %input{:type => "text",placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"} 
+      %input{type: "text",placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"} 
 
     .item-details
       %h3 商品の詳細
@@ -65,7 +65,7 @@
       %h5 販売価格
       .price-input__box
         %P 価格
-        %input{:type => "text",placeholder: '例)¥300',class: "input-price" } 
+        %input{type: "text",placeholder: '例)¥300',class: "input-price" } 
     .sell-item
       = button_tag type: "submit", class: "sell-btn"do
         %p 出品する
