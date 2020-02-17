@@ -1,0 +1,64 @@
+.show-content{
+  height: 1000px;
+  width: 100%;
+  background-color: $furima-gray;
+
+  &__nav{
+    //height: 100px;
+    width: 100%;
+    background-color:yellow;
+    box-shadow:0 5px 5px 0 lightslategray ;
+    margin-bottom: 5px;
+    ul{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-left: 100px;
+      display: flex;
+      li{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.show-contents{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  &__item{
+    background-color: #fff;
+    margin: 50px auto 0;
+    &--name,h1{
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      background-color: blue;
+    }
+    &--img{
+      height: 500px;
+      width: 90%;
+      background-color: red;
+      margin: 0 auto;
+    }
+    &--subimg{
+      height: 150px;
+      width: 90%;
+      background-color: orange;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+    &--price{
+      text-align: center;
+      
+    }  
+  }
+  &__info{
+    background-color: #fff;
+    margin: 10px auto 0;
+    table{
+      border: #000 2px;
+    }
+
+  }
+
+  
+}

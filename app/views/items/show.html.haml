@@ -1,0 +1,28 @@
+= render 'shared/header'
+.show-content
+  .show-content__nav
+    %ul
+      %li 1
+      %li >
+      %li 2
+      %li >
+      %li 3
+      %li >
+
+  .show-contents
+    .show-contents__item
+      .show-contents__item--name
+      %h1 item.name
+      .show-contents__item--img
+        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
+      .show-contents__item--subimg
+        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
+        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
+        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
+      .show-contents__item--price
+        %h2 item.price
+        %p (税込)送料込み
+    .show-contents__info
+
+
+= render 'shared/footer'
