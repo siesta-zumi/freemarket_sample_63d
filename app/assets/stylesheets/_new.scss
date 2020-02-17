@@ -154,19 +154,23 @@
         font-weight: bold;
       }
       &__box{
-        height:100px;
-        width: 300px;
         position: absolute;
-        right: 50px;
+        right: 250px;
         display: flex;
-        justify-content: space-between;
-        line-height: 100px;
+        margin: 20px;
         P{
           color: #333333;
           font-size: 14px;
           font-weight: bold;
+          margin: 15px 0 0;
           }
-        
+          span{
+            @include not-null
+          }
+      }  
+      &__form{
+        position: absolute;
+        right: 50px;
         .input-price{
           height: 48px;
           width: 180px;
@@ -175,8 +179,8 @@
           margin: 23px 0px;
           font-size: 13px;
           text-align: right;
-        }
       }
+    }
     }
     .sell-item{
       height: 200px;
