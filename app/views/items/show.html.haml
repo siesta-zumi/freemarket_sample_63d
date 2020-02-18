@@ -61,8 +61,17 @@
           %th 発送日の目安
           %td ２〜3日で発送
     .show-contents__comment
-      %form_for.aaa
-        = text_area_tag ""
-        = button_tag  "コメントする"
-
+      .show-contents__comment--area
+        %form_for 
+          = text_area_tag ""
+          %p.caution
+            相手のことを考えてコメントしましょう！！
+          = button_tag  "コメントする"
+          %ul
+            %li.link
+              =link_to "<前の商品","#"
+            %li.link
+              =link_to "後ろの商品>","#"
+          .link-item
+            =link_to "〇〇をもっと見る",class:"link-item"
 = render 'shared/footer'

@@ -5,7 +5,7 @@
 
   &__nav{
     width: 100%;
-    background-color:yellow;
+    background-color: #fff;
     box-shadow:0 5px 5px 0 rgb(87, 119, 151) ;
     margin-bottom: 5px;
     ul{
@@ -21,8 +21,8 @@
 }
 .show-contents{
   width: 60%;
-  height: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
   &__item{
     background-color: #fff;
     margin: 50px auto 0;
@@ -36,10 +36,9 @@
       padding: 10px;
     }
     &--img{
-      //height: 650px;
       width: 90%;
-      background-color: red;
       margin-bottom: 15px;
+      margin: 0 auto;
       ul{
         display: flex;
         justify-content: center;
@@ -56,8 +55,8 @@
     }
     &--sub-img{
       width: 90%;
-      background-color: blue;
       padding: 10px;
+      margin: 0 auto;
       ul{
         display: flex;
         justify-content: center;
@@ -83,7 +82,6 @@
   }
   &__info{
     background-color:white;
-    //margin-bottom: 50px;
     h3{
       font-size: 20px;
       padding: 30px;
@@ -110,14 +108,56 @@
     }
   }
   &__comment{
-    background-color:red;
     margin-top: 10px;
-    height: 400px;
-    textarea{
-      margin: 20px;
-      width: 90;
+    height: 500px;
+    position: relative;
+    &--area{
+      position: absolute;
+      top: 30px;
+      background-color: #fff;
+      width: 100%;
+      padding: 20px;
+      textarea{
+        width: 100%;
+        height: 100px;
+      }
+      p.caution{
+        background-color: $furima-gray;
+        padding: 10px;
+        height: 50px;
+        width: 90%;
+        margin: 10px auto;
+      }
+      button{
+        background-color: $furima-green;
+        width: 300px;
+        height: 50px;
+        border-radius: 30px;
+        font-size: 20px;
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+      }
+      ul{
+        display: flex;
+        justify-content: space-between;
+        li.link{
+          padding: 20px;
+          a{
+            color: $furima-green;
+            text-decoration: none;
+          }
+        }
+      }
+      .link-item{
+        font-size: 30px;
+        padding: 20px;
+        a{
+          color: $furima-green;
+          text-decoration: none;
+        }
+      }
     }
-    
   }
 
 }
