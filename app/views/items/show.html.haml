@@ -14,15 +14,55 @@
       .show-contents__item--name
       %h1 item.name
       .show-contents__item--img
-        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
-      .show-contents__item--subimg
-        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
-        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
-        =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "100",height:"100")
+        %ul
+          %li
+            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "600",height:"600",class:"main-img")
+      .show-contents__item--sub-img
+        %ul
+          %li
+            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
+          %li
+            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
+          %li
+            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
       .show-contents__item--price
-        %h2 item.price
+        %h2 ¥30000
         %p (税込)送料込み
     .show-contents__info
-
+      %h3 item.name
+      %table
+        %tr
+          %th 出品者
+          %td hoge
+        %tr
+          %th カテゴリー
+          %td 
+            %ul
+              %li 1
+              %li 2
+              %li 3
+              %li 4
+        %tr
+          %th ブランド
+          %td 〇〇
+        %tr
+          %th 商品のサイズ
+          %td M
+        %tr
+          %th 商品の状態
+          %td 新品
+        %tr
+          %th 配送料の負担
+          %td 出品者負担
+        %tr
+          %th 発送元の地域
+          %td 東京
+        %tr
+          %th 発送日の目安
+          %td ２〜3日で発送
+    .show-contents__comment
+      %form_for.aaa
+        = text_area_tag ""
+        = button_tag  "コメントする"
 
 = render 'shared/footer'
