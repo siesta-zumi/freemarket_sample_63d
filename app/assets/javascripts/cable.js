@@ -19,7 +19,7 @@ $(function() {
     var index = $('.tab li').index(this);
     $('.tab_content').css('display','none');
     $('.tab_content').eq(index).css('display','block');
-    $('.tab li').removeClass('select');
-    $(this).addClass('select')
+    $('.tab li').removeClass('tab_current');
+    $(this).addClass('tab_current')
+    });
   });
-});
