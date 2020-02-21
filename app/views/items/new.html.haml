@@ -7,71 +7,76 @@
   .new-contents-main
     .title
       %h1 商品の情報を入力
+      =form_with model:@item,local:true do |f|
+        .imege-upload
+          .section
+            %h2 出品画像
+            %span 必須
+          %p 最大５枚までアップロードできます
+          .image__list
+            =f.fields_for :item_images do |image|
+              =image.label :image do
+                =image.file_field :image,class:"item-img"
+                =image.file_field :image,class:"item-img"
+                =image.file_field :image,class:"item-img"
+                =image.file_field :image,class:"item-img"
+                =image.file_field :image,class:"item-img"
+        .item-name
+          .section-name
+            .title
+              %p 商品名
+              %span 必須
+            =f.text_field :name,placeholder: '商品名（必須）',class: "input-name"
+          .section-discription
+            .title
+              %p 商品の説明
+              %span 必須
+            =f.text_area :discription,placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"
+      // *** ここまでOK!! **//
 
-    .imege-upload
-      .section
-        %h2 出品画像  
-        %span 必須
-      %p 最大５枚までアップロードできます
-      .image__list
-        .item.img
-        .item.img
-        .item.img
-        .item.img
-        .item.img
-    .item-name
-      .section
-        %p 商品名
-        %span 必須
-      %input{type: "text",placeholder: '商品名（必須）',class: "input-name" } 
-      .section
-        %p 商品の説明
-        %span 必須
-      %input{type: "text",placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"} 
+      .item-details
+        %h3 商品の詳細
+        .item-details__box
+          .section
+            %p カテゴリー
+            %span 必須
+          %select{class: 'select-box'}
+          .section
+            %p ブランド
+            %span 必須
+          %select{class: 'select-box'}
+          .section
+            %p 商品の状態
+            %span 必須
+          %select{class: 'select-box'}
 
-    .item-details
-      %h3 商品の詳細
-      .item-details__box
-        .section
-          %p カテゴリー
+      .delivery-select
+        %h4 発送について
+        .delivery-select__box
+          .section
+            %p 配送料の負担
+            %span 必須
+          %select{class: 'select-box'}
+          .section
+            %p 発送先の地域
+            %span 必須
+          %select{class: 'select-box'}
+          .section
+            %p 発送までの日数
+            %span 必須
+          %select{class: 'select-box'}
+      .price-input
+        %h5 販売価格
+        .price-input__box
+          %P 価格
           %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p ブランド
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p 商品の状態
-          %span 必須
-        %select{class: 'select-box'}
-
-    .delivery-select
-      %h4 発送について
-      .delivery-select__box
-        .section
-          %p 配送料の負担
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p 発送先の地域
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p 発送までの日数
-          %span 必須
-        %select{class: 'select-box'}
-    .price-input
-      %h5 販売価格
-      .price-input__box
-        %P 価格
-        %span 必須
-      .price-input__form
-        ¥
-        %input{type: "text",placeholder: '例)300',class: "input-price" } 
-    .sell-item
-      = button_tag type: "submit", class: "sell-btn"do
-        %p 出品する
+        .price-input__form
+          ¥
+          %input{type: "text",placeholder: '例)300',class: "input-price" }
+      .sell-item
+        = button_tag type: "submit", class: "sell-btn"do
+          %p 出品する
 .new-footer
   .new-footer__logo
     = image_tag("material/logo/logo-white.png", alt: "logo image")
-  %p © FURIMA
+    %p © FURIMA
