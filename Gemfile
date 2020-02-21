@@ -78,3 +78,4 @@ end
 gem 'devise'
 gem 'erb2haml'
 gem 'pry-rails'
+gem 'jquery-rails'
