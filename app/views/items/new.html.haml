@@ -94,10 +94,9 @@
             %span 必須
           .price-input__form
             ¥
-            %input{type: "text",placeholder: '例)300',class: "input-price" }
+            =f.text_field :price, type:"number",min:"0",value: "@item.price",placeholder:"例）300",class:'input-price'
         .sell-item
-          = button_tag type: "submit", class: "sell-btn"do
-            %p 出品する
+          = f.submit "出品する", class: "sell-btn"
 .new-footer
   .new-footer__logo
     = image_tag("material/logo/logo-white.png", alt: "logo image")
