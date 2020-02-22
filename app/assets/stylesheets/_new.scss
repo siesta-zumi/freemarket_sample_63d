@@ -121,7 +121,6 @@
       border: 1px solid #f5f5f5;
       padding: 40px;
       position: relative;
-      background-color: red;
       h3{
         color: #888888;
         font-size: 14px;
@@ -135,9 +134,14 @@
         .section{
           @include categories
         }
-        .select-box{
-          height: 48px;
-          width: 400px;
+        #category_id{
+          @include select;
+        }
+        #brand_id{
+          @include select;
+        }
+        #status{
+          @include select;
         }
       }
     }
@@ -147,6 +151,7 @@
       border: 1px solid #f5f5f5;
       padding: 40px;
       position: relative;
+      background-color: red;
       h4{
         color: #888888;
         font-size: 14px;
@@ -160,9 +165,14 @@
         .section{
           @include categories
         }
-        .select-box{
-          height: 48px;
-          width: 400px;
+        #is_bear_shipping_cost{
+          @include select;
+        }
+        #region{
+          @include select;
+        }
+        #period{
+          @include select;
         }
       }
     }
