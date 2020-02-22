@@ -24,7 +24,12 @@
           %li.hiddn シャネル
           %li.hiddn ラルフローレン
     .member-menu
-      .new-member
-        =link_to "新規会員登録"
-      .login-btn
-        =link_to "ログイン"
+      - if user_signed_in?
+        .logout-member
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+      - else
+        .login-member
+          .new-user
+            = link_to "新規会員登録", new_user_registration_path, class: "header__right--btn"
+          .login-user
+            = link_to "ログイン", new_user_session_path, class: "header__right--btn"
