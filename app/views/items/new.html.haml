@@ -7,7 +7,7 @@
   .new-contents-main
     .title
       %h1 商品の情報を入力
-      =form_with model:@item,local:true do |f|
+      =form_with (model: @items,local:true) do |f|
         .imege-upload
           .section
             %h2 出品画像
@@ -31,7 +31,7 @@
             .title
               %p 商品の説明
               %span 必須
-            =f.text_area :discription,placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"
+            =f.text_area :description,placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"
       
 
         .item-details
