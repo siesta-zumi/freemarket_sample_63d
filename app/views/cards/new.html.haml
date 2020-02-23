@@ -1,6 +1,8 @@
+= link_to "マイページに戻る",user_path(current_user.id)
+
 = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %label カード番号
-  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", value: "4242424242424242"
+  = text_field_tag "number",4242424242424242, class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
   %br
   %label 有効期限
   %select#exp_month{name: "exp_month", type: "text"}
@@ -38,4 +40,3 @@
   #card_token
   = submit_tag "登録する", id: "token_submit"
 
-= link_to "マイページに戻る",user_path(current_user.id)

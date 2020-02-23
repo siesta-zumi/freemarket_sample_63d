@@ -7,7 +7,6 @@ class CardsController < ApplicationController
     redirect_to action: "show" if card.exists? #変数cardに情報が入っていた場合、確認画面用のshowアクションにリダイレクト
   end
 
-
   def pay #payjpとCardsテーブルに登録を行うアクション
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
