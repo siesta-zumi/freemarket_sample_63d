@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-
   devise_for :users
-  root "items#index"
-
+  root to: 'items#index'
   resources :items, only: [:index, :new,:show,:create]
   resources :users, only: :show
-
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
