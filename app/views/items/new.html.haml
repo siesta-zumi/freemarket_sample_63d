@@ -16,11 +16,9 @@
           .image__list
             =f.fields_for :item_images do |image|
               =image.label :image do
-                =image.file_field :image,class:"item-img"
-                =image.file_field :image,class:"item-img"
-                =image.file_field :image,class:"item-img"
-                =image.file_field :image,class:"item-img"
-                =image.file_field :image,class:"item-img"
+                =image.file_field :image,multiple: true,class:"item-img"
+                %P ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+                %i.fa.fa-camera
         .item-name
           .section-name
             .title

@@ -6,12 +6,14 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.item_images.new
   end
 
   def show
   end
 
   def create
+    #binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path,alert:"商品出品が完了しました"
