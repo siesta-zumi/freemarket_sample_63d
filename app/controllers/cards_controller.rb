@@ -24,7 +24,7 @@ class CardsController < ApplicationController
   end
 
   def delete #payjpとCardsテーブルから削除を行うメソッド
-    if !@card.blank?
+    if @card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
