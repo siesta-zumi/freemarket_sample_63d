@@ -90,11 +90,11 @@
         text-align: center;
       }
     }
-    .member-menu{
+    .user-menu{
       width: 70%;
       display: flex;
       justify-content: flex-end;
-      .logout-member{
+      .logout-user{
         display: block;
         width: 120px;
         height: 35px;
@@ -107,9 +107,9 @@
           color: #fff;
         }
       }
-      .login-member{
+      .new-user{
         display: flex;
-        .new-user{
+        .create-user{
           display: block;
           width: 120px;
           margin-left: 20px;
@@ -145,7 +145,7 @@
         transition: all 0.3s ease-out 0s;
         display: inline-block;
       }
-      .new-user a{
+      .create-user a{
         color: #fff;
       }
     }

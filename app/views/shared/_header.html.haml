@@ -23,13 +23,13 @@
           %li.hiddn ルイヴィトン
           %li.hiddn シャネル
           %li.hiddn ラルフローレン
-    .member-menu
+    .user-menu
       - if user_signed_in?
-        .logout-member
+        .logout-user
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
       - else
-        .login-member
-          .new-user
+        .new-user
+          .create-user
             = link_to "新規会員登録", new_user_registration_path, class: "header__right--btn"
           .login-user
             = link_to "ログイン", new_user_session_path, class: "header__right--btn"
