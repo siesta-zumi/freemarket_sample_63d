@@ -121,4 +121,11 @@ $furima-gray: rgb(242,242,242);
     font-size: 12px;
     vertical-align: top;
   }
+  
+}
+@mixin select{
+  height: 48px;
+  width: 400px;
+  font-size: 15px;
+  color: #888888;
 }
