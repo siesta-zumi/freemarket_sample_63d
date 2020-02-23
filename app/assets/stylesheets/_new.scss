@@ -53,43 +53,66 @@
       .image__list{
         display: flex;
         justify-content: space-around;
-        .item.img{
-          height: 114px;
-          width: 114px;
+        .item-img{
+          height: 100px;
+          width: 100px;
           border: 1px solid #333333;
         }
       }
     }
 
     .item-name{
-      height: 355px;
       border: 1px solid #f5f5f5;
-      padding: 40px;
-      .section{
+      .section-name{
         display: flex;
-      p{
-        color: #333333;
-        font-size: 14px;
-        font-weight: bold;
-        margin: 15px 0px 0px;
+        flex-direction: column;
+        border: solid #fff 2px;
+        margin-bottom: 15px;
+        padding: 0 30px;
+        .title{
+          display: flex;
+          p{
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px 0px 0px;
+          }
+          span{
+            @include not-null
+          }
+        }
+        .input-name{
+          height: 48px;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          border-radius: 5px;
+        }
       }
-      span{
-        @include not-null
-      }
-      }
-      .input-name{
-        width: 620px;
-        height: 48px;
-        margin: 8px 0 0;
-        padding: 10px 16px 8px;
-        border-radius: 5px;
-      }
-      .input-description{
-        width: 620px;
-        height: 140px;
-        margin: 8px 0 0;
-        padding: 10px 16px 8px;
-        border-radius: 5px;
+      .section-discription{
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        border: solid #fff 2px;
+        margin-bottom: 15px;
+        padding: 0 30px;
+        .title{
+          display: flex;
+          p{
+            color: #333333;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 15px 0px 0px;
+          }
+          span{
+            @include not-null
+          }
+        }
+        .input-description{
+          height: 140px;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          border-radius: 5px;
+        }
       }
     }
 
@@ -111,9 +134,14 @@
         .section{
           @include categories
         }
-        .select-box{
-          height: 48px;
-          width: 400px;
+        #category_id{
+          @include select;
+        }
+        #brand_id{
+          @include select;
+        }
+        #status{
+          @include select;
         }
       }
     }
@@ -136,9 +164,14 @@
         .section{
           @include categories
         }
-        .select-box{
-          height: 48px;
-          width: 400px;
+        #is_bear_shipping_cost{
+          @include select;
+        }
+        #region{
+          @include select;
+        }
+        #period{
+          @include select;
         }
       }
     }
