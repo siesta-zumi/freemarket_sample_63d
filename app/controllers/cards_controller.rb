@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:new, :delete, :show]
 
   def new
-    redirect_to card_path(current_user.card.id) if !@card.blank? #変数@cardに情報が入っていた場合、確認画面用のshowアクションにリダイレクト
+    redirect_to card_path(current_user.card.id) if @card.present? #変数@cardに情報が入っていた場合、確認画面用のshowアクションにリダイレクト
   end
 
   def pay #payjpとCardsテーブルに登録を行うアクション
