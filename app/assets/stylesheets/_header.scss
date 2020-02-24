@@ -133,6 +133,20 @@
           cursor: pointer;
         }
       }
+      .to-mypage{
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 30px;
+        //background-color: blue;
+        padding: 8px;
+        
+        a{
+          color: #000;
+        }
+        a:hover{
+          color: rgb(0,149,238);
+        }
+      }
 
       .login-user a{
         color: rgb(0,149,238);
