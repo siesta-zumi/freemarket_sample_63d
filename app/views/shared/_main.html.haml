@@ -5,16 +5,19 @@
       %h2=link_to"新規投稿商品"
 
     .main__content__items
-      - @items.each do |i|
-        .contents__list
-          .contents__list-img
-            -# =image_tag i.image.item_images.first.image
-          .contents__list-price
-            = "¥#{i.price.to_s(:delimited)}"
-          .contents__list-name
-            =i.name
-            .contents__list-name--user
-              =i.user.name + " さん"
+      - @itmimgs.each do |i|
+        .contents__list 
+          .contents__list--img 
+            =link_to item_path(i.item.id) do
+              =image_tag i.image.url,class:"img",height:200,width:240
+          .contents__list--price
+            = "¥#{i.item.price.to_s(:delimited)}"
+          .contents__list--name
+            =i.item.name
+            .contents_user
+              ="出品者: " +i.item.user.name + " さん"
+    .main__content__bottom
+      = paginate @itmimgs
 
   .main__content
     .main__content__name
@@ -33,11 +36,13 @@
         %P item.img
         %P item.price
         %P item.name
+
+
   .main__content__img
     %h1 だれでもかんたん、人生を変えるフリマアプリ
     %p 今すぐ無料ダウンロード！
 
   .create-item
-  = link_to new_item_path do
-    %p 出品する
-    %i.fa.fa-camera
+    = link_to new_item_path class:"create" do
+      %p 出品する
+      %i.fa.fa-camera
