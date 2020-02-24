@@ -25,6 +25,10 @@
           %li.hiddn ラルフローレン
     .user-menu
       - if user_signed_in?
+        .to-mypage
+          = link_to "マイページへ", user_path(current_user.id)
+        .to-do
+          = link_to "やること", "#"
         .logout-user
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
       - else
