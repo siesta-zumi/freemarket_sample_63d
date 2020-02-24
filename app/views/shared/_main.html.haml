@@ -5,18 +5,16 @@
       %h2=link_to"新規投稿商品"
 
     .main__content__items
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
+      - @items.each do |i|
+        .contents__list
+          .contents__list-img
+            -# =image_tag i.image.item_images.first.image
+          .contents__list-price
+            = "¥#{i.price.to_s(:delimited)}"
+          .contents__list-name
+            =i.name
+            .contents__list-name--user
+              =i.user.name + " さん"
 
   .main__content
     .main__content__name

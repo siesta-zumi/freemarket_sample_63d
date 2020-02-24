@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    # @items = Item.includes(:item_images).order('created_at DESC')
+    @items = Item.includes(:item_images).order('created_at DESC')
     # モデル作成したら復活します
   end
 
