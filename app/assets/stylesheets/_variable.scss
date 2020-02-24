@@ -1,6 +1,7 @@
 $furima-green: rgb(60,202,206);
 $furima-black: rgb(39,39,39);
-$furima-gray: rgb(242,242,242);
+$furima-gray:  rgb(242,242,242);
+$furima-blue:  rgb(0,149,238);
 
 @mixin title(){
   h1{
@@ -128,4 +129,16 @@ $furima-gray: rgb(242,242,242);
   width: 400px;
   font-size: 15px;
   color: #888888;
+}
+@mixin mypage-list{
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 30px;
+  padding: 8px;
+  a{
+    color: #000;
+  }
+  a:hover{
+    color: rgb(0,149,238);
+  }
 }
