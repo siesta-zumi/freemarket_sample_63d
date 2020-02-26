@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
+  PER = 6
   def index
-    # @items = Item.includes(:item_images).order('created_at DESC')
-    # モデル作成したら復活します
+    @items = Item.includes(:item_images).order('created_at DESC')
+    @itmimgs = ItemImage.page(params[:page]).per(PER).order('created_at DESC')
+    
   end
 
   def new
@@ -24,5 +26,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images_attributes: [:image]).merge(user_id:current_user.id)
   end
+  
 
 end
