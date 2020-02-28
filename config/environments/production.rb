@@ -1,9 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  ##############################################################################
-  ENV['BUNDLE_GEMFILE'] = '/var/www/freemarket_sample_63d/current/Gemfile'
-  ##############################################################################
 
   # Code is not reloaded between requests.
   config.cache_classes = true
