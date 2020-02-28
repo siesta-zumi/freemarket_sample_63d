@@ -1,6 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  ##############################################################################
+  before_exec do |server|
+    ENV["BUNDLE_GEMFILE"] = File.join(File.expand_path("../../../../", __FILE__), "current", "Gemfile")
+  end
+  ##############################################################################
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
