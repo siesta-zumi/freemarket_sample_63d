@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+
+before_action :set_parents, only: [:index]
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
@@ -28,6 +30,7 @@ class ItemsController < ApplicationController
       end
     end
   end
+
   private
   def item_params
     params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
@@ -37,5 +40,6 @@ class ItemsController < ApplicationController
     @parents = Category.where(ancestry: nil)
   end
   
+
 
 end
