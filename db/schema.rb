@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_050355) do
     t.integer "region", null: false
     t.integer "period", null: false
     t.integer "price", null: false
-    t.integer "selling_status", default: 0, null: false
+    t.integer "selling_status", default: 0
     t.bigint "category_id", null: false
     t.bigint "brand_id", null: false
     t.datetime "created_at", null: false
