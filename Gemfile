@@ -83,3 +83,4 @@ gem 'payjp'
 gem 'dotenv-rails'
 gem 'kaminari', '~> 0.17.0'
 gem 'ancestry'
+gem 'aws-sdk-s3', require: false
