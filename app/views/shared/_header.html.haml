@@ -11,11 +11,22 @@
   .header__bottom
     .search-list
       .category-list
-        =link_to  "カテゴリーから探す"
-        %ul
-          %li.hiddn レディース
-          %li.hiddn メンズ
-          %li.hiddn その他
+        #category-list カテゴリーを探す
+        .parent_category-list
+          - @parents.each do |parent|
+            = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
+            -#   子カテゴリー↓
+            -# - parent.children.each do |child|
+            -#   =child.name  
+            -#    孫カテゴリー↓
+            -#   - child.children.each do |grandchild|
+            -#     =grandchild.name
+
+        -# =link_to  "カテゴリーから探す"
+        -# %ul
+        -#   %li.hiddn レディース
+        -#   %li.hiddn メンズ
+        -#   %li.hiddn その他
 
       .brand-list
         =link_to "ブランドから探す"
