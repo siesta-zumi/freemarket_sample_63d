@@ -50,7 +50,7 @@
         .list-item__icon
           >
       %li.list-item
-        クレジットカード登録/変更
+        = link_to "クレジットカード登録/変更",new_card_path, class: 'mypage-list-btn'
         .list-item__icon
           >
       %li.list-item
@@ -65,7 +65,7 @@
     .mypage-head
     %ul
       %li.list-item
-        = link_to "ログアウト","#", method: :delete, class: 'mypage-list-btn'
+        = link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'mypage-list-btn'
         .list-item__icon
           >
 

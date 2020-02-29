@@ -1,7 +1,7 @@
 .header {
   height: 128px;
   background-color: #f5f5f5;
-  
+
   &__logo{
     height: 49px;
     width: 185px;
@@ -52,44 +52,83 @@
       }
       .image__list{
         display: flex;
-        justify-content: space-around;
-        .item.img{
-          height: 114px;
-          width: 114px;
+        flex-direction: column;
+        background-color: $furima-gray;
+        margin: 0 auto;
+        height: 150px;
+        width: 500px;
+        p{
+          display: block;
+          margin: 0 auto;
+          font-size: 15px;
+        }
+        .item-img{
           border: 1px solid #333333;
+          height: 50px;
+          width: 100px;
+          opacity: 0; 
+        }
+        i{
+          font-size: 40px;
+          padding: 15px;
         }
       }
     }
 
     .item-name{
-      height: 355px;
       border: 1px solid #f5f5f5;
-      padding: 40px;
-      .section{
+      .section-name{
         display: flex;
-      p{
-        color: #333333;
-        font-size: 14px;
-        font-weight: bold;
-        margin: 15px 0px 0px;
+        flex-direction: column;
+        border: solid #fff 2px;
+        margin-bottom: 15px;
+        padding: 0 30px;
+        .title{
+          display: flex;
+          p{
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px 0px 0px;
+          }
+          span{
+            @include not-null
+          }
+        }
+        .input-name{
+          height: 48px;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          font-size:18px;
+          border-radius: 5px;
+        }
       }
-      span{
-        @include not-null
-      }
-      }
-      .input-name{
-        width: 620px;
-        height: 48px;
-        margin: 8px 0 0;
-        padding: 10px 16px 8px;
-        border-radius: 5px;
-      }
-      .input-description{
-        width: 620px;
-        height: 140px;
-        margin: 8px 0 0;
-        padding: 10px 16px 8px;
-        border-radius: 5px;
+      .section-discription{
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        border: solid #fff 2px;
+        margin-bottom: 15px;
+        padding: 0 30px;
+        .title{
+          display: flex;
+          p{
+            color: #333333;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 15px 0px 0px;
+          }
+          span{
+            @include not-null
+          }
+        }
+        .input-description{
+          height: 140px;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          border-radius: 5px;
+          font-size: 20px;
+        }
       }
     }
 
@@ -111,9 +150,14 @@
         .section{
           @include categories
         }
-        .select-box{
-          height: 48px;
-          width: 400px;
+        #item_category_id{
+          @include select;
+        }
+        #item_brand_id{
+          @include select;
+        }
+        #item_status{
+          @include select;
         }
       }
     }
@@ -136,9 +180,14 @@
         .section{
           @include categories
         }
-        .select-box{
-          height: 48px;
-          width: 400px;
+        #item_is_bear_shipping_cost{
+          @include select;
+        }
+        #item_region{
+          @include select;
+        }
+        #item_period{
+          @include select;
         }
       }
     }
