@@ -38,19 +38,13 @@
             .section
               %p カテゴリー
               %span 必須
-            =f.select :category_id,"",class:"select-box" ,id:"parent-form"do
-              %option 選択してください
-              %option 1
-              %option 2
-              %option 3
+            =f.collection_select :category_id,Category.where(ancestry: nil).all,:id, :name,prompt: "選択してください"
+
             .section
               %p ブランド
               %span 必須
-            =f.select :brand_id, "",class:'select-box' do
-              %option 選択してください
-              %option 1
-              %option 2
-              %option 3
+            =f.collection_select :brand_id,Brand.all,:id, :name,prompt: "選択してください"
+             
             .section
               %p 商品の状態
               %span 必須
