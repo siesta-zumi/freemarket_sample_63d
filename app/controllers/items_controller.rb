@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :set_parents, only: [:index]
+before_action :set_parents, only: [:index,:new]
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
@@ -8,6 +8,7 @@ before_action :set_parents, only: [:index]
 
   def new
     @item = Item.new
+    
   end
 
   def show
