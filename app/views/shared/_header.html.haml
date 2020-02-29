@@ -1,7 +1,7 @@
 %header.header
   .header__top
     .header__top--logo
-      = link_to image_tag("material/logo/logo.png", alt: "logo image"), "#"
+      = link_to image_tag("material/logo/logo.png", alt: "logo image"), root_path
     .header__top--search
       %form
         %input{name: "keyword", placeholder: "探し物は何ですか？", type: "search",class: "search-ward"}
@@ -23,8 +23,17 @@
           %li.hiddn ルイヴィトン
           %li.hiddn シャネル
           %li.hiddn ラルフローレン
-    .member-menu
-      .new-member
-        =link_to "新規会員登録"
-      .login-btn
-        =link_to "ログイン"
+    .user-menu
+      - if user_signed_in?
+        .to-mypage
+          = link_to "マイページへ", user_path(current_user.id)
+        .to-do
+          = link_to "やること", "#"
+        .logout-user
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+      - else
+        .new-user
+          .create-user
+            = link_to "新規会員登録", new_user_registration_path, class: "header__right--btn"
+          .login-user
+            = link_to "ログイン", new_user_session_path, class: "header__right--btn"

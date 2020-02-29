@@ -70,7 +70,7 @@
         color: #000;
       }
       a:hover{
-        color: rgb(0,149,238);
+        color: $furima-blue;
         ul{
           display: block;
         }
@@ -90,12 +90,11 @@
         text-align: center;
       }
     }
-
-    .member-menu{
+    .user-menu{
       width: 70%;
       display: flex;
       justify-content: flex-end;
-      .new-member{
+      .logout-user{
         display: block;
         width: 120px;
         height: 35px;
@@ -107,32 +106,54 @@
         a{
           color: #fff;
         }
-
+      }
+      .new-user{
+        display: flex;
+        .create-user{
+          display: block;
+          width: 120px;
+          margin-left: 20px;
+          height: 35px;
+          line-height: 35px;
+          text-align: center;
+          background-color:rgb(234,53,45);
+          border-radius: 5px;
+          margin-right: 20px;
+          color: #fff;
+        }
+        .login-user{
+          width: 120px;
+          height: 35px;
+          line-height: 35px;
+          align-items: center;
+          text-align: center;
+          background-color: #fff;
+          border: solid 2px $furima-blue;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+      .to-mypage{
+        @include mypage-list;
+      }
+      .to-do{
+        @include mypage-list;
       }
 
-      .login-btn{
-        width: 100px;
-        height: 35px;
-        line-height: 35px;
-        align-items: center;
-        text-align: center;
-        background-color: #fff;
-        border: solid 2px rgb(0,149,238);
+      .login-user a{
+        color: $furima-blue;
+      }
+      .login-user a:hover{
+        background-color: $furima-blue;
+        color: #fff;
         border-radius: 5px;
-        cursor: pointer;
-        a{
-          color: rgb(0,149,238);
-          display: block;
-        }
-        a:hover{
-          background-color: rgb(0,149,238);
-          color: #fff;
-          border-radius: 5px;
-          text-decoration: none;
-          transition: all 0.3s ease-out 0s;
-        }
+        text-decoration: none;
+        transition: all 0.3s ease-out 0s;
+        display: inline-block;
+      }
+      .create-user a{
+        color: #fff;
       }
     }
-
   }
 }

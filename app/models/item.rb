@@ -1,3 +1,5 @@
 class Item < ApplicationRecord
-  #has_many :item_images
+  belongs_to :user
+  validates :price, presence: true
+  has_many_attached :item_images
 end

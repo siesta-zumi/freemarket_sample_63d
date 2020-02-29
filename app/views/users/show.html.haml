@@ -1,0 +1,106 @@
+= render "shared/header"
+
+.mypage-left
+  .mypage-title
+    %ul
+      %li.list-item
+        マイページ
+        .list-item__icon
+          >
+      %li.list-item
+        商品を出品する
+        .list-item__icon
+          >
+      %li.list-item
+        出品した商品
+        .list-item__icon
+          >
+      %li.list-item
+        購入した商品
+        .list-item__icon
+          >
+      %li.list-item
+        下書き一覧
+        .list-item__icon
+          >
+
+    .mypage-head
+    %ul
+      %li.list-item-letter
+        ガイド・お問い合わせ
+      %li.list-item
+        ガイド
+        .list-item__icon
+          >
+      %li.list-item
+        お問い合わせ
+        .list-item__icon
+          >
+
+    .mypage-head
+    %ul
+      %li.list-item-letter 
+        その他設定
+      %li.list-item
+        プロフィール
+        .list-item__icon
+          >
+      %li.list-item
+        発送元・お届け先変更
+        .list-item__icon
+          >
+      %li.list-item
+        = link_to "クレジットカード登録/変更",new_card_path, class: 'mypage-list-btn'
+        .list-item__icon
+          >
+      %li.list-item
+        メール/パスワード
+        .list-item__icon
+          >
+      %li.list-item
+        本人情報
+        .list-item__icon
+          >
+
+    .mypage-head
+    %ul
+      %li.list-item
+        = link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'mypage-list-btn'
+        .list-item__icon
+          >
+
+
+
+.mypage-right
+  .mypage-icon
+    .mypage-icon__image
+    =image_tag("material/icon/kate.jpg",alt:"item-img",class:"kate-jpg")
+    %p.icon-name hogeさん
+    %P.evaluation 評価　888　出品数　888
+    =image_tag("material/pict/umi.jpg",alt:"item-img",class:"umi-jpg")
+
+
+  %ul.tab
+    %li.sell-items 出品した商品
+    %li.buy-items 購入した商品
+  .tab_content
+    .mypage-item-link
+      .mypage-item-link__image
+      .mypage-item-link__text
+        「　商品名　」 を出品しました。
+    .mypage-item-link
+      .mypage-item-link__image
+      .mypage-item-link__text
+        「　商品名　」 を出品しました。
+  .tab_content.hide
+    .mypage-item-link
+      .mypage-item-link__image
+      .mypage-item-link__text
+        「　商品名　」 を購入しました。
+
+
+  .mypage-go-list
+    .mypage-go-list__btn
+      一覧を見る
+
+= render "shared/footer"
