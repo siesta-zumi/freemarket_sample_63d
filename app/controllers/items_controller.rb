@@ -1,15 +1,11 @@
 class ItemsController < ApplicationController
   PER = 6
   def index
-    @items = Item.includes(:item_images).order('created_at DESC')
-    @itmimgs = ItemImage.page(params[:page]).per(PER).order('created_at DESC')
-    
+    @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
   end
 
   def new
     @item = Item.new
-    @item.item_images.new
-    
   end
 
   def show
@@ -34,7 +30,7 @@ class ItemsController < ApplicationController
   end
   private
   def item_params
-    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images_attributes: [:image]).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
   end
 
   def set_parents

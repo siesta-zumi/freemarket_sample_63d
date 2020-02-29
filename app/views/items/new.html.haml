@@ -15,10 +15,10 @@
           %p 最大５枚までアップロードできます
           .image__list
             #image-box
-              = f.fields_for :item_images do |image|
-                .js-file_group 
-                  data-index="#{image.index}"
-                  = image.file_field :image, class: 'js-file'
+            =f.label :item_images do
+              =f.file_field :item_images,multiple: true,class:"item-img"
+              %P ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+              %i.fa.fa-camera
         .item-name
           .section-name
             .title
