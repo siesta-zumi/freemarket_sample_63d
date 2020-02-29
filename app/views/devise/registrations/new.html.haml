@@ -1,9 +1,9 @@
-.acccount-page
-  .account-page__fv
-    .account-page__fv--second.header
-      %h2 新規アカウントの作成
-      = render "devise/shared/links"
-    .account-page__fv--third
+.account
+  .account_logo
+    = image_tag("material/logo/logo.png", alt: "logo image")
+  .account-page
+    %h2 新規アカウントの作成
+    .account-pagenew
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
         .field
@@ -18,15 +18,21 @@
             = f.email_field :email
         .field
           .field-label
-            = f.label :password
+            = f.label :パスワード
             %i (英数字8文字以上)
             .field-input
               = f.password_field :password, autocomplete: "off"
         .field
           .field-label
-            = f.label :password_confirmation
+            = f.label :パスワードの確認
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
           = f.submit "Create Account", class: 'btn'
+    .account-page_existing
+      %p
+        %span ------------
+        会員のお客様はこちら
+        %span ------------
+      = render "devise/shared/links"
 

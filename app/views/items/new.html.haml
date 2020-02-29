@@ -7,71 +7,89 @@
   .new-contents-main
     .title
       %h1 商品の情報を入力
+      =form_with model: @item,local:true do |f|
+        .imege-upload
+          .section
+            %h2 出品画像
+            %span 必須
+          %p 最大５枚までアップロードできます
+          .image__list
+            #image-box
+            =f.label :item_images do
+              =f.file_field :item_images,multiple: true,class:"item-img"
+              %P ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+              %i.fa.fa-camera
+        .item-name
+          .section-name
+            .title
+              %p 商品名
+              %span 必須
+            =f.text_field :name,placeholder: '商品名（必須）',class: "input-name"
+          .section-discription
+            .title
+              %p 商品の説明
+              %span 必須
+            =f.text_area :description,placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"
+      
 
-    .imege-upload
-      .section
-        %h2 出品画像  
-        %span 必須
-      %p 最大５枚までアップロードできます
-      .image__list
-        .item.img
-        .item.img
-        .item.img
-        .item.img
-        .item.img
-    .item-name
-      .section
-        %p 商品名
-        %span 必須
-      %input{type: "text",placeholder: '商品名（必須）',class: "input-name" } 
-      .section
-        %p 商品の説明
-        %span 必須
-      %input{type: "text",placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"} 
+        .item-details
+          %h3 商品の詳細
+          .item-details__box
+            .section
+              %p カテゴリー
+              %span 必須
+            =f.collection_select :category_id,Category.where(ancestry: nil).all,:id, :name,prompt: "選択してください"
 
-    .item-details
-      %h3 商品の詳細
-      .item-details__box
-        .section
-          %p カテゴリー
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p ブランド
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p 商品の状態
-          %span 必須
-        %select{class: 'select-box'}
+            .section
+              %p ブランド
+              %span 必須
+            =f.collection_select :brand_id,Brand.all,:id, :name,prompt: "選択してください"
+             
+            .section
+              %p 商品の状態
+              %span 必須
+            =f.select :status, "",class:'select-box' do
+              %option 選択してください
+              %option 新品
+              %option 中古
+              %option 傷あり
 
-    .delivery-select
-      %h4 発送について
-      .delivery-select__box
-        .section
-          %p 配送料の負担
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p 発送先の地域
-          %span 必須
-        %select{class: 'select-box'}
-        .section
-          %p 発送までの日数
-          %span 必須
-        %select{class: 'select-box'}
-    .price-input
-      %h5 販売価格
-      .price-input__box
-        %P 価格
-        %span 必須
-      .price-input__form
-        ¥
-        %input{type: "text",placeholder: '例)300',class: "input-price" } 
-    .sell-item
-      = button_tag type: "submit", class: "sell-btn"do
-        %p 出品する
+        .delivery-select
+          %h4 発送について
+          .delivery-select__box
+            .section
+              %p 配送料の負担
+              %span 必須
+            =f.select :is_bear_shipping_cost, "",class:'select-box' do
+              %option 選択してください
+              %option 送料込（出品者負担）
+              %option 着払い（購入者負担）
+            .section
+              %p 発送先の地域
+              %span 必須
+            =f.select :region, "",class:'select-box' do
+              %option 選択してください
+              %option 日本
+              %option 海外
+            .section
+              %p 発送までの日数
+              %span 必須
+            =f.select :period, "",class:'select-box' do
+              %option 選択してください
+              %option 1〜2日で発送
+              %option 2〜3日で発送
+              %option 4〜7日で発送
+        .price-input
+          %h5 販売価格
+          .price-input__box
+            %P 価格
+            %span 必須
+          .price-input__form
+            ¥
+            =f.text_field :price, type:"number",min:"0",value: "@item.price",placeholder:"例）300",class:'input-price'
+        .sell-item
+          = f.submit "出品する", class: "sell-btn"
 .new-footer
   .new-footer__logo
     = image_tag("material/logo/logo-white.png", alt: "logo image")
-  %p © FURIMA
+    %p © FURIMA
