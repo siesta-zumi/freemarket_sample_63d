@@ -69,7 +69,7 @@
    
     .icon-name{
       position: absolute;
-      right: 320px;
+      right: 325px;
       bottom:40px;
       font-size: 14px;
       margin: 8px 0 0;
@@ -145,28 +145,41 @@
     height: 236px;
     overflow:auto;
     border-top: solid 3px #778899;
+
     .mypage-item-link{
-      display: flex;
-      height:91px;
-      padding: 16px;
-      border-bottom: 1px solid #EEEEEE;
+      &__box{
+        display: flex;
+        height: 120px;
+        width: 100%;
+        border-bottom: 1px solid #EEEEEE;
+        padding: 13px 10px;
         &__image{
-          height: 56.8px;
-          width: 48px;
-          background-color: yellowgreen;
-         }
-        &__text{
-          font-size: 14px;
-          color: #333333;
-          padding: 0 10px;
+          height: 90px;
+          width: 130px;
+          text-align: center;
+          margin: 0 10px 0 10px;
+          .mypage-item-image{
+            height: 70px;
+            width: auto;
+            margin: 10px;
+           
+          }
         }
+        &__text{
+          padding: 10px 0;
+          .mypage-item-text{
+            font-size: 15px;
+            color: #333333;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 
   .tab_content.hide{
     display:none;
   }
-
 
   .mypage-go-list{
     height: 88px;
