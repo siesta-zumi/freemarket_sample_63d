@@ -2,6 +2,10 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many_attached :item_images
 
+  ##########ActiveHash####################
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+
   ##########validation####################
   validates :name, presence: true
   validates :description, presence: true
