@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_parents, only: [:index,:new,:show]
+  before_action :set_parents, only: [:index,:new,:show,:create]
   before_action :authenticate_user!, only: [:new] #ログインしているユーザーだけ出品画面に遷移できる
   PER = 6
   def index
@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    
   end
 
   def show
