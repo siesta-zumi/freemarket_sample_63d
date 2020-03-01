@@ -60,6 +60,10 @@
           %th 発送日の目安
           %td
             =Period.find(params[:id]).name
+        %tr
+          %th 商品詳細
+          %td
+            =simple_format(@item.description)
 
       .show-contents__comment
         .show-contents__comment--area
@@ -79,4 +83,5 @@
   .to-buy-item 
     -#仮作成です。
     =button_tag "購入画面へ進む"
+  
 = render 'shared/footer'
