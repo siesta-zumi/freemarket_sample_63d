@@ -14,11 +14,7 @@ class Item < ApplicationRecord
   validate :image_presence
 
   def image_presence
-    if item_images.attached?
-      if !image.content_type.in?(%('image/jpeg image/png'))
-        errors.add(:item_images, 'にはjpegまたはpngファイルを添付してください')
-      end
-    else
+    if !item_images.attached?
       errors.add(:item_images, 'ファイルを添付してください')
     end
   end
