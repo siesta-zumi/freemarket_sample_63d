@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   def set_parents
     @parents = Category.where(ancestry: nil)
   end
