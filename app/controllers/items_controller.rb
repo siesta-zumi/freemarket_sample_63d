@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-
-before_action :set_parents, only: [:index,:new]
+  before_action :set_parents, only: [:index,:new,:show,:create]
+  before_action :authenticate_user!, only: [:new] #ログインしていないユーザーはnewアクションの前にログイン画面に遷移
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
@@ -8,7 +8,6 @@ before_action :set_parents, only: [:index,:new]
 
   def new
     @item = Item.new
-    
   end
 
   def show
@@ -36,11 +35,5 @@ before_action :set_parents, only: [:index,:new]
   def item_params
     params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
   end
-
-  def set_parents
-    @parents = Category.where(ancestry: nil)
-  end
-  
-
 
 end

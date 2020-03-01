@@ -9,6 +9,7 @@
       %h1 商品の情報を入力
       =form_with model: @item,local:true do |f|
         .imege-upload
+          = render 'shared/error_messages', model: f.object
           .section
             %h2 出品画像
             %span 必須
