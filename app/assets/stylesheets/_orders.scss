@@ -1,0 +1,53 @@
+.confirm-container{
+  background-color: #F2F2F2;
+}
+.confirm-header{
+  text-align: center;
+  padding: 50px;
+}
+.confirm-contant{
+  background-color: #fff;
+  width: 700px;
+  height: 650px;
+  margin: 0 auto;
+}
+h2{
+  text-align: center;
+  padding-top: 42px;
+  height: 100px;
+  font-size: 20px;
+}
+.confirm-main{
+  width: 400px;
+  margin: 0 auto;
+  .buy-item{
+    text-align: center;
+    height: 100px;
+  }
+  .confirm-count{
+    height: 80px;
+  }
+  .confirm-way{
+    height: 80px;
+  }
+  .confirm-address{
+    height: 100px;
+  }
+  .confirm-button{
+    margin-top: 25px;
+    text-align: center;
+    .confirm-button_buy{
+      background-color: #F2F2F2;
+      width: 300px;
+      height: 50px;
+      font-size: 20px;
+    }
+  }
+  
+}
+
+.confirm-footer{
+  padding: 50px;
+  text-align: center;
+  
+}

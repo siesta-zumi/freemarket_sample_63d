@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
+  root "orders#show"
+  resources :orders
 end
