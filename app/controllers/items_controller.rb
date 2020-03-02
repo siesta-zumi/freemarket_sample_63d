@@ -12,6 +12,14 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @category = Category.find(@item.category_id)
+    @brand = Brand.find(@item.brand_id)
+    @status = Status.find(@item.status)
+    @cost = IsBearShippingCost.find(@item.is_bear_shipping_cost)
+    @region = Prefecture.find(@item.region)
+    @period = Period.find(@item.period)
+    
+    
   end
 
   def create
@@ -34,7 +42,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_ids[],:brand_id,item_images: []).merge(user_id:current_user.id)
   end
 
 end

@@ -39,27 +39,28 @@
         %tr
           %th カテゴリー
           %td
-            =Category.find(params[:id]).name
+            =@category.name
+
         %tr
           %th ブランド
           %td
-            =Brand.find(params[:id]).name
+            =@brand.name
         %tr
           %th 商品の状態
           %td 
-            =Status.find(params[:id]).name
+            =@status.name
         %tr
           %th 配送料の負担
           %td
-            =IsBearShippingCost.find(params[:id]).name
+            =@cost.name
         %tr
           %th 発送元の地域
           %td
-            =Prefecture.find(params[:id]).name
+            =@region.name
         %tr
           %th 発送日の目安
           %td
-            =Period.find(params[:id]).name
+            =@period.name
         %tr
           %th 商品詳細
           %td
@@ -81,7 +82,6 @@
               =link_to "〇〇をもっと見る",class:"link-item"
 
   .to-buy-item 
-    -#仮作成です。
     =button_tag "購入画面へ進む"
   
 = render 'shared/footer'
