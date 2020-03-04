@@ -8,11 +8,11 @@
         .list-item__icon
           >
       %li.list-item
-        =link_to "商品を出品する", new_item_path, class: 'mypage-list-btn'
+        = link_to "商品を出品する", new_item_path, class: 'mypage-list-btn'
         .list-item__icon
           >
       %li.list-item
-        =link_to "出品した商品", item_path,class: 'mypage-list-btn'
+        = link_to "出品した商品", item_path, class: 'mypage-list-btn'
         .list-item__icon
           >
       %li.list-item
@@ -74,9 +74,9 @@
 .mypage-right
   .mypage-icon
     .mypage-icon__image
-    =image_tag("material/icon/kate.jpg",alt:"item-img",class:"kate-jpg")
-    %p.icon-name 
-      = @user.name+"さん"
+    = image_tag("material/icon/kate.jpg",alt:"item-img",class:"kate-jpg")
+    %p.icon-name
+      = @user.name + "さん"
     %P.evaluation 評価　888　出品数　888
     =image_tag("material/pict/umi.jpg",alt:"item-img",class:"umi-jpg")
 
@@ -89,22 +89,22 @@
     - @items.each do |item|
       .mypage-item-link__box
         .mypage-item-link__box__image
-          =link_to item_path(item.id) do
-            =image_tag item.item_images.first ,class:"mypage-item-image"
+          = link_to item_path(item.id) do
+            = image_tag item.item_images.first , class: "mypage-item-image"
         .mypage-item-link__box__text
-          =link_to item_path(item.id),class:"mypage-item-text"  do
-            = "「 #{item.name} 」" +"を出品しました"
+          = link_to item_path(item.id), class: "mypage-item-text" do
+            = "「 #{item.name} 」" + "を出品しました"
 
   .tab_content.hide
     .mypage-item-link
     - @items.each do |item|
       .mypage-item-link__box
         .mypage-item-link__box__image
-          =link_to item_path(item.id) do
-            =image_tag item.item_images.first ,class:"mypage-item-image"
+          = link_to item_path(item.id) do
+            = image_tag item.item_images.first , class: "mypage-item-image"
         .mypage-item-link__box__text
-          =link_to item_path(item.id),class:"mypage-item-text"  do
-            = "「 #{item.name} 」" +"を購入しました"
+          = link_to item_path(item.id), class: "mypage-item-text" do
+            = "「 #{item.name} 」" + "を購入しました"
 
   .mypage-go-list
     .mypage-go-list__btn
