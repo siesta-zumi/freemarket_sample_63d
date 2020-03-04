@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
-before_action :set_parents, only: [:index,:show]
+  before_action :set_parents, only: [:index,:new,:show,:create]
+  before_action :authenticate_user!, only: [:new] #ログインしていないユーザーはnewアクションの前にログイン画面に遷移
+
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')

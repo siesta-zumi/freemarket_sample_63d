@@ -1,0 +1,38 @@
+.confirm-container
+  .confirm-header
+    = link_to image_tag("material/logo/logo.png", alt: "logo", width: "210", height: "70"), "#"
+  .confirm-contant
+    .confirm-buy
+      %h2 購入内容の確認
+      %hr{color: "#F2F2F2", size: "3", width: "100%"}/
+    .confirm-main
+      .buy-item
+        .buy-item_image
+          item-image
+        .buy-item_name
+          商品名
+      %hr{color: "#F2F2F2", size: "3", width: "100%"}/
+      .confirm-detail
+        .confirm-count
+          %h3 支払い金額
+          %p ￥500
+        %hr{color: "#F2F2F2", size: "3", width: "100%"}/
+        .confirm-way
+          %h3
+            支払い方法
+          %h4
+            支払い方法を選択してください
+        %hr{color: "#F2F2F2", size: "3", width: "100%"}/
+        .confirm-address
+          %h3
+            配送先
+          %p
+            トウキョウ
+        %hr{color: "#F2F2F2", size: "3", width: "100%"}/
+      .confirm-button
+        %button.confirm-button_buy{type: "button"} 購入する
+  .confirm-footer
+    .confirm-logo
+      = link_to image_tag("material/logo/logo-white.png", alt: "logo", width: "210", height: "70"), "#"
+    .confirm-sign
+      © FURIMA
