@@ -8,19 +8,19 @@
         .list-item__icon
           >
       %li.list-item
-        商品を出品する
+        = link_to "商品を出品する", new_item_path, class: 'mypage-list-btn'
         .list-item__icon
           >
       %li.list-item
-        出品した商品
+        = link_to "出品した商品", item_path, class: 'mypage-list-btn'
         .list-item__icon
           >
       %li.list-item
-        購入した商品
+        購入した商品⭐️
         .list-item__icon
           >
       %li.list-item
-        下書き一覧
+        下書き一覧⭐️
         .list-item__icon
           >
 
@@ -29,11 +29,11 @@
       %li.list-item-letter
         ガイド・お問い合わせ
       %li.list-item
-        ガイド
+        ガイド⭐️
         .list-item__icon
           >
       %li.list-item
-        お問い合わせ
+        お問い合わせ⭐️
         .list-item__icon
           >
 
@@ -42,11 +42,11 @@
       %li.list-item-letter 
         その他設定
       %li.list-item
-        プロフィール
+        プロフィール⭐️
         .list-item__icon
           >
       %li.list-item
-        発送元・お届け先変更
+        発送元・お届け先変更⭐️
         .list-item__icon
           >
       %li.list-item
@@ -54,11 +54,11 @@
         .list-item__icon
           >
       %li.list-item
-        メール/パスワード
+        メール/パスワード⭐️
         .list-item__icon
           >
       %li.list-item
-        本人情報
+        本人情報⭐️
         .list-item__icon
           >
 
@@ -74,10 +74,11 @@
 .mypage-right
   .mypage-icon
     .mypage-icon__image
-    =image_tag("material/icon/kate.jpg",alt:"item-img",class:"kate-jpg")
-    %p.icon-name hogeさん
+    = image_tag("material/icon/kate.jpg",alt: "item-img",class: "kate-jpg")
+    %p.icon-name
+      = @user.name + "さん"
     %P.evaluation 評価　888　出品数　888
-    =image_tag("material/pict/umi.jpg",alt:"item-img",class:"umi-jpg")
+    =image_tag("material/pict/umi.jpg",alt: "item-img",class: "umi-jpg")
 
 
   %ul.tab
@@ -85,19 +86,25 @@
     %li.buy-items 購入した商品
   .tab_content
     .mypage-item-link
-      .mypage-item-link__image
-      .mypage-item-link__text
-        「　商品名　」 を出品しました。
-    .mypage-item-link
-      .mypage-item-link__image
-      .mypage-item-link__text
-        「　商品名　」 を出品しました。
+    - @items.each do |item|
+      .mypage-item-link__box
+        .mypage-item-link__box__image
+          = link_to item_path(item.id) do
+            = image_tag item.item_images.first , class: "mypage-item-image"
+        .mypage-item-link__box__text
+          = link_to item_path(item.id), class: "mypage-item-text" do
+            = "「 #{item.name} 」" + "を出品しました"
+
   .tab_content.hide
     .mypage-item-link
-      .mypage-item-link__image
-      .mypage-item-link__text
-        「　商品名　」 を購入しました。
-
+    - @items.each do |item|
+      .mypage-item-link__box
+        .mypage-item-link__box__image
+          = link_to item_path(item.id) do
+            = image_tag item.item_images.first , class: "mypage-item-image"
+        .mypage-item-link__box__text
+          = link_to item_path(item.id), class: "mypage-item-text" do
+            = "「 #{item.name} 」" + "を購入しました"
 
   .mypage-go-list
     .mypage-go-list__btn

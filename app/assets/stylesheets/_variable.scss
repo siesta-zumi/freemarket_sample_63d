@@ -2,6 +2,10 @@ $furima-green: rgb(60,202,206);
 $furima-black: rgb(39,39,39);
 $furima-gray:  rgb(242,242,242);
 $furima-blue:  rgb(0,149,238);
+$back-color:   #eee;
+$letter-color: #333;
+
+
 
 @mixin title(){
   h1{
