@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_050355) do
+ActiveRecord::Schema.define(version: 2020_03_04_131715) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2020_02_28_050355) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "identity_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_furigana", null: false
+    t.string "last_name_furigana", null: false
+    t.date "birthday", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_identity_informations_on_user_id"
+  end
+
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.string "image", null: false
@@ -96,6 +108,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_050355) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "identity_informations", "users"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
