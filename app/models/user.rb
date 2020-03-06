@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :items
   has_one :card
   has_one :identity_information
+  has_one :shipping_address
 end
