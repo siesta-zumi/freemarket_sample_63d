@@ -25,7 +25,28 @@ class ItemsController < ApplicationController
     @region = Prefecture.find(@item.region)
     @period = Period.find(@item.period)
     
+    @items = Item.all
+    @items_ids = @items.ids.sort
+    @current_item_index = @items_ids.index(@item.id)
     
+    if @current_item_index == 0
+      @is_first = true
+    else
+      @is_first = false
+    end
+
+    if @current_item_index == @items_ids.length-1
+      @is_last = true
+    else
+      @is_last = false
+    end
+
+    @previous_index = @current_item_index - 1
+    @next_index = @current_item_index + 1
+
+    @previous_item_id = @items_ids[@previous_index]
+    @next_item_id = @items_ids[@next_index]
+    # binding.pry
   end
 
   def create
@@ -48,7 +69,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_ids[],:brand_id,item_images: []).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
   end
 
 end

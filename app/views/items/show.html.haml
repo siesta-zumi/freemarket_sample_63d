@@ -75,9 +75,11 @@
             = button_tag "コメントする"
             %ul
               %li.link
-                = link_to "<前の商品", "#"
+                -if !@is_last
+                  = link_to "<前の商品", item_path(@next_item_id)
               %li.link
-                = link_to "後ろの商品>", "#"
+                -if !@is_first
+                  = link_to "後ろの商品>", item_path(@previous_item_id)
             .link-item
               = link_to "〇〇をもっと見る", class: "link-item"
 
