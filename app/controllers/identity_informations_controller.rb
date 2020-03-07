@@ -9,7 +9,7 @@ class IdentityInformationsController < ApplicationController
     if @identity_information.save
       redirect_to root_path, alert:"本人確認情報を登録しました"
     else
-      render new_item_path, alert:"エラーが発生しました"
+      #render new_item_path, alert:"エラーが発生しました"
     end
   end
 
