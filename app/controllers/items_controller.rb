@@ -9,6 +9,10 @@ class ItemsController < ApplicationController
   end
 
   def new
+    #出品前に本人確認情報が登録されているか確認、されていなければ登録ページへリダイレクト
+    if user_signed_in? && current_user.identity_information.blank?
+      redirect_to new_identity_information_path
+    end
     @item = Item.new
   end
 

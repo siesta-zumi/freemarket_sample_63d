@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @items = @user.items
   end
 
+
   private 
   
   def set_user
