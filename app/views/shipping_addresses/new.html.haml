@@ -1,8 +1,9 @@
 .account
   .account_logo
-    = image_tag("material/logo/logo.png", alt: "logo image")
+    = link_to root_path do
+      = image_tag("material/logo/logo.png", alt: "logo image")
   .account-page
-    %h2 本人確認情報の登録
+    %h2 発送元・お届け先登録/変更
     .account-pagenew
       =form_with model: @shipping_address,local:true do |f|
         .field
