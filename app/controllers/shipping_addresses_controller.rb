@@ -8,9 +8,9 @@ class ShippingAddressesController < ApplicationController
   def create
     @shipping_address = ShippingAddress.new(shipping_address_params)
     if @shipping_address.save
-      redirect_to root_path, alert:"本人確認情報を登録しました"
+      redirect_to root_path, alert:""
     else
-      #render new_item_path, alert:"エラーが発生しました"
+      render new_shipping_address_path, alert:"エラーが発生しました"
     end
   end
 

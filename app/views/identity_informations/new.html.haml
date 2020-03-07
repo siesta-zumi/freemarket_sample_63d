@@ -1,6 +1,7 @@
 .account
   .account_logo
-    = image_tag("material/logo/logo.png", alt: "logo image")
+    = link_to root_path do
+      = image_tag("material/logo/logo.png", alt: "logo image")
   .account-page
     %h2 本人確認情報の登録
     .account-pagenew
