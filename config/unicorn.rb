@@ -32,9 +32,9 @@ check_client_connection false
 
 run_once = true
 
-before_exec do |server|
-  ENV['BUNDLE_GEMFILE'] = "/var/www/freemarket_sample_63d/current/Gemfile"
-end
+# before_exec do |server|
+#   ENV['BUNDLE_GEMFILE'] = "/var/www/freemarket_sample_63d/current/Gemfile"
+# end
 
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) &&
