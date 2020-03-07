@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new,:show,:create]
   resources :users, only: [:show]
   resources :identity_informations, only: [:new, :create]
+  resources :shipping_addresses, only: [:new, :create]
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
