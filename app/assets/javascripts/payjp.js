@@ -5,6 +5,8 @@ document.addEventListener(
       let btn = document.getElementById("token_submit"); //「登録する」ボタンのJQueryオブジェクトを取得
       btn.addEventListener("click", e => { //btnがクリックされると発火
         e.preventDefault($("#card_number"));
+        console.log()
+        alert('発火')
         let card = { //入力値を取得
           number: document.getElementById("card_number").value,
           cvc: document.getElementById("cvc").value,
