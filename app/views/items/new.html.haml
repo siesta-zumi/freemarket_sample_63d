@@ -73,7 +73,7 @@
             %span 必須
           .price-input__form
             ¥
-            = f.text_field :price, step: 100, type: "number", min: "0",value: "@item.price", placeholder: "例）300", class: 'input-price'
+            = f.text_field :price, step: 100, type: "number", min: "0", value: "@item.price", placeholder: "例）300", class: 'input-price'
         .sell-item
           = f.submit "出品する", class: "sell-btn"
 .new-footer
