@@ -3,7 +3,7 @@
     = image_tag("material/logo/logo.png", alt: "logo image")
   .account-page
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      %h2.login ログイン
+      %h2 ログイン
       .account-mail
         = f.label :email
         %br/
