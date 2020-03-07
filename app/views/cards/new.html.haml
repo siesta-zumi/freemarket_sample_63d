@@ -1,3 +1,4 @@
+%script{src: "https://js.pay.jp/", type: "text/javascript"}
 = link_to "マイページに戻る",user_path(current_user.id)
 
 = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
