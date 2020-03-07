@@ -1,7 +1,8 @@
 %main.main
   .main__content
     .main__content__name
-      %h1 ピックアップカテゴリー
+      %h1 商品一覧
+      -# 仮置きタイトル
       %h2=link_to"新規投稿商品"
 
     .main__content__items
@@ -20,23 +21,24 @@
       = paginate @items
 
 
-  .main__content
-    .main__content__name
-      %h1 ピックアップブランド
-      %h2=link_to"アーカイバ"
-    .main__content__items
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
+  -# .main__content
+  -#   .main__content__name
+  -#     %h1 ピックアップブランド
+  -#     %h2=link_to"アーカイバ"
+  -#   .main__content__items
+  -#     .contents__list
+  -#       %P item.img
+  -#       %P item.price
+  -#       %P item.name
+  -#     .contents__list
+  -#       %P item.img
+  -#       %P item.price
+  -#       %P item.name
+  -#     .contents__list
+  -#       %P item.img
+  -#       %P item.price
+  -#       %P item.name
+  -# 実装次第で復活予定
 
 
   .main__content__img
