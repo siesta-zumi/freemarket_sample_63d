@@ -1,11 +1,13 @@
 .account
   .account_logo
-    = image_tag("material/logo/logo.png", alt: "logo image")
+    = link_to image_tag("material/logo/logo.png", alt: "logo image"), root_path
   .account-page
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       %h2.login  ログイン
+      .account-form
+        %p 入力必須項目
       .account-mail
-        = f.label :email
+        = f.label :メールアドレス
         %br/
         = f.email_field :email, autofocus: true
       .account-password
