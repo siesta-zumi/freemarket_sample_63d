@@ -4,7 +4,7 @@
   .account-page
     %h2 新規アカウントの作成
     .account-form
-      %p 入力必須項目
+      %p 全項目入力必須
     .account-pagenew
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
