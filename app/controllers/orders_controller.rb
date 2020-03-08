@@ -7,12 +7,20 @@ class OrdersController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @address = User.find(current_user.id).shipping_address
-    @order = Order.new #order_params用
+    @order = Order.new #order_params用に用意
   end
 
   def create
+    #####oedersテーブルに登録#############################################
+    order = Order.new(user_id: order_params[:user_id], item_id: order_params[:item_id])
+    order.save
 
-    #Payjpに購入情報を送信
+    #####購入した商品のselling_statusを(1 売り切れ)に変更#####################
+    purchase_item = Item.find(order_params[:item_id])
+    purchase_item.selling_status = 1
+    purchase_item.save
+
+    ####Payjpに購入情報を送信#########################
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     # 登録した顧客IDの定義
     customer_id = current_user.card.customer_id
@@ -25,16 +33,7 @@ class OrdersController < ApplicationController
     customer: customer_id,
     )
 
-    #oedersテーブルに登録
-    order = Order.new(user_id: order_params[:user_id], item_id: order_params[:item_id])
-    order.save
-    
-    #購入した商品のselling_statusを(1 売り切れ)に変更
-    purchase_item = Item.find(order_params[:item_id])
-    purchase_item.selling_status = 1
-    purchase_item.save
-
-    redirect_to root_path
+    redirect_to root_path  ##トップページに遷移
 
   end
 
