@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :identity_informations, only: [:new, :create]
   resources :shipping_addresses, only: [:new, :create]
+  resources :orders, only: [:index, :show, :new, :create]
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
@@ -12,6 +13,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-  root "orders#show"
-  resources :orders
 end
