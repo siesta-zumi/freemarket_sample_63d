@@ -28,18 +28,8 @@ class ItemsController < ApplicationController
     @items = Item.all
     @items_ids = @items.ids.sort
     current_item_index = @items_ids.index(@item.id)
-    
-    if current_item_index == 0
-      @is_first = true
-    else
-      @is_first = false
-    end
-
-    if current_item_index == @items_ids.length-1
-      @is_last = true
-    else
-      @is_last = false
-    end
+    @is_first = current_item_index == 0 ? true : false
+    @is_last = current_item_index == @items_ids.length - 1 ? true : false
 
     previous_index = current_item_index - 1
     next_index = current_item_index + 1
@@ -64,21 +54,16 @@ class ItemsController < ApplicationController
 
   def update
     @item.update!(item_params)
-    if @item.save
-    else
-      render edit_item_path
+    unless @item.save render edit_item_path, notice: "商品を編集できませんでした"
+
     end
   end
 
   def destroy
-
     @item.destroy
-    if @item.destroy
-
-    else
-      render destroy_item_path, notice: "商品を削除できませんでした。"
+    unless @item.destroy render destroy_item_path, notice: "商品を削除できませんでした"
+      
     end
-
   end
 
   def search
