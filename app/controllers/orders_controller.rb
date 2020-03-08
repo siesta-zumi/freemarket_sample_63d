@@ -13,7 +13,9 @@ class OrdersController < ApplicationController
   def create
     #####oedersテーブルに登録#############################################
     order = Order.new(create_order_params)
-    order.save
+    unless order.save
+      redirect root_path ,alert:"エラーが発生しました"
+    end
 
     #####購入した商品のselling_statusを(1 売り切れ)に変更#####################
     purchase_item = Item.find(order_params[:item_id])
