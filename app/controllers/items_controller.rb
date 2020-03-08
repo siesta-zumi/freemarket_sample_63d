@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   before_action :set_parents, only: [:index,:new,:show,:create, :edit]
   before_action :authenticate_user!, only: [:new] #ログインしていないユーザーはnewアクションの前にログイン画面に遷移
   before_action :set_item, only: [:show, :edit, :update, :destroy]
@@ -18,7 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    ##商品表示#############################################################
+    ##商品詳細表示###########################################################
     @category = Category.find(@item.category_id)
     @brand = Brand.find(@item.brand_id)
     @status = Status.find(@item.status)
@@ -38,7 +37,7 @@ class ItemsController < ApplicationController
 
     @previous_item_id = @items_ids[previous_index]
     @next_item_id = @items_ids[next_index]
-    
+
   end
 
   def create
@@ -68,7 +67,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  
   def search
     respond_to do |format|
       format.html
@@ -77,6 +75,14 @@ class ItemsController < ApplicationController
        
       end
     end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item_images = item.item_images
+    item.destroy
+    item_images.destroy
+    redirect_to root_path
   end
 
   private
