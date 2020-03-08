@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_231048) do
+ActiveRecord::Schema.define(version: 2020_03_08_015947) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_231048) do
     t.integer "region", null: false
     t.integer "period", null: false
     t.integer "price", null: false
-    t.integer "selling_status", default: 0, null: false
+    t.integer "selling_status", default: 0
     t.bigint "category_id", null: false
     t.bigint "brand_id", null: false
     t.datetime "created_at", null: false
@@ -92,6 +92,15 @@ ActiveRecord::Schema.define(version: 2020_03_06_231048) do
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_orders_on_item_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -126,5 +135,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_231048) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "users"
   add_foreign_key "shipping_addresses", "users"
 end
