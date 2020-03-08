@@ -43,9 +43,11 @@
             = @address.building_name_room_number
 
         %hr{color: "#F2F2F2", size: "3", width: "100%"}/
-      = form_with(url: orders_path, method: :post) do
+      = form_with model: @order, url: orders_path, mothod: :post, data: { remote: false } do |f|
         .confirm-button
-          = submit_tag("購入する", class: "confirm-button_buy")
+        = f.hidden_field :item_id , value: @item.id
+        = f.hidden_field :item_price , value: @item.price
+        = f.submit("購入する", class: "confirm-button_buy") #css当たってません
   .confirm-footer
     .confirm-logo
       = link_to image_tag("material/logo/logo-white.png", alt: "logo", width: "210", height: "70"), "#"
