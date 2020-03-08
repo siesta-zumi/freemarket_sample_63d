@@ -84,4 +84,6 @@
   .to-buy-item
     = button_tag "購入画面へ進む"
 
+  - if user_signed_in? && current_user.id == @item.user_id
+    = link_to "削除", item_path(@item.id), method: :delete, class: "to-buy-item"
 = render 'shared/footer'
