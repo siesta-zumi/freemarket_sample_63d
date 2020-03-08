@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one :order
   has_many_attached :item_images
 
   ##########ActiveHash####################

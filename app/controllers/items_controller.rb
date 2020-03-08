@@ -66,6 +66,7 @@ class ItemsController < ApplicationController
     end
   end
 
+  
   def search
     respond_to do |format|
       format.html

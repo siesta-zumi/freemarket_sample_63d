@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_one :card
   has_one :identity_information
   has_one :shipping_address
+  has_many :orders
 end
