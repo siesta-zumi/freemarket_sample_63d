@@ -36,6 +36,7 @@ class ItemsController < ApplicationController
       render new_item_path,alert:"エラーが発生しました"
     end
   end
+  
   def search
     respond_to do |format|
       format.html
