@@ -43,7 +43,7 @@
             .section
               %p 商品の状態
               %span 必須
-            = f.collection_select :status, Status.all, :id, :name, prompt: "選択してください", class:'select-box'
+            = f.collection_select :status, Status.all, :id, :name, prompt: "選択してください", class: 'select-box'
 
         .delivery-select
           %h4 発送について
@@ -51,15 +51,15 @@
             .section
               %p 配送料の負担
               %span 必須
-            = f.collection_select :is_bear_shipping_cost, IsBearShippingCost.all, :id, :name, prompt: "選択してください", class:'select-box'
+            = f.collection_select :is_bear_shipping_cost, IsBearShippingCost.all, :id, :name, prompt: "選択してください", class: 'select-box'
             .section
               %p 発送先の地域
               %span 必須
-            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "選択してください", class:'select-box'
+            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "選択してください", class: 'select-box'
             .section
               %p 発送までの日数
               %span 必須
-            = f.collection_select :period, Period.all, :id, :name, prompt: "選択してください", class:'select-box'
+            = f.collection_select :period, Period.all, :id, :name, prompt: "選択してください", class: 'select-box'
         .price-input
           %h5 販売価格
           .price-input__box
