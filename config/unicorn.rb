@@ -1,6 +1,7 @@
 #サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
 app_path = File.expand_path('../../../', __FILE__)
 
+
 #アプリケーションサーバの性能を決定する
 worker_processes 1
 
@@ -30,6 +31,10 @@ GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 check_client_connection false
 
 run_once = true
+
+# before_exec do |server|
+#   ENV['BUNDLE_GEMFILE'] = "/var/www/freemarket_sample_63d/current/Gemfile"
+# end
 
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) &&

@@ -1,5 +1,4 @@
-document.addEventListener(
-  "DOMContentLoaded", e => {
+$(function () {
     if (document.getElementById("token_submit") != null) {
       Payjp.setPublicKey("pk_test_af452b6d7d334942691dce27"); //APIの公開鍵をセット
       let btn = document.getElementById("token_submit"); //「登録する」ボタンのJQueryオブジェクトを取得
@@ -28,6 +27,4 @@ document.addEventListener(
         });
       });
     }
-  },
-  false
-);
+  });

@@ -6,4 +6,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_many :items
   has_one :card
+  has_one :identity_information
+  has_one :shipping_address
+  has_many :orders
 end

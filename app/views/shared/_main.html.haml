@@ -1,47 +1,49 @@
 %main.main
   .main__content
     .main__content__name
-      %h1 ピックアップカテゴリー
+      %h1 商品一覧
+      -# 仮置きタイトル
       %h2=link_to"新規投稿商品"
 
     .main__content__items
       - @items.each do |item|
         .contents__list
           .contents__list--img 
-            =link_to item_path(item.id) do
+            = link_to item_path(item.id) do
               =image_tag item.item_images.first ,class:"img",height:200,width:240
           .contents__list--price
             = "¥#{item.price.to_s(:delimited)}"
           .contents__list--name
             =item.name
             .contents_user
-              ="出品者: " + item.user.name + " さん"
+              = "出品者: " + item.user.name + "さん"
     .main__content__bottom
       = paginate @items
 
 
-  .main__content
-    .main__content__name
-      %h1 ピックアップブランド
-      %h2=link_to"アーカイバ"
-    .main__content__items
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
-      .contents__list
-        %P item.img
-        %P item.price
-        %P item.name
+  -# .main__content
+  -#   .main__content__name
+  -#     %h1 ピックアップブランド
+  -#     %h2=link_to"アーカイバ"
+  -#   .main__content__items
+  -#     .contents__list
+  -#       %P item.img
+  -#       %P item.price
+  -#       %P item.name
+  -#     .contents__list
+  -#       %P item.img
+  -#       %P item.price
+  -#       %P item.name
+  -#     .contents__list
+  -#       %P item.img
+  -#       %P item.price
+  -#       %P item.name
+  -# 実装次第で復活予定
 
 
   .main__content__img
     %h1 だれでもかんたん、人生を変えるフリマアプリ
-    %p 今すぐ無料ダウンロード！!
+    %p 今すぐ無料ダウンロード！!!!!!!
 
   .create-item
     = link_to new_item_path class:"create" do
