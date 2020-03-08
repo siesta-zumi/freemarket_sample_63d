@@ -57,6 +57,23 @@ class ItemsController < ApplicationController
       render new_item_path,alert:"エラーが発生しました"
     end
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update!(item_params)
+    redirect_to items_url, notice: "商品を更新しました。"
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+
+  end
+
   def search
     respond_to do |format|
       format.html
