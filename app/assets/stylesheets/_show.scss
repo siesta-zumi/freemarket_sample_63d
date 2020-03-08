@@ -82,8 +82,9 @@
   }
   &__info{
     background-color:white;
-    h3{
+    &--name{
       font-size: 20px;
+      font-weight: bold;
       padding: 30px;
     }
     table{

@@ -12,25 +12,29 @@
   .show-contents
     .show-contents__item
       .show-contents__item--name
-      %h1 item.name
+        = @item.name
       .show-contents__item--img
         %ul
           %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "600",height:"600",class:"main-img")
+            =image_tag @item.item_images.first,class:"img",height:600,width:600
       .show-contents__item--sub-img
         %ul
-          %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
-          %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
-          %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
+          -# 複数の投稿はこれからeach文で完了させます。
+          -# ※%thirdでエアラーが出る状況
+          -# %li
+          -#   =image_tag @item.item_images.second,class:"img",height:200,width:200
+          -# %li
+          -# %each
+          -#   =image_tag @item.item_images.third,class:"img",height:200,width:200
+          -# %li
+          -#   =image_tag @item.item_images.forth,class:"img",height:200,width:200
       .show-contents__item--price
         %h2 ¥30000
         %p (税込)送料込み
     .show-contents__info
+      .show-contents__info--name
+        = @item.name
       %h3 item.name
-
       %table
         %tr
           %th 出品者
