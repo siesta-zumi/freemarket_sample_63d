@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many_attached :item_images
+  has_many_attached :item_images, dependent: :destroy
 
   ##########ActiveHash####################
   extend ActiveHash::Associations::ActiveRecordExtensions
