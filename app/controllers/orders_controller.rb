@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  protect_from_forgery :except => [:create]
+  protect_from_forgery except: [:create]
 
   def index
   end
