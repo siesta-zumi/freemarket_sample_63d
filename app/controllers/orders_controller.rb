@@ -1,10 +1,21 @@
 class OrdersController < ApplicationController
   protect_from_forgery except: [:create]
+  before_action :set_current_user, only: [:show] 
 
   def index
   end
 
   def show
+    if @current_user.card.blank?
+      redirect_to new_card_path
+      return
+    end
+
+    if @current_user.shipping_address.blank?
+      redirect_to new_shipping_address_path
+      return
+    end
+
     @item = Item.find(params[:id])
     @address = User.find(current_user.id).shipping_address
     @order = Order.new #order_params用に用意
@@ -46,6 +57,10 @@ class OrdersController < ApplicationController
 
   def create_order_params
     params.require(:order).permit(:item_id).merge(user_id:current_user.id)
+  end
+
+  def set_current_user
+    @current_user = User.find(current_user.id)
   end
 
 end
