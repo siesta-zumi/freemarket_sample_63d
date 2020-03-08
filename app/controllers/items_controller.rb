@@ -24,29 +24,28 @@ class ItemsController < ApplicationController
     @cost = IsBearShippingCost.find(@item.is_bear_shipping_cost)
     @region = Prefecture.find(@item.region)
     @period = Period.find(@item.period)
-    
     @items = Item.all
     @items_ids = @items.ids.sort
-    @current_item_index = @items_ids.index(@item.id)
+    current_item_index = @items_ids.index(@item.id)
     
-    if @current_item_index == 0
+    if current_item_index == 0
       @is_first = true
     else
       @is_first = false
     end
 
-    if @current_item_index == @items_ids.length-1
+    if current_item_index == @items_ids.length-1
       @is_last = true
     else
       @is_last = false
     end
 
-    @previous_index = @current_item_index - 1
-    @next_index = @current_item_index + 1
+    previous_index = current_item_index - 1
+    next_index = current_item_index + 1
 
-    @previous_item_id = @items_ids[@previous_index]
-    @next_item_id = @items_ids[@next_index]
-    # binding.pry
+    @previous_item_id = @items_ids[previous_index]
+    @next_item_id = @items_ids[next_index]
+    
   end
 
   def create
