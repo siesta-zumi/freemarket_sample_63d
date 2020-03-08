@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :set_parents, only: [:index,:new,:show,:create]
   before_action :authenticate_user!, only: [:new] #ログインしていないユーザーはnewアクションの前にログイン画面に遷移
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   PER = 6
   def index
@@ -17,7 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+   
     @category = Category.find(@item.category_id)
     @brand = Brand.find(@item.brand_id)
     @status = Status.find(@item.status)
@@ -58,17 +59,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update!(item_params)
+    
+    @item.update!(item_params)
     redirect_to items_url, notice: "商品を更新しました。"
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    
     @item.destroy
 
   end
@@ -86,6 +87,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
