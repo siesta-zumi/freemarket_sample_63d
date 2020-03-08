@@ -54,15 +54,16 @@ class ItemsController < ApplicationController
 
   def update
     @item.update!(item_params)
-    unless @item.save render edit_item_path, notice: "商品を編集できませんでした"
+    unless @item.save
+       render edit_item_path, notice: "商品を編集できませんでした"
 
     end
   end
 
   def destroy
-    @item.destroy
-    unless @item.destroy render destroy_item_path, notice: "商品を削除できませんでした"
-      
+    unless @item.destroy
+       render item_path
+
     end
   end
 
