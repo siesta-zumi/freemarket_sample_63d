@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_parents, only: [:index,:new,:show,:create]
+  before_action :set_parents, only: [:index,:new,:show,:create, :edit]
   before_action :authenticate_user!, only: [:new] #ログインしていないユーザーはnewアクションの前にログイン画面に遷移
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -59,18 +59,25 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
-    
     @item.update!(item_params)
-    redirect_to items_url, notice: "商品を更新しました。"
+    if @item.save
+    else
+      render edit_item_path
+    end
   end
 
   def destroy
-    
+
     @item.destroy
+    if @item.destroy
+
+    else
+      render destroy_item_path, notice: "商品を削除できませんでした。"
+    end
 
   end
 
