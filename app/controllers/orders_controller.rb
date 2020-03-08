@@ -19,8 +19,7 @@ class OrdersController < ApplicationController
 
     #####購入した商品のselling_statusを(1 売り切れ)に変更#####################
     purchase_item = Item.find(order_params[:item_id])
-    purchase_item.selling_status = 1
-    purchase_item.save
+    purchase_item.update(selling_status: 1)
 
     ####Payjpに購入情報を送信#########################
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
