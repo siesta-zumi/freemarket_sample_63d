@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def create
     #####oedersテーブルに登録#############################################
-    order = Order.new(user_id: order_params[:user_id], item_id: order_params[:item_id])
+    order = Order.new(create_order_params)
     order.save
 
     #####購入した商品のselling_statusを(1 売り切れ)に変更#####################
@@ -41,6 +41,10 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:item_id, :item_price).merge(user_id:current_user.id)
+  end
+
+  def create_order_params
+    params.require(:order).permit(:item_id).merge(user_id:current_user.id)
   end
 
 end
