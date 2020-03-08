@@ -18,13 +18,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-   
+    ##商品表示#############################################################
     @category = Category.find(@item.category_id)
     @brand = Brand.find(@item.brand_id)
     @status = Status.find(@item.status)
     @cost = IsBearShippingCost.find(@item.is_bear_shipping_cost)
     @region = Prefecture.find(@item.region)
     @period = Period.find(@item.period)
+
+    ###前の商品、後ろの商品#####################################################
     @items = Item.all
     @items_ids = @items.ids.sort
     current_item_index = @items_ids.index(@item.id)
