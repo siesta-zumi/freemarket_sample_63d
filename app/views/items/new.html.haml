@@ -7,76 +7,85 @@
   .new-contents-main
     .title
       %h1 商品の情報を入力
-      =form_with model: @item,local:true do |f|
-        .imege-upload
+      = form_with model:@item, local:true do |f|
+        .image-upload
           = render 'shared/error_messages', model: f.object
           .section
             %h2 出品画像
             %span 必須
-          %p 最大５枚までアップロードできます
-          .image__list
-            #image-box
-            =f.label :item_images do
-              =f.file_field :item_images,multiple: true,class:"item-img"
-              %P ドラッグ&ドロップ、またはクリックしてファイルをアップロード
-              %i.fa.fa-camera
+          %p 最大5枚までアップロードできます
+          .post__drop__box__container
+            .prev-content
+            .label-content
+              =f.label :item_images, class: "label-box", id: "label-box--0" do
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
+              = f.fields_for :item_images do |i|
+                -# -binding.pry
+            
+                  
+                = i.file_field :item_images, class: "hidden-field"
+                %input{class:"hidden-field", type: "file", name: "item[1]", id: "item_images_attributes_1_image" }
+                %input{class:"hidden-field", type: "file", name: "item[2]", id: "item_images_attributes_2_image" }
+                %input{class:"hidden-field", type: "file", name: "item[3]", id: "item_images_attributes_3_image" }
+                %input{class:"hidden-field", type: "file", name: "item[4]", id: "item_images_attributes_4_image" }
         .item-name
           .section-name
             .title
               %p 商品名
               %span 必須
-            =f.text_field :name,placeholder: '商品名（必須）',class: "input-name"
-          .section-discription
-            .title
-              %p 商品の説明
-              %span 必須
-            =f.text_area :description,placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"
-      
+            = f.text_field :name, placeholder:"商品名（必須)",class: "input-name"
 
-        .item-details
-          %h3 商品の詳細
-          .item-details__box
-            .section
-              %p カテゴリー
-              %span 必須
-            =f.collection_select :category_id,@parents,:id, :name,prompt: "選択してください"
+            .section-discription
+              .title
+                %p 商品の説明
+                %span 必須
+              =f.text_area :description,placeholder: '商品の説明（色、素材、重さ、定価、注意点など)',class: "input-description"
 
-            .section
-              %p ブランド
-              %span 必須
-            =f.collection_select :brand_id,Brand.all,:id, :name,prompt: "選択してください"
-             
-            .section
-              %p 商品の状態
-              %span 必須
-            = f.collection_select :status, Status.all, :id, :name,prompt: "選択してください",class:'select-box'
+          .item-details
+            %h3 商品の詳細
+            .item-details__box
+              .section
+                %p カテゴリー
+                %span 必須
+              =f.collection_select :category_id,@parents,:id, :name,prompt: "選択してください"
 
-        .delivery-select
-          %h4 発送について
-          .delivery-select__box
-            .section
-              %p 配送料の負担
+              .section
+                %p ブランド
+                %span 必須
+              =f.collection_select :brand_id,Brand.all,:id, :name,prompt: "選択してください"
+
+              .section
+                %p 商品の状態
+                %span 必須
+              = f.collection_select :status, Status.all, :id, :name,prompt: "選択してください",class:'select-box'
+
+          .delivery-select
+            %h4 発送について
+            .delivery-select__box
+              .section
+                %p 配送料の負担
+                %span 必須
+              = f.collection_select :is_bear_shipping_cost, IsBearShippingCost.all, :id, :name,prompt: "選択してください", class:'select-box'
+              .section
+                %p 発送先の地域
+                %span 必須
+              = f.collection_select :region, Prefecture.all, :id, :name,prompt: "選択してください", class:'select-box'
+              .section
+                %p 発送までの日数
+                %span 必須
+              = f.collection_select :period, Period.all, :id, :name,prompt: "選択してください", class:'select-box'
+          .price-input
+            %h5 販売価格
+            .price-input__box
+              %P 価格
               %span 必須
-            = f.collection_select :is_bear_shipping_cost, IsBearShippingCost.all, :id, :name,prompt: "選択してください", class:'select-box'
-            .section
-              %p 発送先の地域
-              %span 必須
-            = f.collection_select :region, Prefecture.all, :id, :name,prompt: "選択してください", class:'select-box'
-            .section
-              %p 発送までの日数
-              %span 必須
-            = f.collection_select :period, Period.all, :id, :name,prompt: "選択してください", class:'select-box'
-        .price-input
-          %h5 販売価格
-          .price-input__box
-            %P 価格
-            %span 必須
-          .price-input__form
-            ¥
-            = f.text_field :price, step: 100, type: "number", min: "0", value: "@item.price", placeholder: "例）300", class: 'input-price'
-        .sell-item
-          = f.submit "出品する", class: "sell-btn"
-.new-footer
-  .new-footer__logo
-    = image_tag("material/logo/logo-white.png", alt: "logo image")
-    %p © FURIMA
+            .price-input__form
+              ¥
+              = f.text_field :price, step: 100, type: "number", min: "0", value: "@item.price", placeholder: "例）300", class: 'input-price'
+          .sell-item
+            = f.submit "出品する", class: "sell-btn"
+  .new-footer
+    .new-footer__logo
+      = image_tag("material/logo/logo-white.png", alt: "logo image")
+      %p © FURIMA
