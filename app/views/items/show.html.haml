@@ -80,8 +80,9 @@
               = link_to "〇〇をもっと見る", class: "link-item"
 
   .to-buy-item
-    = link_to order_path(@item.id) do
-      = button_tag "購入画面へ進む", class: "buy-btn"
+    - unless current_user == @item.user
+      = link_to order_path(@item.id) do
+        = button_tag "購入画面へ進む", class: "buy-btn"
     - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
       .edit-item
         = link_to '商品を編集する', edit_item_path(@item.id), class: "item-btn"
