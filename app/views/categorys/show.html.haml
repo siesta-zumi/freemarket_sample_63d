@@ -4,18 +4,12 @@
   .category-box
     %h1.category-title
       カテゴリー一覧
-        
     .category-list
       - @parents.each do |parent|
-        = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
-
+        = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
     .category-list__ladys
       レディース
     .category-list__ladys__child
       - @child .each do |child|
         = child.name
-  
-               
-     
-
 = render "shared/footer"

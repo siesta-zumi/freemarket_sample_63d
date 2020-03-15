@@ -7,9 +7,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path,alert:"登録しました"
+      redirect_to user_path, alert:"登録しました"
     else
-      render "new",alert:"登録に失敗しました"
+      render new_user_path, alert:"登録に失敗しました"
     end
   end
 

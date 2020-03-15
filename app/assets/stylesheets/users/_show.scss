@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -59,32 +59,35 @@
     height: 200px;
     position: relative;
     text-align: center;
-    .avatar{
+
+    .avatar {
       position: absolute;
       right: 325px;
       top: 55px;
       height: 70px;
       width: auto;
     }
-    .fas{
+    .fas {
+      bottom: 53px;
+      color: #444;
+      font-size: 1.2em;
       position: absolute;
       right: 366px;
-      bottom: 53px;
-      font-size: 1.2em;
-      color:#444444;
     }
-    .avatar-btn{
-      position: absolute;
-      right: 324px;
+
+    .avatar-btn {
       bottom: 53px;
-      font-size: 12px;
       color: $letter-color;
       font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      font-size: 12px;
+      position: absolute;
+      right: 324px;
     }
+
     .icon-name{
       position: absolute;
       right: 325px;
-      bottom:30px;
+      bottom: 30px;
       font-size: 14px;
       margin: 8px 0 0;
       color: $letter-color;
