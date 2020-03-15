@@ -16,7 +16,7 @@
       .show-contents__item--img
         %ul
           %li
-            = image_tag @item.item_images.first, class:"img", height:400, width:400
+            = image_tag @item.item_images.first, class:"img", height: 400, width: 400
       .show-contents__item--sub-img
         - if @item.item_images.length > 1
           - @item.item_images.drop(1).each_with_index do |image, _i|
@@ -81,7 +81,7 @@
 
   .to-buy-item
     = link_to order_path(@item.id) do
-      = button_tag "購入画面へ進む", class:"buy-btn"
+      = button_tag "購入画面へ進む", class: "buy-btn"
     - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
       .edit-item
         = link_to '商品を編集する', edit_item_path(@item.id), class: "item-btn"
