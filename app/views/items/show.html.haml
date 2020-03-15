@@ -18,7 +18,10 @@
           %li
             =image_tag @item.item_images.first,class:"img",height:400,width:400
       .show-contents__item--sub-img
-        %ul
+        -if @item.item_images.length > 1
+          -@item.item_images.each_with_index do |image,i|
+            =image_tag image, height:100, widht:100
+        -# %ul
           -# 複数の投稿はこれからeach文で完了させます。
           -# ※%thirdでエアラーが出る状況
           -# %li

@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
     current_item_index = @items_ids.index(@item.id)
     @is_first = current_item_index == 0 ? true : false
     @is_last = current_item_index == @items_ids.length - 1 ? true : false
-
     previous_index = current_item_index - 1
     next_index = current_item_index + 1
 
