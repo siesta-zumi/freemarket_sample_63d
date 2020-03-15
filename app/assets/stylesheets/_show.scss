@@ -30,9 +30,10 @@
     justify-content: center;
     flex-direction: column;
     &--name,h1{
-      font-size: 20px;
+      font-size: 35px;
       font-weight: bold;
       text-align: center;
+      margin: 15px;
       padding: 10px;
     }
     &--img{
