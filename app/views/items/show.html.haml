@@ -91,14 +91,13 @@
               = link_to "〇〇をもっと見る", class: "link-item"
 
   .to-buy-item
-
-  = link_to order_path(@item.id) do
-    = button_tag "購入画面へ進む"
-  - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
-    .edit-item
-      = link_to '商品を編集する', edit_item_path(@item.id)
-    .destryo-item
-      = link_to '商品を削除する', item_path(@item.id), method: :delete, data: {confirm: "#{@item.name}を削除します。よろしいですか？"}
+    = link_to order_path(@item.id) do
+      = button_tag "購入画面へ進む",class:"buy-btn"
+    - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
+      .edit-item
+        = link_to '商品を編集する', edit_item_path(@item.id)
+      .destryo-item
+        = link_to '商品を削除する', item_path(@item.id), method: :delete, data: {confirm: "#{@item.name}を削除します。よろしいですか？"}
 
 
 
