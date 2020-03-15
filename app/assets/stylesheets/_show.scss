@@ -131,37 +131,53 @@
         justify-content: space-between;
         li.link{
           padding: 20px;
-          
+          a{
+            color: $white;
+            text-decoration: none;
+          }
         }
       }
       .link-item{
         font-size: 30px;
         padding: 20px;
-        
+        a{
+          color: $white;
+          text-decoration: none;
+        }
       }
     }
   }
 
 }
 .to-buy-item{
-  background-color: $furima-green;
- 
+  background-color: $furima-gray;
+  a{
+    color: $white;
+    text-decoration: none;
+  }
   button.buy-btn{
-    margin: 0 auto;
+    margin: 10px auto;
     display: block;
     width: 300px;
     height: 50px;
     background-color: $furima-red;
     color: #fff;
     font-size: 30px;
-    
-    
+    text-decoration: none;
   }
 }
-a{
-  color: $white;
-  text-decoration: none;
+.item-btn{
+  height: 50px;
+  width: 300px;
+  background-color:gray;
+  font-size: 15px;
+  text-align: center;
+  line-height: 50px;
+  margin: 10px auto;
+  display: block;
+  
 }
+
 a button:hover{
   cursor: pointer;
 }
