@@ -16,25 +16,17 @@
       .show-contents__item--img
         %ul
           %li
-            =image_tag @item.item_images.first,class:"img",height:600,width:600
+            = image_tag @item.item_images.first, class:"img", height: 400, width: 400
       .show-contents__item--sub-img
-        %ul
-          -# 複数の投稿はこれからeach文で完了させます。
-          -# ※%thirdでエアラーが出る状況
-          -# %li
-          -#   =image_tag @item.item_images.second,class:"img",height:200,width:200
-          -# %li
-          -# %each
-          -#   =image_tag @item.item_images.third,class:"img",height:200,width:200
-          -# %li
-          -#   =image_tag @item.item_images.forth,class:"img",height:200,width:200
+        - if @item.item_images.length > 1
+          - @item.item_images.drop(1).each_with_index do |image, _i|
+            = image_tag image, height: 100, widht: 100
       .show-contents__item--price
-        %h2 ¥30000
+        %h2
+          = "¥" + "#{@item.price.to_s(:delimited)}"
         %p (税込)送料込み
     .show-contents__info
       .show-contents__info--name
-        = @item.name
-      %h3 item.name
       %table
         %tr
           %th 出品者
@@ -88,14 +80,14 @@
               = link_to "〇〇をもっと見る", class: "link-item"
 
   .to-buy-item
-
-  = link_to order_path(@item.id) do
-    = button_tag "購入画面へ進む"
-  - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
-    .edit-item
-      = link_to '商品を編集する', edit_item_path(@item.id)
-    .destryo-item
-      = link_to '商品を削除する', item_path(@item.id), method: :delete, data: {confirm: "#{@item.name}を削除します。よろしいですか？"}
+    = link_to order_path(@item.id) do
+      = button_tag "購入画面へ進む", class: "buy-btn"
+    - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
+      .edit-item
+        = link_to '商品を編集する', edit_item_path(@item.id), class: "item-btn"
+      .destryo-item
+        = link_to '商品を削除する', item_path(@item.id), class: "item-btn",
+         method: :delete, data: {confirm: "#{@item.name}を削除します。よろしいですか？"}
 
 
 
