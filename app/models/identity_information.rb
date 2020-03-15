@@ -10,8 +10,8 @@ class IdentityInformation < ApplicationRecord
   validates :birthday,              presence: true
 
   #全角入力 validation
-  validates :first_name,            format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/ }
-  validates :last_name,             format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/ }
+  validates :first_name,            format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+  validates :last_name,             format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   validates :first_name_furigana,   format: { with: /\A[ぁ-んー－]+\z/ }
   validates :last_name_furigana,    format: { with: /\A[ぁ-んー－]+\z/ }
 
