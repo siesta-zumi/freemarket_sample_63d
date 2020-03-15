@@ -59,6 +59,7 @@ describe IdentityInformation do
       expect(identityinformation.errors[:first_name]).to include("is invalid")
     end
 
+
     it "is valid without a last_name in Hankaku" do
       identityinformation = build(:identity_information, user_id: @user.id, last_name: "ﾊｼﾉﾓﾄ")
       identityinformation.valid?
