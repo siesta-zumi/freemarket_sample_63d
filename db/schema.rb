@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_015947) do
+ActiveRecord::Schema.define(version: 2020_03_15_033422) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_03_08_015947) do
     t.integer "region", null: false
     t.integer "period", null: false
     t.integer "price", null: false
-    t.integer "selling_status", default: 0, null: false
+    t.integer "selling_status", default: 0
     t.bigint "category_id", null: false
     t.bigint "brand_id", null: false
     t.datetime "created_at", null: false
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2020_03_08_015947) do
     t.string "municipalities", null: false
     t.string "block", null: false
     t.string "building_name_room_number"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_shipping_addresses_on_user_id"
@@ -118,8 +118,8 @@ ActiveRecord::Schema.define(version: 2020_03_08_015947) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email", null: false
-    t.string "encrypted_password", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
