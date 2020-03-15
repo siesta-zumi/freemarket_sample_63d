@@ -1,0 +1,74 @@
+
+= link_to "商品ページへ戻る", item_path
+.new-contents
+  .new-contents-main
+    .title
+      %h1 商品の情報を編集
+      = form_with model: @item, local: true do |f|
+        .imege-upload
+          = render 'shared/error_messages', model: f.object
+          .section
+            %h2 出品画像
+            %span 必須
+          %p 最大５枚までアップロードできます
+          .image__list
+            #image-box
+            = f.label :item_images do
+              = f.file_field :item_images, multiple: true, class: "item-img"
+              %p ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+              %i.fa.fa-camera
+        .item-name
+          .section-name
+            .title
+              %p 商品名
+              %span 必須
+            = f.text_field :name, placeholder: '商品名（必須）', class: "input-name"
+          .section-discription
+            .title
+              %p 商品の説明
+              %span 必須
+            = f.text_area :description, placeholder: '商品の説明（色、素材、重さ、定価、注意点など)', class: "input-description"
+        .item-details
+          %h3 商品の詳細
+          .item-details__box
+            .section
+              %p カテゴリー
+              %span 必須
+            = f.collection_select :category_id, @parents, :id, :name, prompt: "選択してください"
+
+            .section
+              %p ブランド
+              %span 必須
+            = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択してください"
+            .section
+              %p 商品の状態
+              %span 必須
+            = f.collection_select :status, Status.all, :id, :name, prompt: "選択してください", class: 'select-box'
+
+        .delivery-select
+          %h4 発送について
+          .delivery-select__box
+            .section
+              %p 配送料の負担
+              %span 必須
+            = f.collection_select :is_bear_shipping_cost, IsBearShippingCost.all, :id, :name, prompt: "選択してください", class: 'select-box'
+            .section
+              %p 発送先の地域
+              %span 必須
+            = f.collection_select :region, Prefecture.all, :id, :name, prompt: "選択してください", class: 'select-box'
+            .section
+              %p 発送までの日数
+              %span 必須
+            = f.collection_select :period, Period.all, :id, :name, prompt: "選択してください", class: 'select-box'
+        .price-input
+          %h5 販売価格
+          .price-input__box
+            %p 価格
+            %span 必須
+          .price-input__form
+            ¥
+            = f.text_field :price, step: 100, type: "number", min: "0", value: "@item.price", placeholder: "例）300", class: 'input-price'
+        .sell-item
+          = f.submit "修正する", class: "sell-btn"
+
+

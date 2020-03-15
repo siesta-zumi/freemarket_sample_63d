@@ -1,6 +1,6 @@
 .confirm-container
   .confirm-header
-    = link_to image_tag("material/logo/logo.png", alt: "logo", width: "210", height: "70"), "#"
+    = link_to image_tag("material/logo/logo.png", alt: "logo", width: "210", height: "70"), root_path
   .confirm-contant
     .confirm-buy
       %h2 購入内容の確認
@@ -8,29 +8,46 @@
     .confirm-main
       .buy-item
         .buy-item_image
-          item-image
+          =image_tag @item.item_images.first ,class:"img",height:45,width:60
         .buy-item_name
           商品名
+        = @item.name
       %hr{color: "#F2F2F2", size: "3", width: "100%"}/
       .confirm-detail
         .confirm-count
           %h3 支払い金額
-          %p ￥500
+          %p 
+            = @item.price
+            円
         %hr{color: "#F2F2F2", size: "3", width: "100%"}/
         .confirm-way
           %h3
             支払い方法
           %h4
-            支払い方法を選択してください
+            クレジットカード
         %hr{color: "#F2F2F2", size: "3", width: "100%"}/
         .confirm-address
+          -# ここから下キレイにしていく
           %h3
             配送先
           %p
-            トウキョウ
+            郵便番号：
+            = @address.postal_code
+          %p
+            都道府県:
+            = Prefecture.find(@address.prefecture).name
+          %p
+            市区町村:
+            = @address.municipalities
+            = @address.block
+            = @address.building_name_room_number
+
         %hr{color: "#F2F2F2", size: "3", width: "100%"}/
-      .confirm-button
-        %button.confirm-button_buy{type: "button"} 購入する
+      = form_with model: @order, url: orders_path, method: :post, data: { remote: false } do |f|
+        .confirm-button
+        = f.hidden_field :item_id , value: @item.id
+        = f.hidden_field :item_price , value: @item.price
+        = f.submit("購入する", class: "confirm-button_buy") #css当たってません
   .confirm-footer
     .confirm-logo
       = link_to image_tag("material/logo/logo-white.png", alt: "logo", width: "210", height: "70"), "#"

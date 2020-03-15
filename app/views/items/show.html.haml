@@ -12,70 +12,83 @@
   .show-contents
     .show-contents__item
       .show-contents__item--name
-      %h1 item.name
+        = @item.name
       .show-contents__item--img
         %ul
           %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "600",height:"600",class:"main-img")
+            = image_tag @item.item_images.first, class:"img", height: 400, width: 400
       .show-contents__item--sub-img
-        %ul
-          %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
-          %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
-          %li
-            =image_tag("material/icon/icon_brand.png",alt:"item-img",width: "200",height:"200",class:"sub-img")
+        - if @item.item_images.length > 1
+          - @item.item_images.drop(1).each_with_index do |image, _i|
+            = image_tag image, height: 100, widht: 100
       .show-contents__item--price
-        %h2 ¥30000
+        %h2
+          = "¥" + "#{@item.price.to_s(:delimited)}"
         %p (税込)送料込み
     .show-contents__info
-      %h3 item.name
+      .show-contents__info--name
       %table
         %tr
           %th 出品者
-          %td hoge
+          %td
+            = @item.user.name
         %tr
           %th カテゴリー
-          %td 
-            %ul
-              %li 1
-              %li 2
-              %li 3
-              %li 4
+          %td
+            = @category.name
+
         %tr
           %th ブランド
-          %td 〇〇
-        %tr
-          %th 商品のサイズ
-          %td M
+          %td
+            = @brand.name
         %tr
           %th 商品の状態
-          %td 新品
+          %td
+            = @status.name
         %tr
           %th 配送料の負担
-          %td 出品者負担
+          %td
+            = @cost.name
         %tr
           %th 発送元の地域
-          %td 東京
+          %td
+            = @region.name
         %tr
           %th 発送日の目安
-          %td ２〜3日で発送
-    .show-contents__comment
-      .show-contents__comment--area
-        %form_for 
-          = text_area_tag ""
-          %p.caution
-            相手のことを考えてコメントしましょう！！
-          = button_tag  "コメントする"
-          %ul
-            %li.link
-              =link_to "<前の商品","#"
-            %li.link
-              =link_to "後ろの商品>","#"
-          .link-item
-            =link_to "〇〇をもっと見る",class:"link-item"
+          %td
+            = @period.name
+        %tr
+          %th 商品詳細
+          %td
+            = simple_format(@item.description)
 
-  .to-buy-item 
-    -#仮作成です。
-    =button_tag "購入画面へ進む"
+      .show-contents__comment
+        .show-contents__comment--area
+          %form_for
+            = text_area_tag ""
+            %p.caution
+              相手のことを考えてコメントしましょう！！
+            = button_tag "コメントする"
+            %ul
+              %li.link
+                - if !@is_last
+                  = link_to "<前の商品", item_path(@next_item_id)
+              %li.link
+                - if !@is_first
+                  = link_to "後ろの商品>", item_path(@previous_item_id)
+            .link-item
+              = link_to "〇〇をもっと見る", class: "link-item"
+
+  .to-buy-item
+    = link_to order_path(@item.id) do
+      = button_tag "購入画面へ進む", class: "buy-btn"
+    - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
+      .edit-item
+        = link_to '商品を編集する', edit_item_path(@item.id), class: "item-btn"
+      .destryo-item
+        = link_to '商品を削除する', item_path(@item.id), class: "item-btn",
+         method: :delete, data: {confirm: "#{@item.name}を削除します。よろしいですか？"}
+
+
+
 = render 'shared/footer'
