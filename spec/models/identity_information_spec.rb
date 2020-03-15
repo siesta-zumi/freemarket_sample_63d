@@ -48,13 +48,13 @@ describe IdentityInformation do
       expect(identityinformation.errors[:birthday]).to include("can't be blank")
     end
 
-    it "is valid with a first_name Katakana" do
+    it "is valid with a first_name in Hankaku" do
       identityinformation = build(:identity_information, user_id: @user.id, first_name: "ｶﾝﾅｺ")
       identityinformation.valid?
       expect(identityinformation.errors[:first_name]).to include("is invalid")
     end
 
-    it "is valid without a last_name in Katakana" do
+    it "is valid without a last_name in Hankaki" do
       identityinformation = build(:identity_information, user_id: @user.id, last_name: "ﾊｼﾉﾓﾄ")
       identityinformation.valid?
       expect(identityinformation.errors[:last_name]).to include("is invalid")
