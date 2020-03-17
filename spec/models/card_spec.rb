@@ -7,7 +7,7 @@ describe Card do
     end
 
     ##成功パターン###############################################
-    it "is valid with a " do
+    it "is valid with a user_id, customer_id, card_id" do
       card = build(:card, user_id: @user.id)
       expect(card).to be_valid
     end
