@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :create, :edit] 
+  before_action :set_user, only: [:show, :create, :update] 
   before_action :set_parents, only: [:index,:new,:show] #applicationControllerを継承しているのでこのコントローラで定義しなくてもset_paramsメソッドは使えます。
 
 
@@ -19,8 +19,7 @@ class UsersController < ApplicationController
 
 
   def update
-    if @user = User.find(params[:id])
-       @user.update(user_params)
+    if @user.update(user_params)
        redirect_to user_path
     else
        render new_user_path

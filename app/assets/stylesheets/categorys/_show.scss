@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -8,12 +8,11 @@
   padding: 60px;
 
   .category-box {
-    height: 250px;
-    width: 700px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-
+    height: 250px;
+    margin: 0 auto;
+    width: 700px;
     .category-title {
       color: $letter-color;
       font-size: 20px;
@@ -21,11 +20,11 @@
       padding: 10px 0;
     }
     
-    .category-list{
+    .category-list {
     a {
-      background-color: #ffffff;
+      background-color: #fff;
       border-radius: 5px;
-      box-shadow: 1px 1px 1px 1px rgba(14,14,14, .0580392);
+      box-shadow: 1px 1px 1px 1px rgba(14, 14, 14, .0580392);
       color: $letter-color;
       float: left;
       font-size: 16px;
@@ -37,9 +36,9 @@
     }
 
     &__ladys {
-      background-color: #ff0000;
+      background-color: #f00;
       border-radius: 3px;
-      color: #ffffff;
+      color: #fff;
       font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
       font-size: 20px;
       font-weight: bold;
@@ -50,7 +49,7 @@
     }
 
     &__ladys__child {
-      background-color: #ffffff;
+      background-color: #fff;
       color: $letter-color;
       display: inline-block;
       font-size: 15px;
@@ -58,7 +57,7 @@
       height: 900px;
       padding: 30px;
       width: 700px;
-    } 
+    }
     }
   }
 }
