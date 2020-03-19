@@ -1,7 +1,17 @@
+
+# ルート
 crumb :root do
-  link "Home", root_path
+  link "トップページ", root_path
 end
 
+crumb :items do
+  link "商品一覧", items_path
+end
+
+crumb :item do |item|
+  link item.name, user_path(item)
+  parent :items
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
