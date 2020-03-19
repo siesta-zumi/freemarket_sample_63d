@@ -5,9 +5,7 @@
   = breadcrumbs separator: " &rsaquo; "
 
   .show-contents
-    
     .show-contents__item
-      
       .show-contents__item--name
         = @item.name
       .show-contents__item--img
@@ -23,7 +21,6 @@
           = "¥" + "#{@item.price.to_s(:delimited)}"
         %p (税込)送料込み
     .show-contents__info
-      
       .show-contents__info--name
       %table
         %tr
