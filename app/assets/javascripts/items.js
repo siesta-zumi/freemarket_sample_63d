@@ -1,7 +1,5 @@
-
 $(document).ready(function () {
   $(".file").on('change', function(){
-    console.log('SSS')
      var fileprop = $(this).prop('files')[0],
          find_img = $(this).parent().find('img'),
          filereader = new FileReader(),
