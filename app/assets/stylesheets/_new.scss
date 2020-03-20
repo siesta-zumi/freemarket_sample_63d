@@ -60,12 +60,12 @@
         width: 100%;
 
         .view_box {
-          border: 1px solid #333333;
-          width: 120px;
+          background-color: $furima-gray;
+          border: 1px solid $letter-color;
+          display: block;
           height: 250px;
           margin: 10px;
-          background-color: $furima-gray;
-          display: block;
+          width: 120px;
 
           .file {
             color: $furima-gray;
