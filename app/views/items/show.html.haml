@@ -1,13 +1,8 @@
 = render 'shared/header'
 .show-content
   .show-content__nav
-    %ul
-      %li 1
-      %li >
-      %li 2
-      %li >
-      %li 3
-      %li >
+  - breadcrumb :item, @item
+  = breadcrumbs separator: " &rsaquo; "
 
   .show-contents
     .show-contents__item

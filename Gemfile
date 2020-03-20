@@ -91,3 +91,4 @@ gem 'aws-sdk-s3', require: false
 gem 'active_hash'
 gem 'rubocop', require: false
 gem "font-awesome-sass"
+gem "gretel"
