@@ -30,9 +30,10 @@
     justify-content: center;
     flex-direction: column;
     &--name,h1{
-      font-size: 20px;
+      font-size: 35px;
       font-weight: bold;
       text-align: center;
+      margin: 15px;
       padding: 10px;
     }
     &--img{
@@ -44,8 +45,6 @@
         justify-content: center;
         padding: 20px;
         li{
-          height: 600px;
-          width: 600px;
           padding: 10px;
           border: solid 3px #fff;
           text-align: center;
@@ -54,22 +53,8 @@
       }
     }
     &--sub-img{
-      width: 90%;
       padding: 10px;
       margin: 0 auto;
-      ul{
-        display: flex;
-        justify-content: center;
-        li{
-          height: 200px;
-          width: 200px;
-          margin-left: 15px;
-          text-align: center;
-          padding: 10px;
-          box-sizing: content-box;
-          border: solid 3px #fff;
-        }
-      }
     }
     &--price{
       text-align: center;
@@ -116,7 +101,6 @@
       position: absolute;
       top: 30px;
       background-color: $furima-red;
-      // background-color: #fff;
       width: 100%;
       padding: 20px;
       textarea{
@@ -165,15 +149,35 @@
 }
 .to-buy-item{
   background-color: $furima-gray;
-  height: 150px;
-  width: 100%;
-  button{
-    margin: 0 auto;
-    display: block;
-    width: 500px;
-    height: 50px;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  .buy-btn {
     background-color: $furima-red;
     color: #fff;
+    display: block;
     font-size: 30px;
+    height: 50px;
+    margin: 10px auto;
+    text-decoration: none;
+    width: 300px;
   }
+}
+
+.item-btn {
+  background-color: #808080;
+  display: block;
+  font-size: 15px;
+  height: 50px;
+  line-height: 50px;
+  margin: 10px auto;
+  text-align: center;
+  width: 300px;
+}
+
+a button:hover {
+  cursor: pointer;
 }

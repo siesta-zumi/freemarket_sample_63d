@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -59,18 +59,36 @@
     height: 200px;
     position: relative;
     text-align: center;
-    .kate-jpg{
+
+    .avatar {
       position: absolute;
       right: 325px;
-      top: 65px;
+      top: 55px;
       height: 70px;
-      width: auto;
+      width: 62px;
     }
-   
+    
+    .fas {
+      bottom: 53px;
+      color: #444;
+      font-size: 1.2em;
+      position: absolute;
+      right: 366px;
+    }
+
+    .avatar-btn {
+      bottom: 53px;
+      color: $letter-color;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      font-size: 12px;
+      position: absolute;
+      right: 324px;
+    }
+
     .icon-name{
       position: absolute;
       right: 325px;
-      bottom:40px;
+      bottom: 30px;
       font-size: 14px;
       margin: 8px 0 0;
       color: $letter-color;
@@ -83,7 +101,7 @@
     p.evaluation{
       position: absolute;
       left:288px;
-      bottom: 25px;
+      bottom: 15px;
       color: $letter-color;
       font-size: 10px;
       font-weight: bold;
