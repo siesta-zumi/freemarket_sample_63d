@@ -1,0 +1,36 @@
+.editted_alert{
+  height: 300px;
+  width: 90%;
+  background-color: $white;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+
+
+  a, .back-to-item {
+    display: block;
+    height: 80px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: $white;
+    background-color: $furima-green;
+    font-size: 20px;
+    padding: 20px 40px;
+    text-decoration: none;
+    border-radius: 3px;
+    border : double 4px $white ;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.7s;
+
+  }
+}
+
+
+
+

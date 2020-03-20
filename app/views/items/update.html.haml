@@ -1,2 +1,4 @@
-%h3 編集が完了いたしました。
-= link_to "商品一覧へ戻る", item_path
+= render 'shared/simple_header'
+.editted_alert
+  = link_to "編集が完了いたしました", item_path, class: "back-to-item" 
+=render 'shared/footer'

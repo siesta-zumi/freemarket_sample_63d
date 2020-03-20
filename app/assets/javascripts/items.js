@@ -27,3 +27,11 @@ $(document).ready(function(){
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
+
+$(function(){
+  $('.back-to-item').hover(function(){
+    $(this).text('商品一覧へ戻る').css('background-color','red')
+  },function(){
+    $(this).text('編集が完了いたしました').css('background-color','rgb(60,202,206)')}
+)});
+
