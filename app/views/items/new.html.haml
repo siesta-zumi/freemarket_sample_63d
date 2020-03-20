@@ -15,11 +15,16 @@
             %span 必須
           %p 最大５枚までアップロードできます
           .image__list
-            #image-box
-            =f.label :item_images do
-              =f.file_field :item_images,multiple: true,class:"item-img"
-              %P ドラッグ&ドロップ、またはクリックしてファイルをアップロード
-              %i.fa.fa-camera
+            .view_box
+              = f.file_field :item_images,multiple: true, class:"file"
+            .view_box
+              =f.file_field :item_images,multiple: true, class:"file"
+            .view_box
+              =f.file_field :item_images,multiple: true, class:"file"
+            .view_box
+              =f.file_field :item_images,multiple: true, class:"file"
+            .view_box
+              =f.file_field :item_images,multiple: true, class:"file"
         .item-name
           .section-name
             .title
