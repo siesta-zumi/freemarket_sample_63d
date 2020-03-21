@@ -75,15 +75,16 @@
 .mypage-right
   .mypage-icon
     .mypage-icon__image
-      - if @user.avatar.nil?
-        = image_tag "material/icon/avatar.jpg", class: "avatar"
-      - else
+      - if @user.avatar.attached? #アタッチされた画像が存在する場合
         = image_tag @user.avatar, class: 'avatar'
+      - else  #アタッチされた画像がない場合デフォルト画像を表示
+        = image_tag "material/icon/avatar.jpg", class: "avatar"
       = form_for @user do |f|
         = f.label :avatar do
           = icon('fas', 'image')
-          = f.file_field :avatar, style: "display: none;"
-        = f.submit 'Send', class: 'avatar-btn'
+          = f.file_field :avatar, style: "display: none;", class: 'avatar_file_field'
+        = f.submit 'Send', class: 'avatar-btn', disabled: true
+
     %p.icon-name
       = @user.name + "さん"
     %P.evaluation 評価　888　出品数　888
