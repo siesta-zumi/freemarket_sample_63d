@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
+    @brands = Brand.all
   end
 
   def new
@@ -20,6 +21,7 @@ class ItemsController < ApplicationController
   def show
    
     @category = Category.find(@item.category_id)
+    
     @brand = Brand.find(@item.brand_id)
     @status = Status.find(@item.status)
     @cost = IsBearShippingCost.find(@item.is_bear_shipping_cost)
