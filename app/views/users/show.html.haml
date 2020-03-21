@@ -75,9 +75,9 @@
 .mypage-right
   .mypage-icon
     .mypage-icon__image
-      - if @user.avatar.attached? #アタッチされた画像が存在する場合
+      - if @user.avatar.attached? # アタッチされた画像が存在する場合
         = image_tag @user.avatar, class: 'avatar'
-      - else  #アタッチされた画像がない場合デフォルト画像を表示
+      - else  # アタッチされた画像がない場合デフォルト画像を表示
         = image_tag "material/icon/avatar.jpg", class: "avatar"
       = form_for @user do |f|
         = f.label :avatar do
