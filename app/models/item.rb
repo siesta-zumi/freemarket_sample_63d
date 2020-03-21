@@ -2,6 +2,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :order
   has_many_attached :item_images
+  belongs_to :user
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
 
   ##########ActiveHash####################
   extend ActiveHash::Associations::ActiveRecordExtensions

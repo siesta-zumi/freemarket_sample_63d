@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
     @region = Prefecture.find(@item.region)
     @period = Period.find(@item.period)
     @items = Item.all
+    @like = Like.new
     @items_ids = @items.ids.sort
     current_item_index = @items_ids.index(@item.id)
     @is_first = current_item_index == 0 ? true : false
@@ -49,20 +50,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
     @item.update!(item_params)
     unless @item.save render edit_item_path, notice: "商品を編集できませんでした"
-
     end
   end
 
   def destroy
     @item.destroy
     unless @item.destroy render destroy_item_path, notice: "商品を削除できませんでした"
-      
     end
   end
 

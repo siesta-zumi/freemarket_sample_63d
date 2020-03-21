@@ -9,4 +9,11 @@ class User < ApplicationRecord
   has_one :identity_information
   has_one :shipping_address
   has_many :orders
+  has_many :items, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_items, through: :likes, source: :item
+  
+  def already_liked?(item)
+    self.likes.exists?(item_id: item.id)
+  end
 end
