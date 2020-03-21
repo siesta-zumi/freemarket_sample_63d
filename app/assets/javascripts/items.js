@@ -1,31 +1,39 @@
-$(document).ready(function(){
-  // 画像用のinputを生成する関数
-  const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
-                    <input class="js-file" type="file"
-                    name="item[item_images_attributes][${index}][image]"
-                    id="item_images_attributes_${index}_image"><br>
-                    <div class="js-remove">削除</div>
-                  </div>`;
-    return html;
+$(document).ready(function () {
+  $(".file").on('change', function(){
+     var fileprop = $(this).prop('files')[0],
+         find_img = $(this).parent().find('img'),
+         filereader = new FileReader(),
+         view_box = $(this).parent('.view_box');
+     
+    if(find_img.length){
+       find_img.nextAll().remove();
+       find_img.remove();
+    }
+     
+    var img = '<div class="img_view"><img alt="" class="img"><p><a href="#" class="img_del">画像を削除する</a></p></div>';
+     
+    view_box.append(img);
+ 
+    filereader.onload = function() {
+      view_box.find('img').attr('src', filereader.result);
+      img_del(view_box);
+    }
+    filereader.readAsDataURL(fileprop);
+  });
+   
+  function img_del(target){
+    target.find("a.img_del").on('click',function(){
+      var self = $(this),
+          parentBox = self.parent().parent().parent();
+      if(window.confirm('画像を削除します。\nよろしいですか？')){
+        setTimeout(function(){
+          parentBox.find('input[type=file]').val('');
+          parentBox.find('.img_view').remove();
+        } , 0);
+      }
+      return false;
+    });
   }
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-
-  $('#image-box').on('change', '.js-file', function(e) {
-    // fileIndexの先頭の数字を使ってinputを作る
-    $('#image-box').append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  });
-
-  $('#image-box').on('click', '.js-remove', function() {
-    $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
 });
 
 $(function(){

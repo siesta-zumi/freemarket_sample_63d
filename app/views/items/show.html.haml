@@ -1,13 +1,8 @@
 = render 'shared/header'
 .show-content
   .show-content__nav
-    %ul
-      %li 1
-      %li >
-      %li 2
-      %li >
-      %li 3
-      %li >
+  - breadcrumb :item, @item
+  = breadcrumbs separator: " &rsaquo; "
 
   .show-contents
     .show-contents__item
@@ -80,7 +75,7 @@
               = link_to "〇〇をもっと見る", class: "link-item"
 
   .to-buy-item
-    - unless current_user.id == @item.user.id
+    - unless user_signed_in? && current_user.id == @item.user.id
       = link_to order_path(@item.id) do
         = button_tag "購入画面へ進む", class: "buy-btn"
     - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
