@@ -1,11 +1,13 @@
 
+
 # ルート
 crumb :root do
   link "トップページ", root_path
 end
 
 crumb :items do
-  link "商品一覧", items_path
+  link "商品一覧", item_path
+  parent :root
 end
 
 crumb :item do |item|
