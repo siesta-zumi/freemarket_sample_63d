@@ -18,17 +18,12 @@
             -# 後で使用します。
             -#   子カテゴリー↓
             -# - parent.children.each do |child|
-            -#   =child.name  
+            -#   =child.name
             -#    孫カテゴリー↓
             -#   - child.children.each do |grandchild|
             -#     =grandchild.name
 
-      .brand-list
-        =link_to "ブランドから探す"
-        %ul
-          %li.hiddn ルイヴィトン
-          %li.hiddn シャネル
-          %li.hiddn ラルフローレン
+      #brand-list ブランドから探す
     .user-menu
       - if user_signed_in?
         .to-mypage
@@ -43,3 +38,14 @@
             = link_to "新規会員登録", new_user_registration_path, class: "header__right--btn"
           .login-user
             = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+
+.brand_modal
+  #brand-index
+    - @brands.each do|brand|
+      .brand-list
+        = link_to "#{brand.name}"
+    .brand-all
+      =link_to "ブランド一覧"
+    .close-modal
+      %i.fa.fa-2x.fa-times
+
