@@ -10,18 +10,17 @@
 
   .header__bottom
     .search-list
-      .category-list
-        #category-list カテゴリーを探す
-        .parent_category-list
-          - @parents.each do |parent|
-            = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
-            -# 後で使用します。
-            -#   子カテゴリー↓
-            -# - parent.children.each do |child|
-            -#   =child.name
-            -#    孫カテゴリー↓
-            -#   - child.children.each do |grandchild|
-            -#     =grandchild.name
+      #category-list カテゴリーを探す
+      -# .parent_category-list
+      -#   - @parents.each do |parent|
+      -#     = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
+          -# 後で使用します。
+          -#   子カテゴリー↓
+          -# - parent.children.each do |child|
+          -#   =child.name
+          -#    孫カテゴリー↓
+          -#   - child.children.each do |grandchild|
+          -#     =grandchild.name
 
       #brand-list ブランドから探す
     .user-menu
@@ -45,6 +44,16 @@
       .brand-list
         = link_to "#{brand.name}"
     .brand-all
+      =link_to "ブランド一覧"
+    .close-modal
+      %i.fa.fa-2x.fa-times
+
+.category_modal
+  #category-index
+    - @parents.each do|parent|
+      .category-list
+        = link_to "#{parent.name}"
+    .category-all
       =link_to "ブランド一覧"
     .close-modal
       %i.fa.fa-2x.fa-times
