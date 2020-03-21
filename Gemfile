@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -89,3 +90,5 @@ gem 'ancestry'
 gem 'aws-sdk-s3', require: false
 gem 'active_hash'
 gem 'rubocop', require: false
+gem "font-awesome-sass"
+gem "gretel"

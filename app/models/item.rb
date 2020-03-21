@@ -18,7 +18,9 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :category_id, presence: true
   validates :brand_id, presence: true
+  validates :user_id, presence: true
   validates :status, presence: true
+  validates :selling_status, presence: true
   validate :image_presence
 
   def image_presence

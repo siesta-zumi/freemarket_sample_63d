@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show]
+  resources :items, only: [:index, :new,:show,:create,:edit,:update,:destroy]
+  resources :users, only: [:show, :create, :update]
+  resources :categorys, only: :show
   resources :identity_informations, only: [:new, :create]
   resources :shipping_addresses, only: [:new, :create]
   resources :orders, only: [:show, :create]

@@ -79,11 +79,20 @@
 .mypage-right
   .mypage-icon
     .mypage-icon__image
-    = image_tag("material/icon/kate.jpg",alt: "item-img",class: "kate-jpg")
+      - if @user.avatar.attached? # アタッチされた画像が存在する場合
+        = image_tag @user.avatar, class: 'avatar'
+      - else  # アタッチされた画像がない場合デフォルト画像を表示
+        = image_tag "material/icon/avatar.jpg", class: "avatar"
+      = form_for @user do |f|
+        = f.label :avatar do
+          = icon('fas', 'image')
+          = f.file_field :avatar, style: "display: none;", class: 'avatar_file_field'
+        = f.submit 'Send', class: 'avatar-btn', disabled: true
+
     %p.icon-name
       = @user.name + "さん"
     %P.evaluation 評価　888　出品数　888
-    =image_tag("material/pict/umi.jpg",alt: "item-img",class: "umi-jpg")
+    = image_tag("material/pict/umi.jpg", alt: "item-img", class: "umi-jpg")
 
 
   %ul.tab
@@ -95,7 +104,7 @@
       .mypage-item-link__box
         .mypage-item-link__box__image
           = link_to item_path(item.id) do
-            = image_tag item.item_images.first , class: "mypage-item-image"
+            = image_tag item.item_images.first, class: "mypage-item-image"
         .mypage-item-link__box__text
           = link_to item_path(item.id), class: "mypage-item-text" do
             = "「 #{item.name} 」" + "を出品しました"

@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
     current_item_index = @items_ids.index(@item.id)
     @is_first = current_item_index == 0 ? true : false
     @is_last = current_item_index == @items_ids.length - 1 ? true : false
-
     previous_index = current_item_index - 1
     next_index = current_item_index + 1
 
@@ -55,12 +54,18 @@ class ItemsController < ApplicationController
   def update
     @item.update!(item_params)
     unless @item.save render edit_item_path, notice: "商品を編集できませんでした"
+    unless @item.save
+       render edit_item_path, notice: "商品を編集できませんでした"
+
     end
   end
 
   def destroy
     @item.destroy
     unless @item.destroy render destroy_item_path, notice: "商品を削除できませんでした"
+    unless @item.destroy
+       render item_path
+
     end
   end
 
