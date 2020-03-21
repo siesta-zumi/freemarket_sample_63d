@@ -35,3 +35,11 @@ $(function(){
     $(this).text('編集が完了いたしました').css('background-color','rgb(60,202,206)')}
 )});
 
+$(function(){
+  $('.back-to-root').hover(function(){
+    $(this).text('トップページへ戻る').css('background-color','blue')
+  },function(){
+    $(this).text('商品を削除いたしました').css('background-color','rgb(60,202,206)')}
+)});
+
+

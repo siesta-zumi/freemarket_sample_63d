@@ -1,2 +1,4 @@
-%h3 削除が完了いたしました。
-= link_to "トップページへ戻る", root_path
+= render 'shared/simple_header'
+.destroy_alert
+  = link_to "商品を削除いたしました", root_path, class: "back-to-root"
+=render 'shared/footer'
