@@ -4,6 +4,8 @@ class Item < ApplicationRecord
   has_many_attached :item_images
   belongs_to :user
   has_many :likes
+  
+  # 誰がいいねしたかなど表示するときに使う
   has_many :liked_users, through: :likes, source: :user
 
   ##########ActiveHash####################
