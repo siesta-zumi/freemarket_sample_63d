@@ -26,13 +26,13 @@ class ItemsController < ApplicationController
     @region = Prefecture.find(@item.region)
     @period = Period.find(@item.period)
     @items = Item.all
+    @like = Like.new
     @items_ids = @items.ids.sort
     current_item_index = @items_ids.index(@item.id)
     @is_first = current_item_index == 0 ? true : false
     @is_last = current_item_index == @items_ids.length - 1 ? true : false
     previous_index = current_item_index - 1
     next_index = current_item_index + 1
-
     @previous_item_id = @items_ids[previous_index]
     @next_item_id = @items_ids[next_index]
     
@@ -48,21 +48,19 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
     @item.update!(item_params)
     unless @item.save
        render edit_item_path, notice: "商品を編集できませんでした"
-
     end
   end
 
   def destroy
+    @item.destroy
     unless @item.destroy
        render item_path
-
     end
   end
 
@@ -72,7 +70,6 @@ class ItemsController < ApplicationController
       format.html
       format.json do
        @children = Category.find(params[:parent_id]).children
-       
       end
     end
   end
