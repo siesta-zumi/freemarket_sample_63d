@@ -6,3 +6,12 @@ $(function() {
     $('.brand_modal').fadeOut();
   });
 });
+
+$(function() {
+  $('#category-list').click(function(){
+    $('.category_modal').fadeIn();
+  });
+  $('.close-modal').click(function(){
+    $('.category_modal').fadeOut();
+  });
+});
