@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
+  resources :item_serches
   resources :items, only: [:index, :new,:show,:create,:edit,:update,:destroy]
   resources :users, only: [:show]
   resources :identity_informations, only: [:new, :create]
