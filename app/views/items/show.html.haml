@@ -5,7 +5,7 @@
   = breadcrumbs separator: " &rsaquo; "
   - if flash[:notice]
     .notice
-      %p= flash[:notice]
+      = flash[:notice]
 
   .show-contents
     .show-contents__item
@@ -72,7 +72,7 @@
           - if current_user
             = form_with model: [@item, @message], local: true do |form|
               = form.text_area :message, placeholder: "コメントする"
-              %p.caution
+              .caution
                 ※※※※※ 相手のことを考えてコメントしましょう！！ ※※※※※
               = form.submit "コメントする", id: "message_btn"
 
@@ -83,7 +83,7 @@
             - @messages.each do |message|
               .message-index
                 %strong
-                  = link_to message.user.name + "さん:", "/users/#{message.user_id}"
+                  = link_to message.user.name + "さん:", user_path(message.user_id)
                 = message.message
       .move_item
         %ul

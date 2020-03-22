@@ -2,9 +2,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.create(message_params)
     if @message.save
-      redirect_to "/items/#{@message.item.id}"
+      redirect_to item_path(message_params[:item_id])
     else 
-      redirect_to "/items/#{@message.item.id}",notice: 'メッセージを入力して下さい!!'
+      redirect_to item_path(message_params[:item_id]),notice: 'メッセージを入力して下さい!!'
     end
   end
 

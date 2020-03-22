@@ -102,7 +102,7 @@
         width: 100%;
         height: 100px;
       }
-      p.caution{
+      .caution{
         background-color: $furima-gray;
         padding: 10px;
         height: 50px;
@@ -156,21 +156,6 @@
       height: 200px;
       margin: 0 20px;
       overflow: scroll;
-
-      .message-index {
-        padding: 5px;
-
-        strong {
-          color: $furima-blue;
-          font-weight: 600;
-
-          & a {
-            color: $furima-blue;
-            cursor: pointer;
-            text-decoration: none;
-          }
-        }
-      }
     }
   }
 
@@ -233,10 +218,7 @@ a button:hover {
   line-height: 50px;
   text-align: center;
   width: 100%;
-
-  p {
-    color: $white;
-    font-size: 20px;
-    font-weight: bold;
-  }
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
 }
