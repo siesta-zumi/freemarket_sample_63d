@@ -1,4 +1,4 @@
-.actions{
+.actions {
   margin-bottom: 26px;
   padding-top: 20px;
   &__text{
@@ -11,8 +11,6 @@
     padding-left: 3px;
   }
 }
-
-
 
 .actions input[type="submit"] {
   border-style: none;
@@ -30,7 +28,7 @@
 
 .field{
   padding-top: 10px;
-  .field-label p span{
+  .field-label p span {
     display: inline-block;
     font-size: 10px;
     padding: 1px;

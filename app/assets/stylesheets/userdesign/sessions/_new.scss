@@ -7,11 +7,11 @@ h2.login {
   color: #111111;
 }
 
-.account{
+.account {
   width: 450px;
   height: 450px;
   margin: 60px auto 0;
-  .account_logo{
+  .account_logo {
     height: 49px;
     width: 185px;
     margin:  0 auto; 
@@ -21,7 +21,7 @@ h2.login {
      }
   }
   
-  .account-page{
+  .account-page {
     padding: 20px 26px;
     margin-top: 100px;
     border-radius: 4px;
@@ -29,16 +29,16 @@ h2.login {
 }
 
 
-  .account-page h1 span{
+  .account-page h1 span {
     font-weight: bold;
     font-size: 20px;
   }
 
-  .account-mail{
+  .account-mail {
     margin-bottom: 13px;
   }
 
-  .account-password{
+  .account-password {
     margin-bottom: 22px;
     &__form{
       display: flex;
@@ -49,7 +49,7 @@ h2.login {
       padding-top: 5px;
     }
   }
-  .account-login{
+  .account-login {
     margin-bottom: 26px;
     &__text{
       margin-top: 18px;
