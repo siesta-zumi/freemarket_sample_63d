@@ -69,9 +69,9 @@
 
       .show-contents__comment
         .show-contents__comment--area
-          -if current_user
-            = form_with model: [@item, @message], local: true do|form|
-              = form.text_area :message, placeholder:"コメントする"
+          - if current_user
+            = form_with model: [@item, @message], local: true do |form|
+              = form.text_area :message, placeholder: "コメントする"
               %p.caution
                 ※※※※※ 相手のことを考えてコメントしましょう！！ ※※※※※
               = form.submit "コメントする", id: "message_btn"
@@ -83,7 +83,7 @@
             - @messages.each do |message|
               .message-index
                 %strong
-                  = link_to message.user.name + "さん:","/users/#{message.user_id}"
+                  = link_to message.user.name + "さん:", "/users/#{message.user_id}"
                 = message.message
       .move_item
         %ul

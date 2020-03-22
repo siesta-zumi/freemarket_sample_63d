@@ -141,44 +141,50 @@
       }
     }
   }
-  .messages{
+  .messages {
     margin-top: 20px;
+
     & h4 {
       font-size: 20px;
-      padding: 8px;
       margin: 5px 15px;
+      padding: 8px;
     }
-    .messages-area{
-      margin: 0 20px;
-      height: 200px;
+
+    .messages-area {
       background-color: $white;
-      border: solid 2px #000;
+      border: solid 2px $furima-black;
+      height: 200px;
+      margin: 0 20px;
       overflow: scroll;
-      
-      .message-index{
+
+      .message-index {
         padding: 5px;
-        strong{
-          color:$furima-blue;
+
+        strong {
+          color: $furima-blue;
           font-weight: 600;
+
           & a {
             color: $furima-blue;
-            text-decoration: none;
             cursor: pointer;
+            text-decoration: none;
           }
         }
-        
       }
     }
-    
   }
-  .move_item{
+
+  .move_item {
     margin-top: 10px;
-    ul{
+
+    ul {
       display: flex;
       justify-content: space-between;
-      li.link{
+
+      li.link {
         padding: 20px;
-        a{
+
+        a {
           color: $furima-blue;
           text-decoration: none;
         }
@@ -222,12 +228,13 @@ a button:hover {
   cursor: pointer;
 }
 .notice{
+  background-color: #ffa500;
   height: 50px;
   line-height: 50px;
-  width: 100%;
-  background-color: orange;
   text-align: center;
-  p{
+  width: 100%;
+
+  p {
     color: $white;
     font-size: 20px;
     font-weight: bold;
