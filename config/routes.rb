@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :likes, only: [:create, :destroy]
+    resources :messages, only: [:create]
   end
   
   resources :users, only: [:show]
