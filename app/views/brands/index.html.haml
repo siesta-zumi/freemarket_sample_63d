@@ -1,0 +1,10 @@
+.wrapper
+  = render "shared/simple_header"
+  .brand-main
+    .brand-box
+      %h1.brand-title
+        ブランド一覧
+      .brand-list
+        - @brand.each do |brand|
+          = brand.name
+  = render "shared/footer"
