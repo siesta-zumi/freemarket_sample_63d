@@ -63,65 +63,46 @@
       width: 50%;
       display: flex;
       
-      a{
+      a {
         color: #000;
       }
-      a:hover{
+      a:hover {
         color: $furima-blue;
         ul{
           display: block;
         }
       }
-      #category-list{
+      #category-list {
         width: 150px;
         height: 35px;
         line-height: 35px;
         text-align: center;
         margin-right: 20px;
-        &:hover{
+
+        &:hover {
           color: $furima-blue;
         }
-        // #category-list{
-        //   font-size: 16px;
-        //   font-weight: bold; 
-        //   text-align: left;
-        //   height: 500px;
-        //   position: relative;
-        // }
-        // .parent_category-list{
-        //   display: none;
-        // }
-        // #category-list:hover+.parent_category-list {
-        //   display: inline-block;
-        //   display: none;
-        //   background-color:white;
-        //   width: 200px;
-        //   height: 500px;
-        //   display: flex;
-        //   flex-direction: column;
-        //   text-align: left;
-        //   font-size: 15px;
-        //   font-weight:500;
-        //   position: absolute;
-        //   top: 100px;
-        // }
       }
-      #brand-list{
+
+      #brand-list {
         width: 150px;
         height: 35px;
         line-height: 35px;
         text-align: center;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
           color: $furima-blue;
         }
       }
     }
-    .user-menu{
+
+    .user-menu {
       width: 70%;
       display: flex;
       justify-content: flex-end;
-      .logout-user{
+
+      .logout-user {
         display: block;
         width: 120px;
         height: 35px;
@@ -130,13 +111,16 @@
         background-color:rgb(234,53,45);
         border-radius: 5px;
         margin-right: 20px;
-        a{
+
+        a {
           color: #fff;
         }
       }
-      .new-user{
+
+      .new-user {
         display: flex;
-        .create-user{
+
+        .create-user {
           display: block;
           width: 120px;
           margin-left: 20px;
@@ -148,7 +132,8 @@
           margin-right: 20px;
           color: #fff;
         }
-        .login-user{
+
+        .login-user {
           width: 120px;
           height: 35px;
           line-height: 35px;
@@ -184,99 +169,109 @@
     }
   }
 }
-.brand_modal{
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+
+.brand_modal {
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
+  bottom: 0;
   display: none;
-  #brand-index{
-    position: absolute;
-    top: 15%;
-    left: 15%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  #brand-index {
     background-color: $furima-gray;
     border: solid 3px $furima-blue;
-    padding: 0 0 40px;
     border-radius: 10px 0;
-    width: 500px;
     height: auto;
+    left: 15%;
+    padding: 0 0 40px;
+    position: absolute;
     text-align: center;
-    .index-title{
+    top: 15%;
+    width: 500px;
+
+    .index-title {
+      background-color: $white;
+      border-bottom: solid 1px $furima-blue;
+      color: gray;
       height: 40px;
       line-height: 40px;
       width: 100%;
-      background-color: #fff;
-      color: gray;
-      border-bottom: solid 1px $furima-blue;
+
       & .title {
         font-weight: 600;
         letter-spacing: 10px;
       }
+
       .close {
-        position: absolute;
-        top: 0px;
-        right: 10px;
         color: gray;
         cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 0;
       }
-
     }
   }
+
   .brand-list a {
     @include modal_list();
   }
-  .brand-all a{
+
+  .brand-all a {
     @include modal_list();
   }
 }
 
-.category_modal{
-  position: fixed;
-  top: 0;
-  right: 0;
+.category_modal {
+  background-color: rgba(0, 0, 0, .6);
   bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
   display: none;
-  #category-index{
-    position: absolute;
-    top: 15%;
-    left: 10%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  #category-index {
     background-color: $furima-gray;
     border: solid 3px $furima-blue;
-    padding: 0 0 40px;
     border-radius: 10px;
-    width: 450px;
     height: auto;
+    left: 10%;
+    padding: 0 0 40px;
+    position: absolute;
     text-align: center;
-    .index-title{
+    top: 15%;
+    width: 450px;
+
+    .index-title {
+      background-color: $white;
+      border-bottom: solid 1px $furima-blue;
+      color: gray;
       height: 40px;
       line-height: 40px;
       width: 100%;
-      background-color: $white;
-      color: gray;
-      border-bottom: solid 1px $furima-blue;
+
       & .title {
         font-weight: 600;
         letter-spacing: 10px;
       }
+
       .close {
-        position: absolute;
-        top: 0px;
-        right: 10px;
         color: gray;
         cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 0;
       }
     }
 
     .category-list a {
       @include modal_list();
     }
-    .category-all a{
+    .category-all a {
       @include modal_list();
     }
   }

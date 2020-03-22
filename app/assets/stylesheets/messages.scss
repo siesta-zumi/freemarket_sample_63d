@@ -1,0 +1,18 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message-index {
+  padding: 5px;
+
+  strong {
+    color: $furima-blue;
+    font-weight: 600;
+
+    & a {
+      color: $furima-blue;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}

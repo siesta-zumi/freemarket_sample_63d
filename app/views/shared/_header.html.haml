@@ -10,18 +10,7 @@
 
   .header__bottom
     .search-list
-      #category-list カテゴリーを探す
-      -# .parent_category-list
-      -#   - @parents.each do |parent|
-      -#     = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
-          -# 後で使用します。
-          -#   子カテゴリー↓
-          -# - parent.children.each do |child|
-          -#   =child.name
-          -#    孫カテゴリー↓
-          -#   - child.children.each do |grandchild|
-          -#     =grandchild.name
-
+      #category-list カテゴリーから探す
       #brand-list ブランドから探す
     .user-menu
       - if user_signed_in?
@@ -48,7 +37,7 @@
       .brand-list
         = link_to "#{brand.name}"
     .brand-all
-      =link_to "ブランド一覧"
+      = link_to "ブランド一覧"
 
 .category_modal
   #category-index
@@ -58,7 +47,7 @@
         %p.close CLOSE
       - @parents.each do|parent|
         .category-list
-          = link_to "#{parent.name}", class: "parent_category",id: "#{parent.id}"
+          = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
       .category-all
-        =link_to "カテゴリー 一覧"
+        = link_to "カテゴリー 一覧"
 
