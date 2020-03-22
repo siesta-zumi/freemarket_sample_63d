@@ -74,8 +74,8 @@
               = form.submit "コメントする", id: "message_btn"
 
       .messages
+        %h4 <コメント一覧>
         .messages-area
-          %h4 <コメント一覧>
           - if @messages
             - @messages.each do |message|
               .message-index

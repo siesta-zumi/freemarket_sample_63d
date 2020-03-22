@@ -143,16 +143,18 @@
   }
   .messages{
     margin-top: 20px;
+    & h4 {
+      font-size: 20px;
+      padding: 8px;
+      margin: 5px 15px;
+    }
     .messages-area{
-      margin: 20px 20px;
+      margin: 0 20px;
       height: 200px;
       background-color: $white;
       border: solid 2px #000;
       overflow: scroll;
-      & h4 {
-        font-size: 20px;
-        padding: 8px;
-      }
+      
       .message-index{
         padding: 5px;
         strong{
