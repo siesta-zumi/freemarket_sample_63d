@@ -4,7 +4,10 @@
     .brand-box
       %h1.brand-title
         ブランド一覧
+      .brand-list
+        - @brands.each do |brand|
+          = link_to brand.name
       - @brands.each do |brand|
-        .brand-list
+        .brands
           = brand.name
   = render "shared/footer"

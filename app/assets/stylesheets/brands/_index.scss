@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+.brand-main {
+  background-color: $back-color;
+  padding: 60px;
+
+  .brand-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 700px;
+
+    .brand-title {
+      color: $letter-color;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    .brand-list {
+
+      a {
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: $box-shadow1px;
+        color: $letter-color;
+        float: left;
+        font-size: 16px;
+        line-height: 40px;
+        margin: 5px;
+        overflow-wrap: break-word;
+        padding: 5px 30px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.brands {
+  background-color: #f00;
+  border-radius: 3px;
+  color: $white;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  margin-top: 30px;
+  padding: 5px 20px;
+  text-decoration: none;
+  width: 700px;
+}
+
