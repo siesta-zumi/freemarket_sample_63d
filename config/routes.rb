@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show]
   resources :users, only: [:show, :create, :update]
-  resources :categorys, only: :show
+  resources :categorys, only: [:index]
   resources :identity_informations, only: [:new, :create]
   resources :shipping_addresses, only: [:new, :create]
   resources :orders, only: [:show, :create]

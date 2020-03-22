@@ -11,20 +11,9 @@
   .header__bottom
     .search-list
       .category-list
-        #category-list カテゴリーを探す
-        .parent_category-list
-          - @parents.each do |parent|
-            = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
-            -# 後で使用します。
-            -#   子カテゴリー↓
-            -# - parent.children.each do |child|
-            -#   =child.name  
-            -#    孫カテゴリー↓
-            -#   - child.children.each do |grandchild|
-            -#     =grandchild.name
-
+        = link_to "カテゴリーを探す", categorys_path
       .brand-list
-        =link_to "ブランドから探す"
+        = link_to "ブランドから探す"
         %ul
           %li.hiddn ルイヴィトン
           %li.hiddn シャネル
