@@ -78,8 +78,6 @@
               %li.link
                 - if !@is_first
                   = link_to "後ろの商品>", item_path(@previous_item_id)
-            .link-item
-              = link_to "〇〇をもっと見る", class: "link-item"
 
   .to-buy-item
     - unless user_signed_in? && current_user.id == @item.user.id
