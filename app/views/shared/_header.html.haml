@@ -35,7 +35,7 @@
         %p.close CLOSE
       - @brands.each do|brand|
         .brand-list
-          = link_to "#{brand.name}"
+          = link_to brand.name
       .brand-all
         = link_to "ブランド一覧", brands_path
 
@@ -47,7 +47,7 @@
         %p.close CLOSE
       - @parents.each do|parent|
         .category-list
-          = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
+          = link_to parent.name, class: "parent_category", id: "#{parent.id}"
       .category-all
         = link_to "カテゴリー 一覧", categorys_path
 
