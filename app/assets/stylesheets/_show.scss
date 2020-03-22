@@ -95,12 +95,7 @@
   }
   &__comment{
     margin-top: 10px;
-    height: 500px;
-    position: relative;
     &--area{
-      position: absolute;
-      top: 30px;
-      background-color: $furima-red;
       width: 100%;
       padding: 20px;
       textarea{
@@ -113,8 +108,9 @@
         height: 50px;
         width: 90%;
         margin: 10px auto;
+        text-align: center;
       }
-      button{
+      #message_btn {
         background-color: $furima-green;
         width: 300px;
         height: 50px;
@@ -140,6 +136,49 @@
         padding: 20px;
         a{
           color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .messages{
+    margin-top: 20px;
+    .messages-area{
+      margin: 20px 20px;
+      height: 200px;
+      background-color: $white;
+      border: solid 2px #000;
+      overflow: scroll;
+      & h4 {
+        font-size: 20px;
+        padding: 8px;
+      }
+      .message-index{
+        padding: 5px;
+        strong{
+          color:$furima-blue;
+          font-weight: 600;
+          & a {
+            color: $furima-blue;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
+    
+  }
+  .move_item{
+    margin-top: 10px;
+    background-color: yellow;
+    ul{
+      display: flex;
+      justify-content: space-between;
+      li.link{
+        padding: 20px;
+        a{
+          color: $furima-blue;
           text-decoration: none;
         }
       }
