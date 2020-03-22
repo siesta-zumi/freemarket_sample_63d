@@ -22,6 +22,13 @@
         %p (税込)送料込み
     .show-contents__info
       .show-contents__info--name
+        = @item.name
+        %h3
+          いいね件数: #{@item.likes.count}
+        - if current_user.already_liked?(@item)
+          = button_to 'いいねを取り消す', item_like_path(@item), method: :delete
+        - else
+          = button_to 'いいね', item_likes_path(@item)
       %table
         %tr
           %th 出品者
