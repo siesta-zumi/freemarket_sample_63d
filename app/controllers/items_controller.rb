@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_parents, only: [:index,:new,:show,:create, :edit]
-  before_action :authenticate_user!, only: [:new] #ログインしていないユーザーはnewアクションの前にログイン画面に遷移
+  before_action :authenticate_user!, only: [:new, :show] #ログインしていないユーザーはnewとshowアクションの前にログイン画面に遷移
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   PER = 6
