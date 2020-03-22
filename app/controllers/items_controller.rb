@@ -22,8 +22,8 @@ class ItemsController < ApplicationController
     @message = Message.new
     @messages = @item.messages.includes(:user)
     @category = Category.find(@item.category_id)
-    
-    @brand = Brand.find(@item.brand_id)
+    @brands = Brand.all
+    @brand = @brands.find(@item.brand_id)
     @status = Status.find(@item.status)
     @cost = IsBearShippingCost.find(@item.is_bear_shipping_cost)
     @region = Prefecture.find(@item.region)

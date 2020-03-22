@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @items = @user.items
+    @brands = Brand.all
   end
 
 

@@ -33,11 +33,11 @@
       %p.title ブランドで検索
       .close-modal
         %p.close CLOSE
-    - @brands.each do|brand|
-      .brand-list
-        = link_to "#{brand.name}"
-    .brand-all
-      = link_to "ブランド一覧"
+      - @brands.each do|brand|
+        .brand-list
+          = link_to "#{brand.name}"
+      .brand-all
+        = link_to "ブランド一覧", brands_path
 
 .category_modal
   #category-index
@@ -49,5 +49,5 @@
         .category-list
           = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
       .category-all
-        = link_to "カテゴリー 一覧"
+        = link_to "カテゴリー 一覧", categorys_path
 

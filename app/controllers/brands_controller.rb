@@ -1,5 +1,5 @@
 class BrandsController < ApplicationController
-  def indeex
-    @brand = Brand.all
+  def index
+    @brands = Brand.all
   end
 end
