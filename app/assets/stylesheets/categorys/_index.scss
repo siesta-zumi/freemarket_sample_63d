@@ -4,13 +4,11 @@
 
 .category-main {
   background-color: $back-color;
-  height: 900px;
   padding: 60px;
 
   .category-box {
     display: flex;
     flex-direction: column;
-    height: 250px;
     margin: 0 auto;
     width: 700px;
     .category-title {
@@ -35,29 +33,36 @@
       text-decoration: none;
     }
 
-    &__ladys {
-      background-color: #f00;
-      border-radius: 3px;
-      color: #fff;
-      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-      font-size: 20px;
-      font-weight: bold;
-      height: 40px;
-      margin-top: 30px;
-      padding: 5px 20px;
-      width: 700px;
-    }
-
-    &__ladys__child {
+    &__child {
       background-color: #fff;
       color: $letter-color;
       display: inline-block;
       font-size: 15px;
-      font-weight: bold;
-      height: 900px;
+      font-weight: 600;
       padding: 30px;
       width: 700px;
+      word-spacing:5px;
+    }
+    &__indirects {  
+      color: #00BFFF;
+      padding: 20px;
+      font-weight: 500;
     }
     }
   }
+}
+.parents{
+  height: 30px;
+  width: 700px;
+  background-color: #f00;
+  border-radius: 3px;
+  color: #fff;
+  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  margin-top: 30px;
+  padding: 5px 20px;
+  width: 700px;
+  text-decoration: none;
 }
