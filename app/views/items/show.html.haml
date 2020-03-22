@@ -3,6 +3,9 @@
   .show-content__nav
   - breadcrumb :item, @item
   = breadcrumbs separator: " &rsaquo; "
+  - if flash[:notice]
+    .notice
+      = flash[:notice]
 
   .show-contents
     .show-contents__item
@@ -66,20 +69,30 @@
 
       .show-contents__comment
         .show-contents__comment--area
-          %form_for
-            = text_area_tag ""
-            %p.caution
-              相手のことを考えてコメントしましょう！！
-            = button_tag "コメントする"
-            %ul
-              %li.link
-                - if !@is_last
-                  = link_to "<前の商品", item_path(@next_item_id)
-              %li.link
-                - if !@is_first
-                  = link_to "後ろの商品>", item_path(@previous_item_id)
-            .link-item
-              = link_to "〇〇をもっと見る", class: "link-item"
+          - if current_user
+            = form_with model: [@item, @message], local: true do |form|
+              = form.text_area :message, placeholder: "コメントする"
+              .caution
+                ※※※※※ 相手のことを考えてコメントしましょう！！ ※※※※※
+              = form.submit "コメントする", id: "message_btn"
+
+      .messages
+        %h4 <コメント一覧>
+        .messages-area
+          - if @messages
+            - @messages.each do |message|
+              .message-index
+                %strong
+                  = link_to message.user.name + "さん:", user_path(message.user_id)
+                = message.message
+      .move_item
+        %ul
+          %li.link
+            - if !@is_last
+              = link_to "<前の商品", item_path(@next_item_id)
+          %li.link
+            - if !@is_first
+              = link_to "後ろの商品>", item_path(@previous_item_id)
 
   .to-buy-item
     - unless user_signed_in? && current_user.id == @item.user.id
@@ -95,3 +108,5 @@
 
 
 = render 'shared/footer'
+
+

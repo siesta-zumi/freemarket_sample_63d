@@ -1,0 +1,19 @@
+.wrapper
+  = render "shared/header"
+  .category-main
+    .category-box
+      %h1.category-title
+        カテゴリー一覧
+      .category-list
+        - @parents.each do |parent|
+          = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
+      - @parents.each do |parent|
+        .parents
+          =  parent.name
+        .category-list__child
+          - parent.children.each do |child|
+            = child.name
+          .category-list__indirects
+            - parent.indirects.each do |indirects|
+              = indirects.name
+= render "shared/footer"
