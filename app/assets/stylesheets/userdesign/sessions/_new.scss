@@ -28,7 +28,6 @@ h2.login {
     border: 1px #ddd solid;
 }
 
-
   .account-page h1 span {
     font-weight: bold;
     font-size: 20px;
@@ -36,6 +35,18 @@ h2.login {
 
   .account-mail {
     margin-bottom: 13px;
+    padding-top: 20px;
+  }
+  
+  .account-mail p span {
+    @include not-null();
+    margin-left: 0;
+  }
+
+  
+  .account-password__form-left p span {
+    @include not-null();
+    margin-left: 0;
   }
 
   .account-password {
@@ -46,7 +57,7 @@ h2.login {
     &__form-right{
       font-size: 2px;
       padding-left: 10px;
-      padding-top: 5px;
+      padding-top: 27px;
     }
   }
   .account-login {
