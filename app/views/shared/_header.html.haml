@@ -10,18 +10,7 @@
 
   .header__bottom
     .search-list
-      #category-list カテゴリーを探す
-      -# .parent_category-list
-      -#   - @parents.each do |parent|
-      -#     = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
-          -# 後で使用します。
-          -#   子カテゴリー↓
-          -# - parent.children.each do |child|
-          -#   =child.name
-          -#    孫カテゴリー↓
-          -#   - child.children.each do |grandchild|
-          -#     =grandchild.name
-
+      #category-list カテゴリーから探す
       #brand-list ブランドから探す
     .user-menu
       - if user_signed_in?

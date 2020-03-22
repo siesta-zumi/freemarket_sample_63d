@@ -78,33 +78,11 @@
         line-height: 35px;
         text-align: center;
         margin-right: 20px;
+        
         &:hover{
           color: $furima-blue;
         }
-        // #category-list{
-        //   font-size: 16px;
-        //   font-weight: bold; 
-        //   text-align: left;
-        //   height: 500px;
-        //   position: relative;
-        // }
-        // .parent_category-list{
-        //   display: none;
-        // }
-        // #category-list:hover+.parent_category-list {
-        //   display: inline-block;
-        //   display: none;
-        //   background-color:white;
-        //   width: 200px;
-        //   height: 500px;
-        //   display: flex;
-        //   flex-direction: column;
-        //   text-align: left;
-        //   font-size: 15px;
-        //   font-weight:500;
-        //   position: absolute;
-        //   top: 100px;
-        // }
+
       }
       #brand-list{
         width: 150px;
