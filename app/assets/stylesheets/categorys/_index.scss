@@ -20,22 +20,22 @@
     }
 
     .category-list {
-      a {
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 1px 1px 1px 1px rgba(14, 14, 14, .0580392);
-        color: $letter-color;
-        float: left;
-        font-size: 16px;
-        line-height: 40px;
-        margin: 5px;
-        overflow-wrap: break-word;
-        padding: 5px 30px;
-        text-decoration: none;
-      }
+    a {
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: $box-shadow1px;
+      color: $letter-color;
+      float: left;
+      font-size: 16px;
+      line-height: 40px;
+      margin: 5px;
+      overflow-wrap: break-word;
+      padding: 5px 30px;
+      text-decoration: none;
+    }
 
     &__child {
-      background-color: #fff;
+      background-color: $white;
       color: $letter-color;
       display: inline-block;
       font-size: 15px;
@@ -45,11 +45,11 @@
       word-spacing: 5px;
     }
 
-      &__indirects {
-        color: #00bfff;
-        font-weight: 500;
-        padding: 20px;
-      }
+    &__indirects {
+      color: $light-blue;
+      font-weight: 500;
+      padding: 20px;
+    }
     }
   }
 }
