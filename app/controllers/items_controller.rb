@@ -75,9 +75,7 @@ class ItemsController < ApplicationController
     item_params_variable.delete("item_image_ids")
 
     # 更新を実行する。 更新に失敗した場合は商品編集画面へリダイレクトさせる
-    unless @item.update(item_params_variable)
-      redirect_to edit_item_path(@item.id), notice: "商品を編集できませんでした"
-    end
+    redirect_to edit_item_path(@item.id), notice: "商品を編集できませんでした" unless @item.update(item_params_variable)
 
   end
 
