@@ -3,6 +3,9 @@
   .show-content__nav
   - breadcrumb :item, @item
   = breadcrumbs separator: " &rsaquo; "
+  - if flash[:notice]
+    .notice
+      %p= flash[:notice]
 
   .show-contents
     .show-contents__item

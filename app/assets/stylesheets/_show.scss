@@ -222,3 +222,15 @@
 a button:hover {
   cursor: pointer;
 }
+.notice{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background-color: orange;
+  text-align: center;
+  p{
+    color: $white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
