@@ -7,7 +7,6 @@
       .category-list
         - @parents.each do |parent|
           = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
-     
       - @parents.each do |parent|
         .parents
           =  parent.name
@@ -17,5 +16,4 @@
           .category-list__indirects
             - parent.indirects.each do |indirects|
               = indirects.name
-         
 = render "shared/footer"
