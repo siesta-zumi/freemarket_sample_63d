@@ -12,6 +12,8 @@
   }
 }
 
+
+
 .actions input[type="submit"] {
   border-style: none;
   width: 100%;
@@ -28,7 +30,19 @@
 
 .field{
   padding-top: 10px;
+  .field-label p span{
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px;
+    text-decoration: none;
+    background: #ec0b0b;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 1px #627295;
+    border-radius: 1px;
+  }
 }
+
+
 
 .account-page_existing{
   padding-top: 10px;
