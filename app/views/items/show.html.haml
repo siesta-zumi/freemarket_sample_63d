@@ -66,11 +66,10 @@
 
       .show-contents__comment
         .show-contents__comment--area
-          %form_for
-            = text_area_tag ""
-            %p.caution
-              相手のことを考えてコメントしましょう！！
-            = button_tag "コメントする"
+          -if current_user
+            = form_with model: [@item, @message], local: true do|form|
+              = form.text_area :message, placeholder:"コメントする"
+              = form.submit "コメントする"
             %ul
               %li.link
                 - if !@is_last
