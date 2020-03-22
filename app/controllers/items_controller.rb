@@ -52,11 +52,34 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update!(item_params)
-    unless @item.save
-       render edit_item_path, notice: "商品を編集できませんでした"
 
+    # 元々の画像を全削除かつ追加画像の投稿なしの場合、編集画面にリダイレクトさせる
+    if item_params[:item_image_ids] != nil && @item.item_images.length == item_params[:item_image_ids].length && item_params[:item_images] == nil
+      redirect_to edit_item_path(@item.id), notice: "商品を編集できませんでした"
+      return
     end
+
+    # item_paramsの中身を変数に格納する
+    item_params_variable = item_params
+
+    # item_paramsの中のitem_image_ids（削除する画像のid）を取得する。
+    delete_image_ids = item_params_variable[:item_image_ids]
+
+    # @itemにアタッチされている画像を削除する
+    unless delete_image_ids == nil
+      delete_image_ids.each do |delete_image_ids|
+        @item.item_images.find(delete_image_ids).purge
+      end
+    end
+
+    # item_params_variableから不要なitem_image_ids（削除する画像のid）
+    item_params_variable.delete("item_image_ids")
+
+    # 更新を実行する。 更新に失敗した場合は商品編集画面へリダイレクトさせる
+    unless @item.update(item_params_variable)
+      redirect_to edit_item_path(@item.id), notice: "商品を編集できませんでした"
+    end
+
   end
 
   def destroy
@@ -79,7 +102,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: []).merge(user_id:current_user.id)
+    params.require(:item).permit(:name,:description,:status,:is_bear_shipping_cost,:region,:period,:price,:selling_status,:category_id,:brand_id,item_images: [], item_image_ids: []).merge(user_id:current_user.id)
   end
 
   def set_item
