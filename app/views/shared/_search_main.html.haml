@@ -1,2 +1,10 @@
-- @items.each do |item|
-  = item.name
+.item-contents
+  .item-main
+    - @items.each do |item|
+      .item-image
+        = link_to item_path(item.id) do
+          =image_tag item.item_images.first ,class:"img",height:200,width:240
+      .item-detail 
+        = item.name
+        = item.price.to_s + "円"
+        
