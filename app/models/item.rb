@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_one :order
   has_many_attached :item_images
   belongs_to :user
+  belongs_to :brand
   has_many :likes
   has_many :messages
   

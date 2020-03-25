@@ -1,0 +1,13 @@
+.wrapper
+  = render "shared/header"
+  .brand-main
+    .brand-box
+      %h1.brand-title
+        ブランド一覧
+      .brand-list
+        - @brands.each do |brand|
+          = link_to brand.name
+      - @brands.each do |brand|
+        .brands
+          = brand.name
+  = render "shared/footer"

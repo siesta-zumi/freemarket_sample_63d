@@ -62,37 +62,47 @@
       font-weight: bold;
       width: 50%;
       display: flex;
-      li{
-        background-color: #fff;
-        display:none;
-      }
-      a{
+
+      a {
         color: #000;
       }
-      a:hover{
+      a:hover {
         color: $furima-blue;
         ul{
           display: block;
         }
       }
-      .category-list{
+      #category-list {
         width: 150px;
         height: 35px;
         line-height: 35px;
         text-align: center;
+        margin-right: 20px;
+
+        &:hover {
+          color: $furima-blue;
+        }
       }
-      .brand-list{
+
+      #brand-list {
         width: 150px;
         height: 35px;
         line-height: 35px;
         text-align: center;
+        cursor: pointer;
+
+        &:hover {
+          color: $furima-blue;
+        }
       }
     }
-    .user-menu{
+
+    .user-menu {
       width: 70%;
       display: flex;
       justify-content: flex-end;
-      .logout-user{
+
+      .logout-user {
         display: block;
         width: 120px;
         height: 35px;
@@ -101,13 +111,16 @@
         background-color:rgb(234,53,45);
         border-radius: 5px;
         margin-right: 20px;
-        a{
+
+        a {
           color: #fff;
         }
       }
-      .new-user{
+
+      .new-user {
         display: flex;
-        .create-user{
+
+        .create-user {
           display: block;
           width: 120px;
           margin-left: 20px;
@@ -119,7 +132,8 @@
           margin-right: 20px;
           color: #fff;
         }
-        .login-user{
+
+        .login-user {
           width: 120px;
           height: 35px;
           line-height: 35px;
@@ -155,3 +169,111 @@
     }
   }
 }
+
+.brand_modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  #brand-index {
+    background-color: $furima-gray;
+    border: solid 3px $furima-blue;
+    border-radius: 10px 0;
+    height: auto;
+    left: 15%;
+    padding: 0 0 40px;
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    width: 500px;
+
+    .index-title {
+      background-color: $white;
+      border-bottom: solid 1px $furima-blue;
+      color: gray;
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+
+      & .title {
+        font-weight: 600;
+        letter-spacing: 10px;
+      }
+
+      .close {
+        color: gray;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 0;
+      }
+    }
+  }
+
+  .brand-list a {
+    @include modal_list();
+  }
+
+  .brand-all a {
+    @include modal_list();
+  }
+}
+
+.category_modal {
+  background-color: rgba(0, 0, 0, .6);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  #category-index {
+    background-color: $furima-gray;
+    border: solid 3px $furima-blue;
+    border-radius: 10px;
+    height: auto;
+    left: 10%;
+    padding: 0 0 40px;
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    width: 450px;
+
+    .index-title {
+      background-color: $white;
+      border-bottom: solid 1px $furima-blue;
+      color: gray;
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+
+      & .title {
+        font-weight: 600;
+        letter-spacing: 10px;
+      }
+
+      .close {
+        color: gray;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 0;
+      }
+    }
+
+    .category-list a {
+      @include modal_list();
+    }
+    .category-all a {
+      @include modal_list();
+    }
+  }
+}
+

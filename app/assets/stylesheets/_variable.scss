@@ -181,3 +181,18 @@ $box-shadow1px: 1px 1px 1px rgba(14, 14, 14, .0580392);
     width: 400px;
   }
 }
+@mixin modal_list{
+  color: $furima-blue;
+  background-color: $white;
+  border:solid 1px $furima-blue;
+  border-radius: 4px;
+  font-weight: 400;
+  padding: 3px 10px;
+  margin: 8px;
+  float: left;
+  text-decoration: none;
+  &:hover{
+    color: $furima-red;
+    background-color: yellow;
+  }
+}
