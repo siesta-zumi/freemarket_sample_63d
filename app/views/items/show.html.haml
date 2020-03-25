@@ -70,7 +70,7 @@
       .show-contents__comment
         .show-contents__comment--area
           - if current_user
-            = form_with model: [@item, @message], local: true do |form|
+            = form_with model: [@item, @message], local: true, id: "item-message" do |form|
               = form.text_area :message, placeholder: "コメントする"
               .caution
                 ※※※※※ 相手のことを考えてコメントしましょう！！ ※※※※※
@@ -82,8 +82,7 @@
           - if @messages
             - @messages.each do |message|
               .message-index
-                %strong
-                  = link_to message.user.name + "さん:", user_path(message.user_id)
+                = message.user.name + "さん:"
                 = message.message
       .move_item
         %ul
