@@ -25,3 +25,17 @@ $(function() {
   });
 
 
+$(function(){
+  $('#item_price').on("change",function(){
+    var number = $('#item_price').val();
+    var price =  parseInt(number);
+    var commission = price  * 0.1
+    var profit = price  * 0.9
+    var commission = commission.toLocaleString();
+    var profit = profit.toLocaleString();
+    $(".commission-input").text(commission)
+    $(".profit-input").text(profit)
+});
+});
+
+
