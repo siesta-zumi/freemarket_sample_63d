@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_053729) do
     t.integer "region", null: false
     t.integer "period", null: false
     t.integer "price", null: false
-    t.integer "selling_status", default: 0
+    t.integer "selling_status", default: 0, null: false
     t.bigint "category_id", null: false
     t.bigint "brand_id", null: false
     t.datetime "created_at", null: false
@@ -141,8 +141,8 @@ ActiveRecord::Schema.define(version: 2020_03_22_053729) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
