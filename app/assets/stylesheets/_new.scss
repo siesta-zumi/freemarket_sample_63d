@@ -211,8 +211,8 @@
     }
 
     .price-input{
-      height: 350px;
       border: 1px solid #f5f5f5;
+      height: 350px;
       padding: 40px;
       position: relative;
       h5{
@@ -248,30 +248,35 @@
           text-align: right;
       }
     }
-    .commission-box{
+    .commission-box {
+      display: flex;
       position: absolute;
       right: 20px;
       top: 170px;
-      display: flex;
-      p{
-        color: gray;
+
+      p {
+        color: $gray;
         font-size: 14px;
         margin: 10px;
       }
+
       .commission-input {
         margin: 10px 50px 0 160px;
       }
     }
+
     .profit-box {
+      display: flex;
       position: absolute;
       right: 20px;
       top: 250px;
-      display: flex;
-      p{
-        color: gray;
+
+      p {
+        color: $gray;
         font-size: 14px;
         margin: 10px;
       }
+
       .profit-input {
         margin: 10px 50px 0 160px;
       }
@@ -284,7 +289,7 @@
       padding: 60px;
       display: flex;
       flex-direction: column;
-      
+
       .sell-btn{
       line-height: 48px;
       background: $furima-green;
@@ -293,13 +298,14 @@
       width: 50%;
       font-size: 18px;
       border-radius: 100px;
-      margin:  0 auto; 
+      margin: 0 auto; 
       }
-      .back-btn{
+
+      .back-btn {
+        color: $gray;
+        font-size: 16px;
         margin: 25px;
         text-decoration: none;
-        font-size: 16px;
-        color: gray;
       }
     }
   }

@@ -83,14 +83,14 @@
             ¥
             = f.text_field :price, step: 100, type: "number", min: "0", value: "@item.price", placeholder: "例）300", class: 'input-price'
           .commission-box
-            %P 販売手数料 (10%)
+            %p 販売手数料 (10%)
             %p.commission-input ーー
           .profit-box
-            %P 販売利益
+            %p 販売利益
             %p.profit-input ーー
         .sell-item
           = f.submit "出品する", class: "sell-btn"
-          = link_to "戻る", root_path, class: "back-btn"   
+          = link_to "戻る", root_path, class: "back-btn"
 
 .new-footer
   .new-footer__logo
