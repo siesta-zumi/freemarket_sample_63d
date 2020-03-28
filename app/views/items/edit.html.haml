@@ -5,11 +5,16 @@
       %h1 商品の情報を編集
 
       =form_with model: @item,local:true do |f|
-        %h2 投稿済みの画像
-        %p 削除したい画像にチェックをつけてください
-        - @item.item_images.each do |item_image|
-          = f.check_box :item_image_ids, { multiple: true, checked: item_image[:checked], disabled: item_image[:disabled], include_hidden: false }, item_image[:id]
-          = image_tag item_image, class: "posted_image"
+        .image_delete
+          %h2 投稿済みの画像 
+          %p 削除したい画像にチェックをつけてください
+          - @item.item_images.each do |item_image|
+            = label_tag do
+              .check_box_image
+                .check_box_image__check_box
+                  = f.check_box :item_image_ids, { multiple: true, checked: item_image[:checked], disabled: item_image[:disabled], include_hidden: false }, item_image[:id]
+                .check_box_image__image
+                  = image_tag item_image, class: "posted_image"
         .imege-upload
           = render 'shared/error_messages', model: f.object
           .section
@@ -79,11 +84,10 @@
             = f.text_field :price, step: 100, type: "number", min: "0", value: @item.price, placeholder: "例）300", class: 'input-price'
         .sell-item
           = f.submit "修正する", class: "sell-btn"
-        .edit-item
-          = link_to "商品ページへ戻る", item_path, class: "item-btn"
-.new-footer
-  .new-footer__logo
-    = image_tag("material/logo/logo-white.png", alt: "logo image")
-    %p © FURIMA
+  .back_button_area
+    .back-item
+      = link_to "商品ページへ戻る", item_path, class: "item-btn"
+
+= render 'shared/footer'
 
 
