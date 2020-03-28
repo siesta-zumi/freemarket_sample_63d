@@ -36,12 +36,17 @@
             class: "input-description"
         .item-details
           %h3 商品の詳細
+          
           .item-details__box
             .section
               %p カテゴリー
               %span 必須
             = f.collection_select :category_id, @parents, :id,
              :name, prompt: "選択してください"
+
+            .section.child-category
+
+            .section.grand-child-category
 
             .section
               %p ブランド

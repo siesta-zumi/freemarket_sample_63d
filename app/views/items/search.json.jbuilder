@@ -1,4 +1,4 @@
-json.array! @children do |child|
-  json.id child.id
-  json.name child.name
+json.array! @categories do |category|
+  json.id category.id
+  json.name category.name
 end

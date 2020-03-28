@@ -8,6 +8,9 @@ class ItemsController < ApplicationController
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
     @brands = Brand.all
+    
+    
+    
   end
 
   def new
@@ -91,11 +94,9 @@ class ItemsController < ApplicationController
 
   
   def search
+    @categories = Category.where(ancestry: params[:id])
     respond_to do |format|
-      format.html
-      format.json do
-       @children = Category.find(params[:parent_id]).children
-      end
+      format.json
     end
   end
 
