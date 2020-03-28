@@ -165,11 +165,12 @@
         width: 400px;
         position: absolute;
         right: 50px;
-        .section{
+        .section {
           @include categories
         }
-        #item_category_id{
+        #item_category_id,#child,#grand-child {
           @include select;
+          margin-bottom: 10px;
         }
         #item_brand_id{
           @include select;
