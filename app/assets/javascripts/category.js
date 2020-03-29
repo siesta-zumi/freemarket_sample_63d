@@ -32,6 +32,7 @@ $(function() {
         };
       })
       .fail(function() {
+        alert('カテゴリー取得に失敗しました');
       });
     }
     
@@ -66,6 +67,7 @@ $(function() {
         }
       })
       .fail(function() {
+        alert('カテゴリー取得に失敗しました');
       });
     }
     
