@@ -4,11 +4,14 @@ $(function() {
       `<option value= ${result.id}>${result.name}</option>`
     return html
   }
+  
   $("#item_category_id").on("change",function(){
+    var $child = $('#child');
+    var $grandChild = $('#grand-child');
     var int = document.getElementById("item_category_id").value;
     if(int == 0){
-      $('#child').remove();
-      $('#grand-child').remove();
+      $child.remove();
+      $grandChild.remove();
     }else{
       $.ajax({
         url: 'search',
@@ -23,9 +26,9 @@ $(function() {
           insertHTML += buildHTML(child)
         });
         insertHTML += `</select>`
-        if($('#child').length){
-          $('#child').replaceWith(insertHTML);
-          $('#grand-child').remove();
+        if($child.length){
+          $child.replaceWith(insertHTML);
+          $grandChild.remove();
         } else {
           $('.child-category').append(insertHTML);
   
@@ -43,9 +46,10 @@ $(function() {
     var intParent = document.getElementById("item_category_id").value
     var intChild = document.getElementById("child").value
     var int = intParent + '/' + intChild
+    var $grandChild = $('#grand-child');
 
     if(intChild == 0){
-      $('#grand-child').remove();
+      $grandChild.remove();
     }else{
       $.ajax({
         url: 'search',
@@ -60,8 +64,8 @@ $(function() {
           insertHTML += buildHTML(child)
         });
         insertHTML += `</select>`
-        if($('#grand-child').length){
-          $('#grand-child').replaceWith(insertHTML);
+        if($grandChild.length){
+          $grandChild.replaceWith(insertHTML);
         }else{
           $('.grand-child-category').append(insertHTML);
         }
