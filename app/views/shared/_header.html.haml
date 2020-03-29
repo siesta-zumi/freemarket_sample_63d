@@ -47,7 +47,7 @@
         %p.close CLOSE
       - @parents.each do|parent|
         .category-list
-          = link_to parent.name, class: "parent_category", id: "#{parent.id}"
+          = link_to parent.name, category_path(parent.id) , class: "parent_category", id: "#{parent.id}"
       .category-all
         = link_to "カテゴリー 一覧", categorys_path
 
