@@ -35,7 +35,7 @@
         %p.close CLOSE
       - @brands.each do|brand|
         .brand-list
-          = link_to brand.name
+          = link_to brand.name, brand_path(brand.id)
       .brand-all
         = link_to "ブランド一覧", brands_path
 
