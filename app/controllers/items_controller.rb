@@ -8,9 +8,6 @@ class ItemsController < ApplicationController
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
     @brands = Brand.all
-    
-    
-    
   end
 
   def new
