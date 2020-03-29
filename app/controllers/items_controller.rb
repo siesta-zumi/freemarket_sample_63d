@@ -91,11 +91,9 @@ class ItemsController < ApplicationController
 
   
   def search
+    @categories = Category.where(ancestry: params[:id])
     respond_to do |format|
-      format.html
-      format.json do
-       @children = Category.find(params[:parent_id]).children
-      end
+      format.json
     end
   end
 

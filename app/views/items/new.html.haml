@@ -43,6 +43,10 @@
             = f.collection_select :category_id, @parents, :id,
              :name, prompt: "選択してください"
 
+            .section.child-category
+
+            .section.grand-child-category
+
             .section
               %p ブランド
               %span 必須
