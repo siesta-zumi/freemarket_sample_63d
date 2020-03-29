@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show]
   resources :users, only: [:show, :create, :update]
-  resources :categorys, only: [:index]
+  resources :categorys, only: [:index, :show]
   resources :brands, only: [:index]
   resources :identity_informations, only: [:new, :create]
   resources :shipping_addresses, only: [:new, :create]
