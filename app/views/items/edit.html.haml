@@ -48,7 +48,12 @@
             .section
               %p カテゴリー
               %span 必須
-            = f.collection_select :category_id, @parents, :id, :name, prompt: "選択してください"
+            = f.collection_select :category_id, @parents, :id,
+             :name, prompt: "選択してください"
+
+            .section.child-category
+
+            .section.grand-child-category
 
             .section
               %p ブランド
