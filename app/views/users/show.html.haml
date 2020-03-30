@@ -3,6 +3,8 @@
 .mypage-left
   .mypage-title
     %ul
+      %li.list-item-letter 
+        マイページメニュー
       %li.list-item
         マイページ
         .list-item__icon
@@ -20,36 +22,6 @@
         .list-item__icon
           >
       %li.list-item
-        購入した商品⭐️
-        .list-item__icon
-          >
-      %li.list-item
-        下書き一覧⭐️
-        .list-item__icon
-          >
-
-    .mypage-head
-    %ul
-      %li.list-item-letter
-        ガイド・お問い合わせ
-      %li.list-item
-        ガイド⭐️
-        .list-item__icon
-          >
-      %li.list-item
-        お問い合わせ⭐️
-        .list-item__icon
-          >
-
-    .mypage-head
-    %ul
-      %li.list-item-letter 
-        その他設定
-      %li.list-item
-        プロフィール⭐️
-        .list-item__icon
-          >
-      %li.list-item
         = link_to "お届け先登録/変更", new_shipping_address_path, class: 'mypage-list-btn'
         .list-item__icon
           >
@@ -58,14 +30,9 @@
         .list-item__icon
           >
       %li.list-item
-        メール/パスワード⭐️
-        .list-item__icon
-          >
-      %li.list-item
         = link_to "本人情報",new_identity_information_path, class: 'mypage-list-btn'
         .list-item__icon
           >
-
 
     .mypage-head
     %ul

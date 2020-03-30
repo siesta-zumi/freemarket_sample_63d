@@ -10,6 +10,12 @@
   padding: 50px 0 0 150px;
   position: relative;
   .mypage-title{
+    .list-item-letter{
+      font-weight: bold;
+      font-size: 15px;
+      color: $letter-color;
+      margin: 5px;
+    }
     .list-item{
       box-sizing: border-box;
       height: 50px;
@@ -32,13 +38,7 @@
       width: 280px;
       background-color: $back-color;
     }
-    .list-item-letter{
-      font-weight: bold;
-      font-size: 15px;
-      color: $letter-color;
-      margin: 3px;
-    }
-  
+
   .mypage-list-btn{
     text-decoration: none;
     color: $letter-color;
