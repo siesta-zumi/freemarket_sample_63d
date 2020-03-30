@@ -6,14 +6,14 @@
         カテゴリー一覧
       .category-list
         - @parents.each do |parent|
-          = link_to "#{parent.name}", class: "parent_category", id: "#{parent.id}"
+          = link_to "#{parent.name}",category_path(parent.id), class: "parent_category", id: "#{parent.id}"
       - @parents.each do |parent|
         .parents
-          =  parent.name
+          = link_to parent.name, category_path(parent.id), class: "parents-item"
         .category-list__child
           - parent.children.each do |child|
-            = child.name
+            = link_to child.name, category_path(child.id), class: "child-item"
           .category-list__indirects
             - parent.indirects.each do |indirects|
-              = indirects.name
+              = link_to indirects.name, category_path(indirects.id), class: "indirects-item"
 = render "shared/footer"
