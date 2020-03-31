@@ -50,12 +50,11 @@
               %span 必須
             .section
               %select#parent
-                %option{value: 0} 選択して下さい
+                %option{ value: 0 } 選択して下さい
                 - @parents.each do |category|
-                  %option{value: "#{category.id}"} #{category.name}
+                  %option{ value: "#{ category.id }" } #{category.name}
 
             .section.child-category
-              
 
             .section.grand-child-category
 

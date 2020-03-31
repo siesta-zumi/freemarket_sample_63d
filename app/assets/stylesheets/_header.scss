@@ -144,7 +144,7 @@
           border-radius: 5px;
           cursor: pointer;
 
-           a{
+          a {
             color: $furima-blue;
             display: block;
           }
@@ -157,7 +157,6 @@
         @include mypage-list;
       }
 
-      
       .create-user a{
         color: #fff;
       }
