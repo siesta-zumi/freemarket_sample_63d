@@ -48,7 +48,16 @@
             .section
               %p カテゴリー
               %span 必須
-            = f.collection_select :category_id, @parents, :id, :name, prompt: "選択してください"
+            .section
+              %select#parent
+                %option{value: 0} 選択して下さい
+                - @parents.each do |category|
+                  %option{value: "#{category.id}"} #{category.name}
+
+            .section.child-category
+              
+
+            .section.grand-child-category
 
             .section
               %p ブランド
