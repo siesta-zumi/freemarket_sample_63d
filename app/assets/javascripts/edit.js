@@ -6,11 +6,9 @@ $(function() {
   }
   
   $("#parent").on("change",function(){
-    console.log('AAA');
     var $child = $('#edit-child');
     var $grandChild = $('#edit-grand-child');
     var int = document.getElementById("parent").value;
-    
     if(int == 0){
       $child.remove();
       $grandChild.remove();
@@ -22,30 +20,25 @@ $(function() {
         data: {id: int}
       })
       .done(function(children) {
-        
         var insertHTML = `<select name="child" id="edit-child">
                           <option value=0>---</option>`;
         $.each(children, function(i, child) {
           insertHTML += buildHTML(child)
         });
-        
         insertHTML += `</select>`
         if($child.length){
           $child.replaceWith(insertHTML);
           $grandChild.remove();
         } else {
           $('.child-category').append(insertHTML);
-  
         };
       })
       .fail(function() {
         alert('カテゴリー取得に失敗しました');
       });
     }
-    
   });
 
-  
   $(document).on("change","#edit-child",function(){
     var intParent = document.getElementById("parent").value
     var intChild = document.getElementById("edit-child").value
@@ -78,6 +71,5 @@ $(function() {
         alert('カテゴリー取得に失敗しました');
       });
     }
-    
   });
 })
