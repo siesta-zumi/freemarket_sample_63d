@@ -170,7 +170,10 @@
           @include categories
         }
 
-        #item_category_id,#child,#grand-child {
+        #item_category_id,
+        #child,#grand-child,
+        #parent,#edit-child,
+        #edit-grand-child {
           @include select;
           margin-bottom: 10px;
         }
