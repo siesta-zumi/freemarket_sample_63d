@@ -9,6 +9,7 @@ $(function() {
     var $child = $('#child');
     var $grandChild = $('#grand-child');
     var int = document.getElementById("item_category_id").value;
+    
     if(int == 0){
       $child.remove();
       $grandChild.remove();
@@ -25,6 +26,7 @@ $(function() {
         $.each(children, function(i, child) {
           insertHTML += buildHTML(child)
         });
+        
         insertHTML += `</select>`
         if($child.length){
           $child.replaceWith(insertHTML);
