@@ -1,3 +1,18 @@
-.a {
+.search-side{
+  background-color: $furima-gray;
+  float: left;
+  width: 400px;
+  height: 1400px;
+}
+.side-detail{
+  background-color: white;
   width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.side-head{
+  text-align: center;
+}
+.side-button{
+  text-align: center;
 }

@@ -1,10 +1,16 @@
 .item-result{
-  width: 100%;
   background-color: $furima-gray;
+  float: left;
+  width: calc(100% - 400px);
+  // max-width: calc(100% - 400px);
+  height: 1400px;
+}
+.result-title{
+  
 }
 .result__main{
-  width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 .result__content{
   width: 210px;
