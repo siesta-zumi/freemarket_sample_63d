@@ -13,29 +13,31 @@
               %span 入力必須
             = f.label :ニックネーム 
           .field-input
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, placeholder: '例）フリマ　太郎', autofocus: true
+
         .field
           .field-label
             %p
               %span 入力必須
             = f.label :メールアドレス
           .field-input
-            = f.email_field :email
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
+
         .field
           .field-label
             %p
               %span 入力必須
             = f.label :パスワード
-            %i (英数字8文字以上)
             .field-input
-              = f.password_field :password, autocomplete: "off"
+              = f.password_field :password, placeholder: '8文字以上', autocomplete: "off"
+
         .field
           .field-label
             %p
               %span 入力必須
             = f.label :パスワードの確認
           .field-input
-            = f.password_field :password_confirmation, autocomplete: "off"
+            = f.password_field :password_confirmation, placeholder: 'パスワードの確認', autocomplete: "off"
         .actions
           = f.submit "Create Account", class: 'btn'
     .account-page_existing

@@ -27,13 +27,16 @@
 }
 
 .field{
-  padding-top: 10px;
+  margin-top: 40px;
   .field-label p span {
     @include not-null();
     margin-left: 0;
   }
 }
 
+.field-input{
+  font-size: 25px;
+}
 
 
 .account-page_existing{

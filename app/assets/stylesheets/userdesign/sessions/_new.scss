@@ -35,7 +35,7 @@ h2.login {
 
   .account-mail {
     margin-bottom: 13px;
-    padding-top: 20px;
+    margin-top: 40px;
   }
   
   .account-mail p span {
@@ -50,18 +50,14 @@ h2.login {
   }
 
   .account-password {
-    margin-bottom: 22px;
-    &__form{
-      display: flex;
-    }
+    margin-top: 40px;
     &__form-right{
-      font-size: 2px;
       padding-left: 10px;
       padding-top: 27px;
     }
   }
   .account-login {
-    margin-bottom: 26px;
+    margin-top: 40px;
     &__text{
       margin-top: 18px;
       font-size: 12px;
@@ -70,6 +66,10 @@ h2.login {
       font-size: 13px;
       margin-top: 18px;
       padding-left: 3px;
+    }
+    &__forget{
+      font-size: 13px;
+      margin-top: 18px;
     }
   }
 
