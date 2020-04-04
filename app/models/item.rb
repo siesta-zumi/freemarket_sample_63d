@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   has_many_attached :item_images
   belongs_to :user
   belongs_to :brand
+  belongs_to :category
   has_many :likes
   has_many :messages
   
@@ -20,7 +21,7 @@ class Item < ApplicationRecord
   validates :is_bear_shipping_cost, presence: true
   validates :period, presence: true
   validates :price, presence: true
-  validates :category_id, presence: true
+  validate :selected_category?
   validates :brand_id, presence: true
   validates :user_id, presence: true
   validates :status, presence: true
@@ -31,5 +32,20 @@ class Item < ApplicationRecord
     if !item_images.attached?
       errors.add(:item_images, 'ファイルを添付してください')
     end
+  end
+
+  def selected_category?
+
+    # category_idが0かnilの場合、即エラー
+    if category_id == 0 || category_id == nil
+      errors.add(:category_id, 'カテゴリーが正しく選択されていません')
+    else
+      # 選択されたカテゴリーが親とさらにその親を持たない場合はエラー
+      selected_category = Category.find(category_id)
+      if selected_category == nil || selected_category.parent == nil || selected_category.parent.parent == nil
+        errors.add(:category_id, 'カテゴリーが正しく選択されていません')
+      end
+    end
+
   end
 end
