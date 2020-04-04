@@ -40,7 +40,7 @@
         %tr
           %th カテゴリー
           %td
-            = @category.name
+            = "#{@category.parent.parent.name} > #{@category.parent.name} > #{@category.name}"
 
         %tr
           %th ブランド
