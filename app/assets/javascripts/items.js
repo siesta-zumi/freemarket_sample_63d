@@ -40,14 +40,14 @@ $(function(){
   $('.back-to-item').hover(function(){
     $(this).text('商品詳細画面へ戻る').css('background-color','red')
   },function(){
-    $(this).text('編集が完了いたしました').css('background-color','rgb(60,202,206)')}
+    $(this).text('編集が完了しました').css('background-color','rgb(60,202,206)')}
 )});
 
 $(function(){
   $('.back-to-root').hover(function(){
     $(this).text('トップページへ戻る').css('background-color','blue')
   },function(){
-    $(this).text('商品を削除いたしました').css('background-color','rgb(60,202,206)')}
+    $(this).text('商品を削除しました').css('background-color','rgb(60,202,206)')}
 )});
 
 $(function(){
@@ -55,4 +55,11 @@ $(function(){
     $(this).text('トップページへ戻る').css('background-color','blue')
   },function(){
     $(this).text('該当する商品がありません').css('background-color','rgb(60,202,206)')}
+)});
+
+$(function(){
+  $('.back-to-create').hover(function(){
+    $(this).text('トップページへ戻る').css('background-color','red')
+  },function(){
+    $(this).text('出品が完了しました').css('background-color','rgb(60,202,206)')}
 )});
