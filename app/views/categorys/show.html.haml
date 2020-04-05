@@ -5,8 +5,8 @@
       = "#{@category_name}の商品一覧"
   .category_items_area
     .main__content__items
-      - if @items.size > 0
-        - @items.each do |item|
+      - if @display_items.size > 0
+        - @display_items.each do |item|
           .contents__list
             .contents__list--img 
               = link_to item_path(item.id) do
@@ -21,6 +21,6 @@
         .no_item_alert
           = link_to "該当する商品がありません", root_path, class: "back-to-root-form-category"
   .main__content__bottom
-    = paginate @items
+    -# = paginate @display_items
   
   = render "shared/footer"
