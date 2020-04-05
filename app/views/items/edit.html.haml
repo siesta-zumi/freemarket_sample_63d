@@ -50,13 +50,21 @@
               %span 必須
             .section
               %select#parent
-                %option{ value: 0 } #{@category.name}
+                %option{ value: 0 } #{@category.parent.parent.name}
                 - @parents.each do |category|
                   %option{ value: "#{ category.id }" } #{ category.name }
 
             .section.child-category
+              %select#edit-child
+                %option{ value: 0 } #{@category.parent.name}
+                - @parents.each do |category|
+                  %option{ value: "#{ category.id }" } #{ category.name }
 
             .section.grand-child-category
+              %select#edit-grand-child
+                %option{ value: 0 } #{@category.name}
+                - @parents.each do |category|
+                  %option{ value: "#{ category.id }" } #{ category.name }
 
             .section
               %p ブランド
