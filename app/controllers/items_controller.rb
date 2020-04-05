@@ -51,6 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = Category.find(@item.category_id)
   end
 
   def update
