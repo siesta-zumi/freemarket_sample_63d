@@ -13,7 +13,7 @@
               %span 入力必須
             = f.label :ニックネーム 
           .field-input
-            = f.text_field :name, placeholder: '例）フリマ　太郎', autofocus: true
+            = f.text_field :name, placeholder: '例）フリマ 太郎', autofocus: true
 
         .field
           .field-label
@@ -21,7 +21,7 @@
               %span 入力必須
             = f.label :メールアドレス
           .field-input
-            = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
+            = f.email_field :email, placeholder: 'example@gmail.com'
 
         .field
           .field-label
@@ -29,7 +29,7 @@
               %span 入力必須
             = f.label :パスワード
             .field-input
-              = f.password_field :password, placeholder: '8文字以上', autocomplete: "off"
+              = f.password_field :password, placeholder: '半角英数８文字以上', autocomplete: "off"
 
         .field
           .field-label

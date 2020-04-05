@@ -9,16 +9,18 @@
       .account-mail
         %p
           %span 入力必須
+        = f.label :メールアドレス
         .field-input
-          = f.email_field :email, placeholder: 'メールアドレス', autofocus: true
+          = f.email_field :email, placeholder: 'example@gmail.com', autofocus: true
 
       .account-password
         .account-password__form
           .account-password__form-left
             %p
               %span 入力必須
+            = f.label :パスワード
             .field-input
-              = f.password_field :password, placeholder: '8文字以上', autocomplete: "off"
+              = f.password_field :password, placeholder: '半角英数８文字以上', autocomplete: "off"
 
       .account-login
         = f.submit "ログイン"
