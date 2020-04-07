@@ -1,12 +1,15 @@
 .item-result{
-  background-color: $furima-gray;
+  background-color: white;
   float: left;
-  width: calc(100% - 400px);
-  // max-width: calc(100% - 400px);
-  height: 1400px;
+  width: calc(100% - 300px);
+  height: 2000px;
 }
 .result-title{
-  
+  text-align: center;
+  width: 800px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 25px;
 }
 .result__main{
   display: flex;
@@ -14,7 +17,7 @@
 }
 .result__content{
   width: 210px;
-  margin: 15px;
+  margin: 30px;
   border: 1px solid;
   display: block;
   &--image{

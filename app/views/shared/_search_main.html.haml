@@ -1,6 +1,7 @@
 .item-result
   .result-title
     検索結果
+    
   .result__main
     - @items.each do |item|
       .result__content
@@ -13,3 +14,4 @@
           =item.name
         .result__content--user
           = "出品者: " + item.user.name + "さん"
+  

@@ -4,10 +4,9 @@
       = link_to image_tag("material/logo/logo.png", alt: "logo image"), root_path
     .header__top--search
       = search_form_for @q, url:item_serches_path  do |f|
-        = f.label :name_cont
-        = f.search_field :name_cont 
-        .search-icon
-          = f.submit ""
+        = f.search_field :name_cont ,class: "search-ward"
+        = button_tag type: "submit", class: "search-icon" do
+          %i.fa.fa-search
 
   .header__bottom
     .search-list
