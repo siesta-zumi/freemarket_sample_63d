@@ -1,7 +1,7 @@
 .item-result
   .result-title
     検索結果
-    
+    -# = @items.total_count
   .result__main
     - @items.each do |item|
       .result__content
