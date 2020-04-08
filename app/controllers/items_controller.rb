@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
     @q = Item.ransack(params[:q])
-    # @search = Item.ransack(params[:q])
   end
 
   def new

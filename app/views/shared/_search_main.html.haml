@@ -1,13 +1,12 @@
 .item-result
   .result-title
     検索結果
-    -# = @items.total_count
   .result__main
     - @items.each do |item|
       .result__content
         .result__content--image
           = link_to item_path(item.id) do
-            =image_tag item.item_images.first ,class:"img",height:200,width:200
+            =image_tag item.item_images.first, class: "img", height:200, width:200
         .result__content--price
           = "¥#{item.price.to_s(:delimited)}"
         .result__content--name
