@@ -6,7 +6,7 @@
       .result-content
         .result-content--image
           = link_to item_path(item.id) do
-            = image_tag item.item_images.first, class: "img", height: 200, width: 200
+            = image_tag item.item_images.first, class: "img"
         .result-content--price
           ¥#{item.price.to_s(:delimited)}
         .result-content--name
