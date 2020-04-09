@@ -3,7 +3,6 @@
   height: 2000px;
   width: 100%;
 }
- 
 .result-title {
   font-weight: bold;
   text-align: center;
@@ -12,16 +11,17 @@
   font-size: 25px;
 }
 
-.result__main {
+.result-main {
   display: flex;
   flex-wrap: wrap;
 }
 
-.result__content {
+.result-content {
   display: block;
   margin: 30px;
   width: 210px;
   border: 1px solid;
+
   &--image {
     padding-top: 2px;
     text-align: center;

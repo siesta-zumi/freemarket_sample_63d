@@ -1,16 +1,15 @@
 .item-result
   .result-title
     検索結果
-  .result__main
+  .result-main
     - @items.each do |item|
-      .result__content
-        .result__content--image
+      .result-content
+        .result-content--image
           = link_to item_path(item.id) do
-            =image_tag item.item_images.first, class: "img", height:200, width:200
-        .result__content--price
-          = "¥#{item.price.to_s(:delimited)}"
-        .result__content--name
-          =item.name
-        .result__content--user
+            = image_tag item.item_images.first, class: "img", height: 200, width: 200
+        .result-content--price
+          ¥#{item.price.to_s(:delimited)}
+        .result-content--name
+          = item.name
+        .result-content--user
           = "出品者: " + item.user.name + "さん"
-  
