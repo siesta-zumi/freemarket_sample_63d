@@ -8,7 +8,7 @@ class ItemSerchesController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit!
+    params.require(:q).permit(:name_cont)
   end
   
   
