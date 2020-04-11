@@ -44,8 +44,12 @@ class OrdersController < ApplicationController
     # トークンIDもしくは顧客IDは必須なので顧客IDを指定
     customer: customer_id,
     )
+    redirect_to action: :done
+    # redirect_to root_path  ##トップページに遷移
 
-    redirect_to root_path  ##トップページに遷移
+  end
+
+  def done
 
   end
 
