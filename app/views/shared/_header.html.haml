@@ -19,7 +19,7 @@
         .to-do
           = link_to "やること", "#"
         .logout-user
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn", id:"logout-btn" , data: {confirm: "ログアウトします。よろしいですか？"}
       - else
         .new-user
           .create-user
