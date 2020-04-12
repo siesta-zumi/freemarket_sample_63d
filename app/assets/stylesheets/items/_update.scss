@@ -53,7 +53,11 @@
   }
 }
 
-.editted_alert{
+.editted_alert {
+  @include alert();
+}
+
+.done-item-alert {
   @include alert();
 }
 

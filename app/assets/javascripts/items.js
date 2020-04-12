@@ -56,3 +56,11 @@ $(function(){
   },function(){
     $(this).text('該当する商品がありません').css('background-color','rgb(60,202,206)')}
 )});
+
+$(function(){
+  $('.done-to-buy').hover(function(){
+    $(this).text('トップページへ戻る').css('background-color','blue')
+  },function(){
+    $(this).text('商品の購入が完了いたしました').css('background-color','rgb(60,202,206)')}
+)});
+
