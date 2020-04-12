@@ -1,0 +1,66 @@
+.image_delete {
+  border: 1px solid #f5f5f5;
+  padding: 40px;
+
+  h2{
+    margin-block-start: 1em;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    text-align: left;
+  }
+  p {
+    font-size: 14px;
+    margin: 8px 0 10px;
+    color: #333333;
+  }
+
+  .posted_image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .check_box_image {
+    display: inline-block;
+    margin-right: 1%;
+    border: 1px solid $letter-color;
+    background-color: $furima-gray;
+  }
+}
+
+.back-item{
+  background-color: #f5f5f5;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    margin-top: 50px;
+  }
+
+  .item-btn {
+    background-color: #808080;
+    display: block;
+    font-size: 15px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px auto;
+    text-align: center;
+    width: 300px;
+  }
+}
+
+.editted_alert {
+  @include alert();
+}
+
+.done-item-alert {
+  @include alert();
+}
+
+
+
+

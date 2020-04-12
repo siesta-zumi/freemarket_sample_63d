@@ -10,25 +10,8 @@
 
   .header__bottom
     .search-list
-      .category-list
-        #category-list カテゴリーを探す
-        .parent_category-list
-          - @parents.each do |parent|
-            = link_to "#{parent.name}",class: "parent_category",id: "#{parent.id}"
-            -# 後で使用します。
-            -#   子カテゴリー↓
-            -# - parent.children.each do |child|
-            -#   =child.name  
-            -#    孫カテゴリー↓
-            -#   - child.children.each do |grandchild|
-            -#     =grandchild.name
-
-      .brand-list
-        =link_to "ブランドから探す"
-        %ul
-          %li.hiddn ルイヴィトン
-          %li.hiddn シャネル
-          %li.hiddn ラルフローレン
+      #category-list カテゴリーから探す
+      #brand-list ブランドから探す
     .user-menu
       - if user_signed_in?
         .to-mypage
@@ -36,10 +19,36 @@
         .to-do
           = link_to "やること", "#"
         .logout-user
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, 
+          class: "header__right--btn", id: "logout-btn" , data: {confirm: "ログアウトします。よろしいですか？"}
       - else
         .new-user
           .create-user
             = link_to "新規会員登録", new_user_registration_path, class: "header__right--btn"
           .login-user
-            = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+            = link_to "ログイン", new_user_session_path, class: "header__right--btn", id: "login-btn"
+
+.brand_modal
+  #brand-index
+    .index-title
+      %p.title ブランドで検索
+      .close-modal
+        %p.close CLOSE
+      - @brands.each do|brand|
+        .brand-list
+          = link_to brand.name, brand_path(brand.id)
+      .brand-all
+        = link_to "ブランド一覧", brands_path
+
+.category_modal
+  #category-index
+    .index-title
+      %p.title カテゴリーで検索
+      .close-modal
+        %p.close CLOSE
+      - @parents.each do|parent|
+        .category-list
+          = link_to parent.name, category_path(parent.id) , class: "parent_category", id: "#{parent.id}"
+      .category-all
+        = link_to "カテゴリー 一覧", categorys_path
+

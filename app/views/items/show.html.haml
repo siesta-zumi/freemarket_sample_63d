@@ -1,13 +1,11 @@
 = render 'shared/header'
 .show-content
   .show-content__nav
-    %ul
-      %li 1
-      %li >
-      %li 2
-      %li >
-      %li 3
-      %li >
+  - breadcrumb :item, @item
+  = breadcrumbs separator: " &rsaquo; "
+  - if flash[:notice]
+    .notice
+      = flash[:notice]
 
   .show-contents
     .show-contents__item
@@ -27,6 +25,13 @@
         %p (税込)送料込み
     .show-contents__info
       .show-contents__info--name
+        = @item.name
+        %h3
+          いいね件数: #{@item.likes.count}
+        - if current_user.already_liked?(@item)
+          = button_to 'いいねを取り消す', item_like_path(@item), method: :delete
+        - else
+          = button_to 'いいね', item_likes_path(@item)
       %table
         %tr
           %th 出品者
@@ -35,7 +40,7 @@
         %tr
           %th カテゴリー
           %td
-            = @category.name
+            = "#{@category.parent.parent.name} > #{@category.parent.name} > #{@category.name}"
 
         %tr
           %th ブランド
@@ -64,24 +69,34 @@
 
       .show-contents__comment
         .show-contents__comment--area
-          %form_for
-            = text_area_tag ""
-            %p.caution
-              相手のことを考えてコメントしましょう！！
-            = button_tag "コメントする"
-            %ul
-              %li.link
-                - if !@is_last
-                  = link_to "<前の商品", item_path(@next_item_id)
-              %li.link
-                - if !@is_first
-                  = link_to "後ろの商品>", item_path(@previous_item_id)
-            .link-item
-              = link_to "〇〇をもっと見る", class: "link-item"
+          - if current_user
+            = form_with model: [@item, @message], local: true, id: "item-message" do |form|
+              = form.text_area :message, placeholder: "コメントする"
+              .caution
+                ※※※※※ 相手のことを考えてコメントしましょう！！ ※※※※※
+              = form.submit "コメントする", id: "message_btn"
+
+      .messages
+        %h4 <コメント一覧>
+        .messages-area
+          - if @messages
+            - @messages.each do |message|
+              .message-index
+                = message.user.name + "さん:"
+                = message.message
+      .move_item
+        %ul
+          %li.link
+            - if !@is_last
+              = link_to "<前の商品", item_path(@next_item_id)
+          %li.link
+            - if !@is_first
+              = link_to "後ろの商品>", item_path(@previous_item_id)
 
   .to-buy-item
-    = link_to order_path(@item.id) do
-      = button_tag "購入画面へ進む", class: "buy-btn"
+    - unless user_signed_in? && current_user.id == @item.user.id
+      = link_to order_path(@item.id) do
+        = button_tag "購入画面へ進む", class: "buy-btn"
     - if user_signed_in? && current_user.id == @item.user_id # ログインユーザーが出品者の時に編集、削除ができる
       .edit-item
         = link_to '商品を編集する', edit_item_path(@item.id), class: "item-btn"
@@ -92,3 +107,5 @@
 
 
 = render 'shared/footer'
+
+

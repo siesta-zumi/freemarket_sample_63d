@@ -15,9 +15,9 @@
 .new-contents{
   background-color: #f5f5f5;
   .new-contents-main{
-    width: 700px;
-    margin:  0 auto;  
     background-color:white;
+    margin: 0 auto;
+    width: 850px;
     .title{
       padding: 32px 16px;
       font-size: 22px;
@@ -29,11 +29,11 @@
       }
     }
 
-    .imege-upload{
-      height: 303px;
+    .imege-upload {
       border: 1px solid #f5f5f5;
       padding: 40px;
-      .section{
+
+      .section {
         display: flex;
         h2{
           margin-block-start: 1em;
@@ -41,34 +41,52 @@
           font-weight: bold;
           color: #333333;
         }
-        span{
+        span {
           @include not-null
         }
       }
-      p{
+
+      p {
         font-size: 14px;
         margin: 8px 0 10px;
         color: #333333;
       }
-      .image__list{
+      .image__list {
         display: flex;
-        flex-direction: column;
-        background-color: $furima-gray;
+        flex-direction: row;
+        height: 250px;
+        justify-content: space-between;
         margin: 0 auto;
-        height: 150px;
-        width: 500px;
-        p{
+        width: 100%;
+
+        .view_box {
+          background-color: $furima-gray;
+          border: 1px solid $letter-color;
           display: block;
+          height: 250px;
+          margin: 10px;
+          width: 120px;
+
+          .file {
+            color: $furima-gray;
+            display: block;
+            margin: 10px auto;
+            width: 100px;
+          }
+
+          img {
+            height: 100px;
+            margin-top: 40px;
+            width: 100px;
+          }
+        }
+
+        p {
+          display: block;
+          font-size: 14px;
           margin: 0 auto;
-          font-size: 15px;
         }
-        .item-img{
-          border: 1px solid #333333;
-          height: 50px;
-          width: 100px;
-          opacity: 0; 
-        }
-        i{
+        i {
           font-size: 40px;
           padding: 15px;
         }
@@ -147,15 +165,23 @@
         width: 400px;
         position: absolute;
         right: 50px;
-        .section{
+
+        .section {
           @include categories
         }
-        #item_category_id{
+
+        #item_category_id,
+        #child,#grand-child,
+        #parent,#edit-child,
+        #edit-grand-child {
           @include select;
+          margin-bottom: 10px;
         }
+
         #item_brand_id{
           @include select;
         }
+        
         #item_status{
           @include select;
         }
@@ -193,8 +219,8 @@
     }
 
     .price-input{
-      height: 200px;
       border: 1px solid #f5f5f5;
+      height: 350px;
       padding: 40px;
       position: relative;
       h5{
@@ -230,20 +256,64 @@
           text-align: right;
       }
     }
+    .commission-box {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 170px;
+
+      p {
+        color: $gray;
+        font-size: 14px;
+        margin: 10px;
+      }
+
+      .commission-input {
+        margin: 10px 50px 0 160px;
+      }
     }
+
+    .profit-box {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 250px;
+
+      p {
+        color: $gray;
+        font-size: 14px;
+        margin: 10px;
+      }
+
+      .profit-input {
+        margin: 10px 50px 0 160px;
+      }
+    }
+    }
+
     .sell-item{
       height: 200px;
       border: 1px solid #f5f5f5;
-      padding: 70px;
-      text-align: center;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+
       .sell-btn{
       line-height: 48px;
       background: $furima-green;
       border: 1px solid $furima-green;
       color: #fff;
-      width: 60%;
+      width: 50%;
       font-size: 18px;
       border-radius: 100px;
+      margin: 0 auto; 
+      }
+
+      .back-btn {
+        color: $gray;
+        font-size: 16px;
+        margin: 25px;
+        text-decoration: none;
       }
     }
   }

@@ -1,0 +1,25 @@
+.wrapper
+  = render "shared/header"
+  .categoty_items_title
+    %h2 
+      = "#{@category_name}の商品一覧"
+  .category_items_area
+    .main__content__items
+      - if @display_items.size > 0
+        - @display_items.each do |item|
+          .contents__list
+            .contents__list--img 
+              = link_to item_path(item.id) do
+                =image_tag item.item_images.first ,class:"img",height:200,width:240
+            .contents__list--price
+              = "¥#{item.price.to_s(:delimited)}"
+            .contents__list--name
+              =item.name
+              .contents_user
+                = "出品者: " + item.user.name + "さん"
+      - else
+        .no_item_alert
+          = link_to "該当する商品がありません", root_path, class: "back-to-root-form-category"
+  .main__content__bottom
+  
+  = render "shared/footer"

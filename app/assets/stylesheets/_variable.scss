@@ -7,7 +7,9 @@ $furima-red: rgb(255, 0, 0);
 $back-color:   #eee;
 $letter-color: #333;
 $white: #fff;
-
+$light-blue: #00bfff;
+$gray: #808080;
+$box-shadow1px: 1px 1px 1px rgba(14, 14, 14, .0580392);
 
 
 @mixin title(){
@@ -147,5 +149,51 @@ $white: #fff;
   }
   a:hover{
     color: rgb(0,149,238);
+  }
+}
+
+@mixin alert{
+  height: 300px;
+  width: 90%;
+  background-color: $white;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+
+  a, .back-to-item {
+    background-color: $furima-green;
+    border: double 4px $white;
+    border-radius: 3px;
+    bottom: 0;
+    color: $white;
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    height: 80px;
+    left: 0;
+    margin: auto;
+    padding: 20px 40px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    transition: all .7s;
+    width: 400px;
+  }
+}
+@mixin modal_list{
+  color: $furima-blue;
+  background-color: $white;
+  border:solid 1px $furima-blue;
+  border-radius: 4px;
+  font-weight: 400;
+  padding: 3px 10px;
+  margin: 8px;
+  float: left;
+  text-decoration: none;
+  &:hover{
+    color: $furima-red;
+    background-color: yellow;
   }
 }
