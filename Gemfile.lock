@@ -54,6 +54,8 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
+    autonumeric-rails (2.0.0.1)
+      jquery-rails (>= 2.0.2)
     aws-eventstream (1.0.3)
     aws-partitions (1.278.0)
     aws-sdk-core (3.90.1)
@@ -374,6 +376,7 @@ PLATFORMS
 DEPENDENCIES
   active_hash
   ancestry
+  autonumeric-rails
   aws-sdk-s3
   better_errors
   binding_of_caller
