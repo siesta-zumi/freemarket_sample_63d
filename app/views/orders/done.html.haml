@@ -1,2 +1,5 @@
-購入が完了しました
-= link_to "トップページへ戻る",root_path
+
+= render 'shared/simple_header'
+.done-item_alert
+  = link_to "商品の購入が完了いたしました", root_path, class: "done-to-buy"
+= render 'shared/footer'
