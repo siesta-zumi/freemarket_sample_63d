@@ -92,3 +92,4 @@ gem 'active_hash'
 gem 'rubocop', require: false
 gem "font-awesome-sass"
 gem "gretel"
+gem 'autonumeric-rails'
