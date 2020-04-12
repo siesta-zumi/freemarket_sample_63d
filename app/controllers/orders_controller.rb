@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
     customer: customer_id,
     )
     redirect_to action: :done
-    # redirect_to root_path  ##トップページに遷移
+    
 
   end
 
