@@ -1,5 +1,6 @@
 class ItemSerchesController < ApplicationController
   before_action :set_parents
+  before_action :set_brands
 
   def index
     @q = Item.ransack(search_params)
@@ -10,6 +11,9 @@ class ItemSerchesController < ApplicationController
   def search_params
     params.require(:q).permit(:name_cont)
   end
-  
+
+  def set_brands
+    @brands = Brand.all
+  end
   
 end
