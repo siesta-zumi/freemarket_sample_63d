@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
+    @q = Item.ransack(params[:q])
     @brands = Brand.all
   end
 
