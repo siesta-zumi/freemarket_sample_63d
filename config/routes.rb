@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'items#index'
 
   resources :items do
+    member do
+      get 'preview'
+    end
     collection do
       get 'search'
     end
