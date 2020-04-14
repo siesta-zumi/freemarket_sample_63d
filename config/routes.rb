@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :item_serches, only: [:index]
 
   resources :items do
+    member do
+      get 'preview'
+    end
     collection do
       get 'search'
     end
