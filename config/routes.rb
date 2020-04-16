@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
+  resources :item_serches, only: [:index]
 
   resources :items do
+    member do
+      get 'preview'
+    end
     collection do
       get 'search'
     end

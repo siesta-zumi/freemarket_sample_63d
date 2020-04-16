@@ -1,0 +1,15 @@
+.item-result
+  .result-title
+    検索結果
+  .result-main
+    - @items.each do |item|
+      .result-content
+        .result-content--image
+          = link_to item_path(item.id) do
+            = image_tag item.item_images.first, class: "img"
+        .result-content--price
+          ¥#{item.price.to_s(:delimited)}
+        .result-content--name
+          = item.name
+        .result-content--user
+          = "出品者: " + item.user.name + "さん"

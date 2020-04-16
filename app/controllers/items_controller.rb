@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
 
-  before_action :set_parents, only: [:index,:new,:show,:create, :edit]
+  before_action :set_parents, only: [:index,:new,:show,:create, :edit, :preview]
   before_action :authenticate_user!, only: [:new, :show] #ログインしていないユーザーはnewとshowアクションの前にログイン画面に遷移
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   PER = 6
   def index
     @items = Item.where(selling_status: 0).page(params[:page]).per(PER).order('created_at DESC')
+    @q = Item.ransack(params[:q])
     @brands = Brand.all
   end
 
@@ -90,6 +91,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def preview
+    @items = Item.where(selling_status: 0).order('created_at DESC')
+    @brands = Brand.all
+    @item = Item.find_by(params[:id])
+  end
   
   def search
     @categories = Category.where(ancestry: params[:id])

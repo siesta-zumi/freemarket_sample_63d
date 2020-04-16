@@ -1,0 +1,27 @@
+.search-side
+  .side-detail
+    .side-head
+      詳細検索
+    .side-keyword
+      %form{ action: "cgi-bin/example.cgi", method: "post" }
+      %p キーワードを追加する
+      %input{ name: "search", type: "search" }/
+    .side-category
+      %form{ action: "cgi-bin/example.cgi", method: "post" }
+      %p カテゴリーを選択する
+      %input{ name: "search", type: "search" }
+    .side-brand
+      %form{ action: "cgi-bin/example.cgi", method: "post" }
+      %p ブランド名から探す
+      %input{ name: "search", type: "search" }/
+    .side-price
+      %form{ action: "cgi-bin/example.cgi", method: "post" }
+      %p 価格
+      %input{ name: "search", type: "search" }/
+    .side-status
+      %form{ action: "cgi-bin/example.cgi", method: "post" }
+      %p 商品の状態
+      %input{ name: "search", type: "search" }/
+    .side-button
+      %input{ name: "submit", type: "submit", value: "検索" }/
+
