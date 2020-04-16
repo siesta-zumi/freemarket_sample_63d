@@ -93,3 +93,4 @@ gem 'rubocop', require: false
 gem "font-awesome-sass"
 gem "gretel"
 gem 'autonumeric-rails'
+gem 'rails-i18n'
