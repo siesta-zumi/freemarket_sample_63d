@@ -32,4 +32,5 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
+  
 end

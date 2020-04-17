@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @q = Item.ransack(params[:q])
+    @q.sorts = ['update_at desc', 'id desc'] 
     @items = @q.result(distinct: true)
   end 
 end
