@@ -58,5 +58,10 @@ $(function(){
 )});
 
 
-
+$(function(){
+  $('.done-to-buy').hover(function(){
+    $(this).text('トップページへ戻る').css('background-color','blue')
+  },function(){
+    $(this).text('商品の購入が完了いたしました').css('background-color','rgb(60,202,206)')}
+)});
 
