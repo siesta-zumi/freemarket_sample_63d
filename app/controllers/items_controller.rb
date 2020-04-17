@@ -44,11 +44,13 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+
     if @item.save
       redirect_to root_path,alert:"商品出品が完了しました"
     else
       render new_item_path,alert:"エラーが発生しました"
     end
+
   end
 
   def edit

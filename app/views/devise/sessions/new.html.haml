@@ -5,22 +5,23 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       %h1 
         %span ログイン
+
       .account-mail
         %p
           %span 入力必須
         = f.label :メールアドレス
-        %br/
-        = f.email_field :email, autofocus: true
+        .field-input
+          = f.email_field :email, placeholder: 'example@gmail.com', autofocus: true
+
       .account-password
         .account-password__form
           .account-password__form-left
             %p
               %span 入力必須
-            = f.label :password, "パスワード"
-            %i (英数字8文字以上)
-          .account-password__form-right
-            = link_to "パスワードを忘れた場合", new_user_password_path
-        = f.password_field :password, autocomplete: "off"
+            = f.label :パスワード
+            .field-input
+              = f.password_field :password, placeholder: '半角英数８文字以上', autocomplete: "off"
+
       .account-login
         = f.submit "ログイン"
         .account-login__text
@@ -33,6 +34,9 @@
           .account-login__remember
             = f.check_box :remember_me
             = f.label :remember, "ログインしたままにする"
+          .account-login__forget
+            = link_to "パスワードを忘れた場合", new_user_password_path
+
             
     .account-newuser
       %p
