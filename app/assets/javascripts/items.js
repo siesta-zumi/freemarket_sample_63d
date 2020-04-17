@@ -56,3 +56,7 @@ $(function(){
   },function(){
     $(this).text('該当する商品がありません').css('background-color','rgb(60,202,206)')}
 )});
+
+
+
+

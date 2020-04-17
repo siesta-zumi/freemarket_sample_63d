@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'items#index'
+  resources :item_serches, only: [:index]
 
   resources :items do
+    member do
+      get 'preview'
+    end
     collection do
       get 'search'
     end
@@ -16,7 +20,11 @@ Rails.application.routes.draw do
   resources :brands, only: [:index, :show]
   resources :identity_informations, only: [:new, :create]
   resources :shipping_addresses, only: [:new, :create]
-  resources :orders, only: [:show, :create]
+  resources :orders, only: [:show, :create] do
+   collection do
+    get 'done'
+   end
+  end
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'

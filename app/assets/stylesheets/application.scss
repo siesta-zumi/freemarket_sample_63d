@@ -16,6 +16,8 @@
 @import "userdesign/sessions/new";
 @import "userdesign/sessions/newaccount";
 @import "orders";
+@import 'search_main';
+@import 'search_side';
 @import "categorys/index";
 @import "categorys/show";
 @import "font-awesome-sprockets";
@@ -25,4 +27,4 @@
 @import "items/destroy";
 @import "messages";
 @import "brands/index";
-@import "brands/show";
+@import 'brands/show';

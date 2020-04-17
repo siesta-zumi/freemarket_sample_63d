@@ -84,7 +84,7 @@
             %span 必須
           .price-input__form
             ¥
-            = f.text_field :price, step: 100, type: "number", min: "0", value: "@item.price", placeholder: "例）300", class: 'input-price'
+            = f.text_field :price, data: { autonumeric: true },value: "@item.price", placeholder: "例）300", class: 'input-price'
           .commission-box
             %p 販売手数料 (10%)
             %p.commission-input ーー

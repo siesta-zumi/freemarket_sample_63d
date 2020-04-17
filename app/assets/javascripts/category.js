@@ -15,7 +15,7 @@ $(function() {
       $grandChild.remove();
     }else{
       $.ajax({
-        url: 'search',
+        url: '/items/search',
         type: 'GET',
         dataType: 'json',
         data: {id: int}
@@ -54,7 +54,7 @@ $(function() {
       $grandChild.remove();
     }else{
       $.ajax({
-        url: 'search',
+        url: '/items/search',
         type: 'GET',
         dataType: 'json',
         data: {id: int}
