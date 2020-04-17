@@ -19,7 +19,7 @@
        width: 100%;
      }
     }
-    &--search{
+    .header-top--search {
       height: 40px;
       width: 600px;
       position: relative;
@@ -28,9 +28,7 @@
         height:40px;
         background-color:white;
         border: solid 1px;
-
       }
-
       .search-icon{
         position: absolute;
         display: block;
@@ -49,7 +47,6 @@
           opacity: 0.9;
         }
       }
-
     }
   }
 

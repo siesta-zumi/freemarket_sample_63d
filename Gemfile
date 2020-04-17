@@ -90,5 +90,9 @@ gem 'ancestry'
 gem 'aws-sdk-s3', require: false
 gem 'active_hash'
 gem 'rubocop', require: false
+gem 'ransack'
 gem "font-awesome-sass"
 gem "gretel"
+gem 'autonumeric-rails'
+gem 'rails-i18n'
+

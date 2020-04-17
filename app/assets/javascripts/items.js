@@ -58,8 +58,9 @@ $(function(){
 )});
 
 $(function(){
-  $('.back-to-create').hover(function(){
-    $(this).text('トップページへ戻る').css('background-color','red')
+  $('.done-to-buy').hover(function(){
+    $(this).text('トップページへ戻る').css('background-color','blue')
   },function(){
-    $(this).text('出品が完了しました').css('background-color','rgb(60,202,206)')}
+    $(this).text('商品の購入が完了いたしました').css('background-color','rgb(60,202,206)')}
 )});
+
