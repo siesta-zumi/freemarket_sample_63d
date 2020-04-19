@@ -1,6 +1,10 @@
 class IdentityInformationsController < ApplicationController
 
   def new
+    unless current_user.identity_information.nil?
+      redirect_to edit_identity_information_path(current_user.id)
+    end
+
     @identity_information = IdentityInformation.new
   end
 
@@ -13,6 +17,17 @@ class IdentityInformationsController < ApplicationController
     end
   end
 
+  def edit
+    @identity_information = IdentityInformation.find(current_user.identity_information.id)
+  end
+
+  def update
+    if current_user.identity_information.update(identity_information_params)
+      redirect_to user_path(current_user.id), alert:"本人確認情報を更新しました"
+    else
+      redirect_to edit_identity_information_path, alert:"エラーが発生しました"
+    end
+  end
   private 
 
   def identity_information_params
