@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :categorys, only: [:index, :show]
   resources :brands, only: [:index, :show]
   resources :identity_informations, only: [:new, :create]
-  resources :shipping_addresses, only: [:new, :create]
+  resources :shipping_addresses, only: [:new, :create, :edit, :update]
   resources :orders, only: [:show, :create] do
    collection do
     get 'done'
