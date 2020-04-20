@@ -38,12 +38,12 @@ class Item < ApplicationRecord
 
     # category_idが0かnilの場合、即エラー
     if category_id == 0 || category_id == nil
-      errors.add(:category_id, 'カテゴリーが正しく選択されていません')
+      errors.add(:category_id, 'が正しく選択されていません')
     else
       # 選択されたカテゴリーが親とさらにその親を持たない場合はエラー
       selected_category = Category.find(category_id)
       if selected_category == nil || selected_category.parent == nil || selected_category.parent.parent == nil
-        errors.add(:category_id, 'カテゴリーが正しく選択されていません')
+        errors.add(:category_id, 'が正しく選択されていません')
       end
     end
 
