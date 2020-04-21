@@ -4,7 +4,8 @@ class ItemSerchesController < ApplicationController
 
   def index
     @q = Item.ransack(search_params)
-    @items = @q.result(distinct: true)
+    @q.sorts = ['update_at desc', 'id desc'] 
+    @items = @q.result(distinct: true).where(selling_status: 0)
   end
 
   private
