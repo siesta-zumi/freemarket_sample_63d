@@ -3,9 +3,9 @@
     = link_to root_path do
       = image_tag("material/logo/logo.png", alt: "logo image")
   .account-page
-    %h2 お届け先登録
+    %h2 お届け先変更
     .account-pagenew
-      =form_with model: @shipping_address, local:true do |f|
+      = form_with model: @shipping_address, local: true do |f|
         .field
           .field-label
             = f.label :郵便番号
@@ -15,7 +15,7 @@
           .field-label
             = f.label :都道府県
           .field-input
-            = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "選択してください", class:'select-box'
+            = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "選択してください", class: 'select-box', id: 'prefecture-select__box'
         .field
           .field-label
             = f.label :市区町村
@@ -38,4 +38,4 @@
             = f.text_field :phone_number
 
         .actions
-          = f.submit "登録", class: 'btn'
+          = f.submit "更新", class: 'btn'
