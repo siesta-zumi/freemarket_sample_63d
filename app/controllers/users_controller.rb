@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     @ordered_items = []
     @user.orders.each do |order|
-      @ordered_items << Item.find(order.item_id)
+      @ordered_items << order.item
     end
   end
 
