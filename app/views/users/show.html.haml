@@ -82,7 +82,7 @@
 
   .tab_content.hide
     .mypage-item-link
-    - @items.each do |item|
+    - @ordered_items.each do |item|
       .mypage-item-link__box
         .mypage-item-link__box__image
           = link_to item_path(item.id) do
