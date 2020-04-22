@@ -152,6 +152,12 @@
       }
       .to-do{
         @include mypage-list;
+        
+        h2 {
+          font-size: 18px;
+          font-weight: bold;
+          color: $furima-blue;
+        }
       }
 
       .create-user a{
