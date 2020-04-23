@@ -16,6 +16,11 @@ class UsersController < ApplicationController
   def show
     @items = @user.items
     @brands = Brand.all
+
+    @ordered_items = []
+    @user.orders.each do |order|
+      @ordered_items << order.item
+    end
   end
 
 
