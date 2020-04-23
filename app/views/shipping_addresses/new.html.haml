@@ -7,6 +7,7 @@
     .account-pagenew
       =form_with model: @shipping_address, local:true do |f|
         .field
+          = render 'shared/error_messages', model: f.object
           .field-label
             = f.label :郵便番号
           .field-input
