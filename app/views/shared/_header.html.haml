@@ -17,7 +17,7 @@
         .to-mypage
           = link_to "マイページへ", user_path(current_user.id)
         .to-do
-          = link_to "やること", "#"
+          %h2 #{current_user.name}さん
         .logout-user
           = link_to "ログアウト", destroy_user_session_path, method: :delete, 
           class: "header__right--btn", id: "logout-btn" , data: {confirm: "ログアウトします。よろしいですか？"}
