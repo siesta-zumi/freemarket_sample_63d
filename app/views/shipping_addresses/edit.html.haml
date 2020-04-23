@@ -39,7 +39,8 @@
           .field-label
             = f.label :お届け先電話番号
           .field-input
-            = f.text_field :phone_number
+            = f.text_field :phone_number,
+              placeholder: " ※半角数字11桁（例）08011110000"
 
         .actions
           = f.submit "更新", class: 'btn'
