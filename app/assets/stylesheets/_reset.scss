@@ -124,3 +124,12 @@ legend {
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset { display: none; }
+
+.alert li {
+  color: red;
+  font-size: small;
+}
+
+.alert li::before {
+  content: "※";
+}
