@@ -85,7 +85,7 @@ gem 'pry-rails'
 gem 'jquery-rails'
 gem 'payjp'
 gem 'dotenv-rails'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'ancestry'
 gem 'aws-sdk-s3', require: false
 gem 'active_hash'
